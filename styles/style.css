@@ -30,6 +30,18 @@ html {
   scroll-behavior: smooth;
 }
 
+section {
+  padding: 2rem 9%;
+}
+
+.home {
+  background-color: var(--white-milk);
+}
+
+section:nth-child(even) {
+  background-color: #eee;
+}
+
 /* header */
 header {
   position: fixed;
@@ -142,4 +154,45 @@ header .icons #menu-bars {
   html {
     font-size: 50%;
   }
+}
+
+/* hero section */
+.home .home-slider .slide {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 9rem;
+}
+
+.home .home-slider .slide .content {
+  flex: 1 1 45rem;
+}
+
+.home .home-slider .slide .image {
+  flex: 1 1 45rem;
+}
+
+.home .home-slider .slide .image {
+  flex: 1 1 45rem;
+}
+
+.home .home-slider .slide .image img {
+  width: 100%;
+}
+
+.home .home-slider .slide .content h3 {
+  font-size: 6.2rem;
+  color: var(--green-dark);
+}
+
+.home .home-slider .slide .content p {
+  font-size: 2.2rem;
+  padding: 3rem 0;
+  line-height: 1.5;
+  color: var(--green);
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--green-dark);
 }
