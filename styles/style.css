@@ -1,6 +1,6 @@
 /* google fonts link */
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Josefin+Sans:ital,wght@0,300;1,400&display=swap");
 :root {
   --white: #fff;
   --black: #000;
@@ -46,21 +46,30 @@ header {
 }
 
 header .logo {
-  font-size: 2.5rem;
+  font-size: 5rem;
   font-weight: bolder;
+  font-family: "Edu TAS Beginner", cursive;
+  align-items: center;
   color: var(--green-dark);
 }
 
-header .logo i {
+header img {
   margin-right: 1rem;
-  color: var(--green);
+  /* width: 100px;
+  height: 100px;
+  color: var(--green); */
+  width: 6.25rem;
+  height: 6.25rem;
+  align-items: center;
 }
 
 header .navbar a {
   font-size: 1.7rem;
+  align-items: center;
+  justify-content: center;
   border-radius: 0.5rem;
   padding: 0.5rem 1.5rem;
-  color: var(--green-dark);
+  color: var(--green);
 }
 
 header .navbar a.active,
