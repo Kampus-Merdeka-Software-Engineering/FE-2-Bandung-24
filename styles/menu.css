@@ -197,3 +197,13 @@ header .icons #menu-bars {
   background-size: 100% auto;
   background-position: center;
 }
+
+.category .choice-category a img {
+  width: 5rem;
+  height: 5rem;
+}
+
+/* .category .choice-category a #cake {
+  width: 5rem;
+  height: 2rem;
+} */
