@@ -30,6 +30,64 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.dark-mode {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.dark-mode .home {
+  background-color: var(--green-dark);
+}
+
+.dark-mode .menu,
+.dark-mode .promo,
+.dark-mode .review,
+.dark-mode .article,
+.dark-mode .story {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.dark-mode .home .home-slider .slide .content h3,
+.dark-mode .home .home-slider .slide .content p,
+.dark-mode .story .our-story h4,
+.dark-mode .story .our-story .content-story p,
+.dark-mode .menu .menu-card h4,
+.dark-mode .promo .promo-card h4,
+.dark-mode .review .review-card h4,
+.dark-mode .article .article-card h4 {
+  color: var(--white);
+}
+
+.dark-mode .story .our-story .line,
+.dark-mode .story .our-story .content-story .line,
+.dark-mode .menu .menu-card .line,
+.dark-mode .promo .promo-card .line,
+.dark-mode .review .review-card .line,
+.dark-mode .article .article-card .line {
+  background-color: var(--white);
+}
+
+.dark-mode .swiper-pagination-bullet-active {
+  background: var(--green);
+}
+
+/* fa-solid {
+  color: white;
+  background-color: black;
+} */
+
+.fa-solid.active {
+  /* color: black;
+  background-color: white; */
+  transform: rotate(180deg);
+}
+
 section {
   flex: 1 1 auto;
   padding: 2rem 9%;
@@ -329,7 +387,7 @@ header .icons #menu-bars {
   margin-top: .5rem;
 } */
 
-.menu{
+.menu {
   background-color: #eee;
 }
 
