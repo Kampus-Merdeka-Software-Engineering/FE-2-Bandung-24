@@ -7,7 +7,7 @@ menu.onclick = () => {
     navbar.classList.toggle('active');
 }
 
-// swiper js function
+// hero slider function
 const swiper = new Swiper(".home-slider", {
     pagination: {
         el: ".swiper-pagination",
