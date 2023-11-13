@@ -9,6 +9,7 @@
   --green-dark: #435334;
   --white-milk: #faf1e5;
   --light-grey: #a49e9e;
+  --dark-grey: #4c4949;
   --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
 }
 
@@ -174,7 +175,7 @@ header .icons #menu-bars {
 .hero .image img {
   background-color: var(--light-grey);
   width: 70%;
-  margin-left: 25%;
+  margin-left: 15%;
   border-radius: 1.9rem;
 }
 
@@ -226,10 +227,73 @@ header .icons #menu-bars {
 }
 
 .category .choice-category a img:hover {
-  color: var(--white);
-  background-color: var(--green-dark);
-  border-radius: 40%;
   transform: scale(1.2);
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6rem;
+}
+.menu .menu-card {
+  display: flex;
+  justify-content: center;
+  /* width: 20rem; */
+  padding: 26px 26px;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+  box-shadow: 0px 2px 5px var(--black);
+  border-radius: 46px;
+}
+
+.menu .menu-card img {
+  width: 20rem;
+  height: 15rem;
+  border-radius: 20px;
+  margin: auto;
+}
+
+.menu .menu-card h2 {
+  color: var(--green-dark);
+  font-weight: 900;
+  font-size: 2rem;
+  margin: auto;
+  /* margin-bottom: 0.5rem; */
+}
+.menu .menu-card h3 {
+  color: var(--black);
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.menu .menu-card .price {
+  display: flex;
+  align-content: center;
+  gap: 1.8rem;
+  margin: auto;
+}
+
+.menu .order a {
+  background-color: var(--green);
+  display: flex;
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 500;
+  /* margin: 1rem 1.5rem 0rem 1.5rem; */
+  padding: 0.8rem 1.5rem;
+  align-items: center;
+  border: 2px;
+  border-style: solid;
+  border-radius: 2rem;
+}
+
+.menu .menu-card .order a:hover {
+  background-color: var(--white);
+  color: var(--green);
 }
 
 /* .category .choice-category a #cake {
