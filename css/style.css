@@ -579,3 +579,36 @@ header .icons #menu-bars {
   background: var(--green-dark);
   border-radius: 1rem;
 }
+
+/* mail floating */
+.mail-floating .right-button {
+  display: flex;
+  flex-direction: row;
+  float: right;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 9999;
+  padding: 12px;
+  background-color: var(--green);
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.mail-floating i {
+  font-size: 18px;
+  color: var(--white-dark);
+  margin-right: 8px;
+}
+
+.mail-floating .mail-label {
+  font-size: 14px;
+  color: var(--white-dark);
+}
+
+.mail-floating .emoji {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+}
