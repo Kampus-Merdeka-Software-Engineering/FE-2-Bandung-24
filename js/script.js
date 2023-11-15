@@ -7,22 +7,6 @@ menu.onclick = () => {
     navbar.classList.toggle('active');
 }
 
-// lazyload image function
-const images = document.querySelectorAll('img[data-src]');
-
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.setAttribute('src', entry.target.getAttribute('data-src'));
-            observer.unobserve(entry.target);
-        }
-    });
-});
-
-images.forEach((image) => {
-    observer.observe(image);
-});
-
 // hero slider function
 const swiper = new Swiper(".home-slider", {
     pagination: {

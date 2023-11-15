@@ -320,7 +320,7 @@ header .icons #menu-bars {
   font-size: 2rem;
   color: var(--white);
   background-color: var(--green);
-  border-radius: 11.25rem;
+  border-radius: 10px;
 }
 
 .story .our-story .content-story .btn:hover {
@@ -596,6 +596,10 @@ header .icons #menu-bars {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+.mail-floating .right-button:hover {
+  background-color: var(--green-dark);
+}
+
 .mail-floating i {
   font-size: 18px;
   color: var(--white-dark);
@@ -611,4 +615,134 @@ header .icons #menu-bars {
   width: 16px;
   height: 16px;
   margin-left: 4px;
+}
+
+/* sponsor */
+.sponsor {
+  margin-bottom: 3rem;
+}
+.sponsor .sponsor-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.sponsor .sponsor-container img {
+  width: 8%;
+  height: 8%;
+  object-fit: cover;
+}
+
+/* footer */
+footer {
+  background-color: var(--green-dark);
+  color: var(--white-dark);
+  font-size: 16px;
+}
+
+.row {
+  padding: 5rem 5%;
+}
+
+.row.primary {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+  align-items: space-around;
+}
+
+.column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2em;
+  min-height: 15em;
+}
+
+.footer-text {
+  width: 100%;
+  text-align: left;
+  color: white;
+  font-size: 2.2rem;
+  white-space: nowrap;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+li:not(:first-child) {
+  margin-top: 0.8em;
+}
+
+ul li a {
+  color: var(--white-dark);
+  text-decoration: none;
+}
+
+ul li a:hover {
+  color: var(--green);
+}
+
+.about p {
+  text-align: justify;
+  line-height: 2;
+  margin: 0;
+}
+
+input,
+.btn-subs {
+  font-size: 1em;
+  padding: 1em;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.btn-subs {
+  background-color: var(--green);
+  color: var(--white-dark);
+}
+
+div.social {
+  display: flex;
+  font-size: 2.2em;
+  flex-direction: row;
+  margin-top: 1.5rem;
+}
+
+.social i {
+  color: var(--white-dark);
+  margin-right: 1rem;
+}
+
+.copyright {
+  padding: 2rem 5%;
+  background-color: var(--black-light);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.copyright p {
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 850px) {
+  .row.primary {
+    grid-template-columns: 1fr;
+    grid-gap: 0rem;
+    display: flex;
+    flex-direction: column;
+  }
 }
