@@ -721,6 +721,10 @@ div.social {
   margin-right: 1rem;
 }
 
+.social i:hover {
+  color: var(--green-light);
+}
+
 .copyright {
   padding: 2rem 5%;
   background-color: var(--black-light);
