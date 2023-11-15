@@ -134,6 +134,11 @@ header .navbar a {
   color: var(--green-dark);
 }
 
+header .navbar a.active {
+  background-color: var(--green);
+  color: var(--white);
+}
+
 header .navbar a:hover {
   color: var(--white);
   background-color: var(--green);
@@ -202,6 +207,11 @@ header .icons #menu-bars {
 
   header .navbar.active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  header .navbar a.active {
+    background-color: var(--green);
+    color: var(--white);
   }
 
   header .navbar a {
@@ -650,7 +660,7 @@ footer {
 
 .row.primary {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: space-around;
 }
 
@@ -666,7 +676,7 @@ footer {
   width: 100%;
   text-align: left;
   color: white;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   white-space: nowrap;
   margin-bottom: 3rem;
   font-style: italic;
@@ -699,20 +709,6 @@ ul li a:hover {
   margin: 0;
 }
 
-input,
-.btn-subs {
-  font-size: 1em;
-  padding: 1em;
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.btn-subs {
-  background-color: var(--green);
-  color: var(--white-dark);
-}
-
 div.social {
   display: flex;
   font-size: 2.2em;
@@ -736,6 +732,14 @@ div.social {
 
 .copyright p {
   font-size: 1.5rem;
+}
+
+.copyright a {
+  color: var(--white-dark);
+}
+
+.copyright a:hover {
+  color: var(--green);
 }
 
 @media screen and (max-width: 850px) {

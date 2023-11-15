@@ -7,6 +7,37 @@ menu.onclick = () => {
     navbar.classList.toggle('active');
 }
 
+// navbar highlight function
+window.addEventListener("load", function () {
+    const currentUrl = window.location.href;
+    const navItems = document.querySelectorAll(".navbar a");
+
+    for (const navItem of navItems) {
+        navItem.classList.remove("active");
+    }
+
+    for (const navItem of navItems) {
+        if (navItem.href === currentUrl) {
+            navItem.classList.add("active");
+        }
+    }
+});
+
+window.addEventListener("hashchange", function () {
+    const currentUrl = window.location.href;
+    const navItems = document.querySelectorAll(".navbar a");
+
+    for (const navItem of navItems) {
+        navItem.classList.remove("active");
+    }
+
+    for (const navItem of navItems) {
+        if (navItem.href === currentUrl) {
+            navItem.classList.add("active");
+        }
+    }
+});
+
 // hero slider function
 const swiper = new Swiper(".home-slider", {
     pagination: {
