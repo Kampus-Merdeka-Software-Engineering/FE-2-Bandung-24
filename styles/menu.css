@@ -316,12 +316,12 @@ header .icons #menu-bars {
   text-align: center;
   color: var(--green-dark);
   font-weight: 500;
-  margin-right: 5rem;
+  margin-right: 4rem;
   margin-left: 10rem;
   line-height: 6.5rem;
   letter-spacing: -2.7px;
 }
-.hero-footer .content h2 span {
+.hero-footer h2 span {
   float: left;
   font-size: 4.5rem;
   text-align: center;
@@ -330,10 +330,10 @@ header .icons #menu-bars {
 }
 .hero-footer p {
   float: right;
-  margin-left: 5rem;
+  /* margin-left: 3rem; */
   margin: auto;
   margin-top: 2.3rem;
-  padding-right: 9.3rem;
+  /* padding-right: 9.3rem; */
   font-size: 2rem;
   line-height: 3rem;
   letter-spacing: 0.5px;
