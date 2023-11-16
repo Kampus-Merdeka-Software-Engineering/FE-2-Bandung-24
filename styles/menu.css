@@ -3,11 +3,14 @@
 
 :root {
   --white: #ffffff;
+  --white-milk: #faf1e5;
+  --white-creamy: #e9c99f;
+  --white-dark: #f5f5f5;
   --black: #000;
+  --black-light: #1b1c1e;
   --green: #9eb384;
   --green-light: #cedebd;
   --green-dark: #435334;
-  --white-milk: #faf1e5;
   --light-grey: #a49e9e;
   --dark-grey: #4c4949;
   --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
@@ -32,8 +35,70 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: var(--white-dark);
+  color: var(--black-light);
+}
+
+/* dark mode */
+.dark-mode {
+  background-color: var(--black-light);
+  color: var(--white-dark);
+}
+
+/* .dark-mode section {
+  border-top: 0.5px solid grey;
+  border-bottom: 0.5px solid grey;
+} */
+
+.dark-mode .hero {
+  background-color: var(--green-dark);
+}
+
+.dark-mode .category .choice-category {
+  background-color: var(--green);
+  color: var(--white-dark);
+}
+
+.dark-mode .menu .menu-card {
+  background-color: var(--white-creamy);
+  color: var(--green-dark);
+}
+.dark-mode .menu .menu-card h2 {
+  color: var(--green-dark);
+}
+.dark-mode .menu .menu-card .price .order a {
+  background-color: var(--black-light);
+}
+
+.dark-mode .menu .menu-card .price .order a:hover {
+  background-color: var(--white-dark);
+  color: var(--black-light);
+  font-weight: bold;
+}
+.dark-mode .hero .menu-content .content h3,
+.dark-mode .hero .menu-content .content p,
+/* .dark-mode .menu .menu-card h2, */
+.dark-mode .menu .menu-card .price {
+  color: var(--white-dark);
+}
+
+.dark-mode .hero-footer {
+  color: var(--black-light);
+}
+.dark-mode .hero-footer h2,
+.dark-mode .hero-footer p {
+  color: var(--green-dark);
+}
+.fa-solid.active {
+  transform: rotate(180deg);
+  color: var(--green);
+}
+
 section {
+  /* flex: 1 1 auto; */
   padding: 2rem 9%;
+  /* margin: 0; */
 }
 
 .hero {
@@ -160,6 +225,10 @@ header .icons #menu-bars {
     background-color: var(--white);
     font-size: 2rem;
   }
+
+  /* .menu {
+    width: 100%;
+  } */
 }
 
 /* hero seaction */
@@ -204,7 +273,7 @@ header .icons #menu-bars {
   align-items: center;
 }
 .category .choice-category {
-  background-color: var(--white-milk);
+  background-color: var(--green-light);
   background-size: 100% auto;
   background-position: center;
   margin-top: 5rem;
@@ -234,6 +303,7 @@ header .icons #menu-bars {
   transform: scale(1.2);
 }
 
+/* menu section */
 .menu {
   display: flex;
   flex-wrap: wrap;
@@ -305,9 +375,12 @@ header .icons #menu-bars {
   color: var(--green);
 }
 
+/* hero footer section */
 .hero-footer {
   display: flex;
   justify-content: center;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
 }
 
 .hero-footer h2 {
@@ -363,3 +436,111 @@ header .icons #menu-bars {
   opacity: 1;
   transform: translate(0);
 } */
+
+/* footer */
+footer {
+  background-color: var(--green-dark);
+  color: var(--white-dark);
+  font-size: 16px;
+}
+
+.row {
+  padding: 5rem 5%;
+}
+
+.row.primary {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-content: space-around;
+}
+
+.column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+  min-height: 15rem;
+}
+
+.footer-text {
+  width: 100%;
+  text-align: left;
+  color: white;
+  font-size: 2.4rem;
+  white-space: nowrap;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+li:not(:first-child) {
+  margin-top: 0.8rem;
+}
+
+ul li a {
+  color: var(--white-dark);
+  text-decoration: none;
+}
+
+ul li a:hover {
+  color: var(--green);
+}
+
+.about p {
+  text-align: justify;
+  line-height: 2;
+  margin: 0;
+}
+
+div.social {
+  display: flex;
+  font-size: 2.2em;
+  flex-direction: row;
+  margin-top: 1.5rem;
+}
+
+.social i {
+  color: var(--white-dark);
+  margin-right: 1rem;
+}
+
+.social i:hover {
+  color: var(--green-light);
+}
+
+.copyright {
+  padding: 2rem 5%;
+  background-color: var(--black-light);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.copyright p {
+  font-size: 1.5rem;
+}
+
+.copyright a {
+  color: var(--white-dark);
+}
+
+.copyright a:hover {
+  color: var(--green);
+}
+
+@media screen and (max-width: 850px) {
+  .row.primary {
+    grid-template-columns: 1fr;
+    grid-gap: 0rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
