@@ -151,55 +151,80 @@ header .icons #menu-bars {
 
 .hero {
   background-color: var(--green-light);
-  display: flex;
+
+  /* display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   padding-top: 9rem;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  align-items: center;
+  align-items: center; */
 }
-.hero .content {
-  flex: 1 1 45rem;
-  margin-left: 10%;
-}
-
-.hero .image {
-  flex: 1 1 45rem;
-}
-.hero .image img {
-  width: 70%;
-  margin-left: 15%;
-  border-radius: 1.9rem;
-}
-
-.hero .content h3 {
+.hero .menu-content {
   display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 9rem;
   align-items: center;
+}
+
+.hero .menu-content .image {
+  flex: 1 1 45rem;
+}
+.hero .menu-content .image img {
+  width: 100%;
+}
+.hero .menu-content .content {
+  flex: 1 1 45rem;
+}
+.hero .menu-content .content h3 {
   font-size: 6.3rem;
   color: var(--green-dark);
 }
-.hero .content p {
+.hero .menu-content .content p {
   font-size: 2.4rem;
   padding: 3rem 0;
   line-height: 1.5;
   color: var(--green-dark);
 }
+
 .hero-story {
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+}
+.hero-story .content-story {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  padding-top: 9rem;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  padding: 3.5rem;
   align-items: center;
+  float: left;
 }
+
 .hero-story .content-story h3 {
   display: flex;
-  /* align-items:  */
+  align-items: center;
   font-size: 6.3rem;
   color: var(--green-dark);
   flex-direction: column;
+  font-weight: 600;
+}
+
+.hero-story .content-story h3 span {
+  font-weight: bolder;
+}
+.hero-story .our-story {
+  /* flex: 1 1 45rem; */
+  display: flex;
+  align-content: center;
+  float: right;
+  width: 50%;
+  font-size: 2rem;
+}
+
+.hero-story .our-story p {
+  display: flex;
+  text-transform: none;
+  text-align: justify;
 }
