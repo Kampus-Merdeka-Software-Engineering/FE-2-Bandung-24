@@ -310,16 +310,27 @@ header .icons #menu-bars {
   justify-content: center;
   gap: 6rem;
 }
+
 .menu .menu-card {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   justify-content: center;
   padding: 26px 26px;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 1rem;
-  flex-shrink: 0;
+  align-content: center;
+  gap: 2rem;
+  /* flex-shrink: 0; */
   box-shadow: 0px 2px 5px var(--black);
   border-radius: 46px;
+  outline: 0.1rem solid transparent;
+  outline-offset: -0.1rem;
+  cursor: pointer;
+}
+
+.menu .menu-card:hover {
+  outline: 0.2rem solid var(--green-dark);
+  outline-offset: 0;
+  transform: scale(1.1);
 }
 
 .menu .menu-card img {
@@ -333,6 +344,10 @@ header .icons #menu-bars {
   z-index: 1;
   transition: 0.5s; */
 }
+
+/* .menu .menu-card:hover img {
+  transform: scale(1.1);
+} */
 
 .menu .menu-card h2 {
   color: var(--green-dark);
