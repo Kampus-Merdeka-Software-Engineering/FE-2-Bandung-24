@@ -754,3 +754,72 @@ div.social {
     flex-direction: column;
   }
 }
+/* location */
+.location .our-location {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.location .our-location h4 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  line-height: 2.5;
+  color: var(--green-dark);
+  word-wrap: break-word;
+}
+
+.location .our-location .line {
+  width: 10rem;
+  height: 0.5rem;
+  background: var(--green-dark);
+  border-radius: 1rem;
+  margin-bottom: 30px;
+}
+.location .location-card {
+  width: 500px; /* Sesuaikan nilai lebar yang diinginkan */
+  height: 320px; /* Sesuaikan nilai tinggi yang diinginkan */
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.location .location-card img {
+  width: 500px;
+  height: 200px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 1px;
+}
+
+.location .location-card .card-content {
+  padding: 10px;
+}
+
+.location-card h5 {
+  font-size: 3rem;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  line-height: 1;
+  color: var(--green-dark);
+  word-wrap: break-word;
+}
+.location-card p {
+  color: #666666;
+  font-size: 1.2rem;
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+
+.location-card a {
+  color: #3498db;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: inline-block;
+  font-weight: bold;
+  margin-top: 4px;
+}
