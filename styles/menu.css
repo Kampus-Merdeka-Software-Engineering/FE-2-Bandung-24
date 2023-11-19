@@ -245,6 +245,12 @@ header .icons #menu-bars {
   }
 }
 
+@media (max-width: 991px) {
+  .preview {
+    flex-wrap: wrap;
+  }
+}
+
 /* mobile */
 @media (max-width: 768px) {
   header .icons #menu-bars {
@@ -492,6 +498,7 @@ header .icons #menu-bars {
 /* preview section */
 .product-preview {
   position: fixed;
+  z-index: 9999;
   top: 0;
   left: 0;
   min-height: 100vh;
@@ -508,9 +515,23 @@ header .icons #menu-bars {
   text-align: center;
   background-color: var(--white);
   position: relative;
-  margin: 2rem;
-  width: 50rem;
+  margin: 2rem auto;
+  width: 80%;
   border-radius: 36px;
+  flex-wrap: nowrap;
+  animation: animationPreview 0.5s;
+}
+
+/* preview animation */
+@keyframes animationPreview {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 .product-preview .preview.active {
@@ -518,8 +539,10 @@ header .icons #menu-bars {
 }
 
 .product-preview .preview img {
+  float: left;
   height: 30rem;
   border-radius: 16px;
+  margin-right: 2.5rem;
 }
 
 .product-preview .preview .fa-circle-xmark {
@@ -536,6 +559,7 @@ header .icons #menu-bars {
 }
 
 .product-preview .preview h2 {
+  text-align: left;
   color: var(--green-dark);
   padding: 0.5rem 0;
   font-size: 2.5rem;
@@ -543,6 +567,7 @@ header .icons #menu-bars {
 
 .product-preview .preview .stars {
   padding: 1rem 0;
+  float: left;
 }
 
 .product-preview .preview .stars i {
@@ -556,23 +581,28 @@ header .icons #menu-bars {
 }
 
 .product-preview .preview p {
-  line-height: 1.5;
-  padding: 1rem 0;
   font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 1rem 0;
+  padding: 0.5rem 0;
   color: var(--black-light);
+  text-align: left;
 }
 
 .product-preview .preview .price {
-  padding: 1rem 0;
+  padding-top: 3rem;
   font-size: 2.5rem;
-  color: var(--green);
+  color: #eb9c36;
+  margin: 1rem 0;
+  text-align: left;
+  font-weight: 600;
 }
 
 .product-preview .preview .buttons {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .product-preview .preview .buttons a {
@@ -596,6 +626,26 @@ header .icons #menu-bars {
 
 .product-preview .preview .buttons a.order:hover {
   background: var(--green-dark);
+}
+
+/* media queries */
+
+/* tablet */
+@media (max-width: 991px) {
+  .product-preview .preview img {
+    width: 50%;
+    height: 50%;
+    display: block;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .product-preview .preview img {
+    width: 50%;
+    height: 50%;
+    display: block;
+  }
 }
 /* footer */
 footer {

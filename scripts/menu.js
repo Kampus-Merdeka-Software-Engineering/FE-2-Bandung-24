@@ -19,25 +19,34 @@ document.addEventListener('click', function (e) {
 })
 
 // preview function
-let previewContainer = document.querySelector('.product-preview');
-let previewBox = previewContainer.querySelectorAll('.preview');
+const previewContainer = document.querySelector('.product-preview');
+const previewBox = previewContainer.querySelectorAll('.preview');
 
 document.querySelectorAll('.menu .menucard').forEach(menucard => {
-    menucard.onclick = () => {
+    menucard.onclick = (e) => {
         previewContainer.style.display = 'flex';
-        let name = menucard.getAttribute('data-name');
+        const name = menucard.getAttribute('data-name');
         previewBox.forEach(preview => {
-            let target = preview.getAttribute('data-target');
+            const target = preview.getAttribute('data-target');
             if (name == target) {
                 preview.classList.add('active');
             };
         });
+        e.preventDefault();
     };
 });
 
 previewBox.forEach(close => {
-    close.querySelector('.fa-circle-xmark').onclick = () => {
+    close.querySelector('.fa-circle-xmark').onclick = (e) => {
         close.classList.remove('active');
         previewContainer.style.display = 'none';
+        e.preventDefault();
+    };
+});
+
+// close diluar preview box
+window.onclick = (e) => {
+    if (e.target === previewContainer) {
+        previewContainer.style.display = 'none';
     }
-})
+}
