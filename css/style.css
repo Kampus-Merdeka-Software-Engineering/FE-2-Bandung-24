@@ -69,7 +69,8 @@ body {
 .dark-mode .menu .menu-card h4,
 .dark-mode .promo .promo-card h4,
 .dark-mode .review .review-card h4,
-.dark-mode .article .article-card h4 {
+.dark-mode .article .article-card h4,
+.dark-mode .location .our-location h4 {
   color: var(--white-dark);
 }
 
@@ -78,7 +79,8 @@ body {
 .dark-mode .menu .menu-card .line,
 .dark-mode .promo .promo-card .line,
 .dark-mode .review .review-card .line,
-.dark-mode .article .article-card .line {
+.dark-mode .article .article-card .line,
+.dark-mode .location .our-location .line {
   background-color: var(--white-dark);
 }
 
@@ -785,52 +787,42 @@ div.social {
   height: 0.5rem;
   background: var(--green-dark);
   border-radius: 1rem;
-  margin-bottom: 30px;
+  margin-bottom: 1px;
 }
-.location .content-loc {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(calc(30% - 20px), 1fr)); /* Atur lebar kartu dan jumlah kartu per baris */
+.location .our-location .content-loc {
+  display: flex;
+  flex-direction: row;
   gap: 10px;
 }
 .location .location-card {
+  width: 700px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
   background-color: #ffffff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
 }
-.location .location-card img {
+.location-card img {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
+  height: 300px;
   border-bottom: 1px solid #e0e0e0;
-  margin-bottom: 1px;
 }
 
-.location .location-card .card-content {
-  padding: 10px;
+.location-card .card-content {
+  padding: 20px;
 }
 
 .location-card h5 {
-  font-size: 2rem;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  line-height: 1;
-  color: var(--green-dark);
-  word-wrap: break-word;
-}
-.location-card p {
-  color: #666666;
-  font-size: 1rem;
-  margin-bottom: 3px;
-  margin-top: 3px;
+  color: #333333;
+  font-size: 2.4rem;
+  margin-bottom: 2px;
 }
 
-.location-card a {
-  color: #3498db;
-  text-decoration: none;
-  font-size: 1rem;
-  display: inline-block;
-  font-weight: bold;
-  margin-top: 4px;
+.location-card p {
+  color: #666666;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
 }
