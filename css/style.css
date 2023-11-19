@@ -755,6 +755,12 @@ div.social {
   }
 }
 /* location */
+.location {
+  display: flex;
+  flex-direction: column; /* Adjust the direction to column */
+  align-items: center;
+  gap: 20px; /* Adjust the gap between location cards */
+}
 .location .our-location {
   display: flex;
   flex-direction: column;
@@ -781,17 +787,22 @@ div.social {
   border-radius: 1rem;
   margin-bottom: 30px;
 }
+.location .content-loc {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(calc(30% - 20px), 1fr)); /* Atur lebar kartu dan jumlah kartu per baris */
+  gap: 10px;
+}
 .location .location-card {
-  width: 500px; /* Sesuaikan nilai lebar yang diinginkan */
-  height: 320px; /* Sesuaikan nilai tinggi yang diinginkan */
   background-color: #ffffff;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
 .location .location-card img {
-  width: 500px;
-  height: 200px;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
   border-bottom: 1px solid #e0e0e0;
   margin-bottom: 1px;
 }
@@ -801,7 +812,7 @@ div.social {
 }
 
 .location-card h5 {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-top: 3px;
   margin-bottom: 3px;
   line-height: 1;
@@ -810,7 +821,7 @@ div.social {
 }
 .location-card p {
   color: #666666;
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-bottom: 3px;
   margin-top: 3px;
 }
@@ -818,7 +829,7 @@ div.social {
 .location-card a {
   color: #3498db;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: inline-block;
   font-weight: bold;
   margin-top: 4px;
