@@ -114,3 +114,17 @@ const initSlider = () => {
 }
 window.addEventListener("resize", initSlider);
 window.addEventListener("load", initSlider);
+
+//
+
+// const mb = document.querySelector('.navbar');
+
+// document.addEventListener('click', function (e) {
+
+//     if (!mb.contains(e.target) && !menu.contains(e.target)) {
+//         menu.classList.remove('active');
+//     }
+// })
+
+
+

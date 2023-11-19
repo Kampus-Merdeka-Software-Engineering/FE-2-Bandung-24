@@ -81,8 +81,46 @@
           class="fa-solid fa-circle-half-stroke"
           onclick="darkMode()"
         ></i>
-        <a href="#" class="fa-solid fa-cart-shopping"></a>
+        <a href="#" class="fa-solid fa-cart-shopping" id="cart-btn"></a>
       </div>
+
+      <!-- shopping cart start -->
+      <div class="shopping-cart">
+        <div class="cart-item">
+          <img
+            src="./public/assets/img/kopi/menu-coffee/cappucino.jpg"
+            alt="cappucino"
+          />
+          <div class="item-detail">
+            <h3>Cappucino</h3>
+            <div class="item-price">Rp 15.000</div>
+          </div>
+          <i class="fa-solid fa-trash-can" id="remove-item"></i>
+        </div>
+        <div class="cart-item">
+          <img
+            src="./public/assets/img/kopi/menu-coffee/cappucino.jpg"
+            alt="cappucino"
+          />
+          <div class="item-detail">
+            <h3>Cappucino</h3>
+            <div class="item-price">Rp 15.000</div>
+          </div>
+          <i class="fa-solid fa-trash-can" id="remove-item"></i>
+        </div>
+        <div class="cart-item">
+          <img
+            src="./public/assets/img/kopi/menu-coffee/cappucino.jpg"
+            alt="cappucino"
+          />
+          <div class="item-detail">
+            <h3>Cappucino</h3>
+            <div class="item-price">Rp 15.000</div>
+          </div>
+          <i class="fa-solid fa-trash-can" id="remove-item"></i>
+        </div>
+      </div>
+      <!-- shopping cart end -->
     </header>
 
     <!-- main -->
@@ -119,99 +157,313 @@
           </a>
         </div>
       </section>
+
       <!-- menu section -->
       <section class="menu" id="menu">
-        <div class="menu-card">
-          <img src="./public/assets/img/kopi/cappucino.jpg" alt="coffee" />
-          <h2>Cappucino Coffee</h2>
-          <div class="price">
-            <h3>Rp 15.000</h3>
-            <div class="order">
-              <a href="#">Order</a>
-            </div>
-          </div>
+        <div class="menucard" data-name="m-1">
+          <img
+            src="./public/assets/img/kopi/menu-coffee/cappucino.jpg"
+            alt="coffee"
+          />
+          <h2>Cappucino</h2>
+          <div class="price">Rp 15.000</div>
         </div>
-        <div class="menu-card">
-          <img src="./public/assets/img/kopi/cappucino.jpg" alt="coffee" />
-          <h2>Cappucino Coffee</h2>
-          <div class="price">
-            <h3>Rp 15.000</h3>
-            <div class="order">
-              <a href="#">Order</a>
-            </div>
-          </div>
+        <div class="menucard" data-name="m-2">
+          <img
+            src="./public/assets/img/kopi/menu-coffee/latte.jpg"
+            alt="coffee"
+          />
+          <h2>Latte</h2>
+          <div class="price">Rp 15.000</div>
         </div>
-        <div class="menu-card">
-          <img src="./public/assets/img/kopi/cappucino.jpg" alt="coffee" />
-          <h2>Cappucino Coffee</h2>
-          <div class="price">
-            <h3>Rp 15.000</h3>
-            <div class="order">
-              <a href="#">Order</a>
-            </div>
-          </div>
+        <div class="menucard" data-name="m-3">
+          <img
+            src="./public/assets/img/kopi/menu-coffee/macchiato.jpg"
+            alt="coffee"
+          />
+          <h2>Macchiato</h2>
+          <div class="price">Rp 15.000</div>
         </div>
-        <div class="menu-card">
-          <img src="./public/assets/img/kopi/cappucino.jpg" alt="coffee" />
-          <h2>Cappucino Coffee</h2>
-          <div class="price">
-            <h3>Rp 15.000</h3>
-            <div class="order">
-              <a href="#">Order</a>
-            </div>
-          </div>
+        <div class="menucard" data-name="m-4">
+          <img
+            src="./public/assets/img/kopi/menu-coffee/mocha.jpg"
+            alt="coffee"
+          />
+          <h2>Mocha</h2>
+          <div class="price">Rp 15.000</div>
         </div>
-        <div class="menu-card">
-          <img src="./public/assets/img/kopi/cappucino.jpg" alt="coffee" />
-          <h2>Cappucino Coffee</h2>
-          <div class="price">
-            <h3>Rp 15.000</h3>
-            <div class="order">
-              <a href="#">Order</a>
-            </div>
-          </div>
+        <div class="menucard" data-name="m-5">
+          <img
+            src="./public/assets/img/kopi/menu-coffee/espresso.jpg"
+            alt="coffee"
+          />
+          <h2>Espresso</h2>
+          <div class="price">Rp 15.000</div>
         </div>
-        <div class="menu-card">
-          <img src="./public/assets/img/kopi/cappucino.jpg" alt="coffee" />
-          <h2>Cappucino Coffee</h2>
-          <div class="price">
-            <h3>Rp 15.000</h3>
-            <div class="order">
-              <a href="#">Order</a>
-            </div>
-          </div>
+        <div class="menucard" data-name="m-6">
+          <img
+            src="./public/assets/img/kopi/menu-coffee/iced-caramel-macchiato.jpg"
+            alt="coffee"
+          />
+          <h2>Iced Caramel Macchiato</h2>
+          <div class="price">Rp 15.000</div>
         </div>
-        <div class="menu-card">
-          <img src="./public/assets/img/kopi/cappucino.jpg" alt="coffee" />
-          <h2>Cappucino Coffee</h2>
-          <div class="price">
-            <h3>Rp 15.000</h3>
-            <div class="order">
-              <a href="#">Order</a>
-            </div>
-          </div>
+        <div class="menucard" data-name="m-7">
+          <img
+            src="./public/assets/img/kopi/menu-coffee/iced-hazelnut-latte.jpg"
+            alt="coffee"
+          />
+          <h2>Iced Hazelnut Latte</h2>
+          <div class="price">Rp 15.000</div>
         </div>
-        <div class="menu-card">
-          <img src="./public/assets/img/kopi/cappucino.jpg" alt="coffee" />
-          <h2>Cappucino Coffee</h2>
-          <div class="price">
-            <h3>Rp 15.000</h3>
-            <div class="order">
-              <a href="#">Order</a>
-            </div>
-          </div>
+        <div class="menucard" data-name="m-8">
+          <img
+            src="./public/assets/img/kopi/menu-coffee/iced-americano.jpg"
+            alt="coffee"
+          />
+          <h2>Iced Americano</h2>
+          <div class="price">Rp 15.000</div>
         </div>
-        <div class="menu-card">
-          <img src="./public/assets/img/kopi/cappucino.jpg" alt="coffee" />
-          <h2>Cappucino Coffee</h2>
-          <div class="price">
-            <h3>Rp 15.000</h3>
-            <div class="order">
-              <a href="#">Order</a>
-            </div>
-          </div>
+        <div class="menucard" data-name="m-9">
+          <img
+            src="./public/assets/img/kopi/menu-coffee/cappucino-cincau.jpg"
+            alt="coffee"
+          />
+          <h2>Cappucino Cincau</h2>
+          <div class="price">Rp 15.000</div>
         </div>
       </section>
+
+      <!-- preview section -->
+      <div class="product-preview">
+        <div class="preview" data-target="m-1">
+          <i class="fa-solid fa-circle-xmark"></i>
+          <img
+            src="./public/assets/img/kopi/menu-coffee/cappucino.jpg"
+            alt=""
+          />
+          <h2>Cappucino</h2>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+            eaque culpa officia laboriosam magnam reprehenderit! Ipsam, ad quis?
+            Harum, commodi.
+          </p>
+          <div class="price">Rp 15.000</div>
+          <div class="buttons">
+            <a href="#" class="order">order now</a>
+            <a href="#" class="cart">add to cart</a>
+          </div>
+        </div>
+
+        <div class="preview" data-target="m-2">
+          <i class="fa-solid fa-circle-xmark"></i>
+          <img src="./public/assets/img/kopi/menu-coffee/latte.jpg" alt="" />
+          <h2>Latte</h2>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+            eaque culpa officia laboriosam magnam reprehenderit! Ipsam, ad quis?
+            Harum, commodi.
+          </p>
+          <div class="price">Rp 15.000</div>
+          <div class="buttons">
+            <a href="#" class="order">order now</a>
+            <a href="#" class="cart">add to cart</a>
+          </div>
+        </div>
+        <div class="preview" data-target="m-3">
+          <i class="fa-solid fa-circle-xmark"></i>
+          <img
+            src="./public/assets/img/kopi/menu-coffee/macchiato.jpg"
+            alt=""
+          />
+          <h2>Macchiato</h2>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+            eaque culpa officia laboriosam magnam reprehenderit! Ipsam, ad quis?
+            Harum, commodi.
+          </p>
+          <div class="price">Rp 15.000</div>
+          <div class="buttons">
+            <a href="#" class="order">order now</a>
+            <a href="#" class="cart">add to cart</a>
+          </div>
+        </div>
+        <div class="preview" data-target="m-4">
+          <i class="fa-solid fa-circle-xmark"></i>
+          <img src="./public/assets/img/kopi/menu-coffee/mocha.jpg" alt="" />
+          <h2>Mocha</h2>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+            eaque culpa officia laboriosam magnam reprehenderit! Ipsam, ad quis?
+            Harum, commodi.
+          </p>
+          <div class="price">Rp 15.000</div>
+          <div class="buttons">
+            <a href="#" class="order">order now</a>
+            <a href="#" class="cart">add to cart</a>
+          </div>
+        </div>
+        <div class="preview" data-target="m-5">
+          <i class="fa-solid fa-circle-xmark"></i>
+          <img src="./public/assets/img/kopi/menu-coffee/espresso.jpg" alt="" />
+          <h2>Espresso</h2>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+            eaque culpa officia laboriosam magnam reprehenderit! Ipsam, ad quis?
+            Harum, commodi.
+          </p>
+          <div class="price">Rp 15.000</div>
+          <div class="buttons">
+            <a href="#" class="order">order now</a>
+            <a href="#" class="cart">add to cart</a>
+          </div>
+        </div>
+        <div class="preview" data-target="m-6">
+          <i class="fa-solid fa-circle-xmark"></i>
+          <img
+            src="./public/assets/img/kopi/menu-coffee/iced-caramel-macchiato.jpg"
+            alt=""
+          />
+          <h2>Iced Caramel Macchiato</h2>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+            eaque culpa officia laboriosam magnam reprehenderit! Ipsam, ad quis?
+            Harum, commodi.
+          </p>
+          <div class="price">Rp 15.000</div>
+          <div class="buttons">
+            <a href="#" class="order">order now</a>
+            <a href="#" class="cart">add to cart</a>
+          </div>
+        </div>
+        <div class="preview" data-target="m-7">
+          <i class="fa-solid fa-circle-xmark"></i>
+          <img
+            src="./public/assets/img/kopi/menu-coffee/iced-hazelnut-latte.jpg"
+            alt=""
+          />
+          <h2>Iced Hazelnut Latte</h2>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+            eaque culpa officia laboriosam magnam reprehenderit! Ipsam, ad quis?
+            Harum, commodi.
+          </p>
+          <div class="price">Rp 15.000</div>
+          <div class="buttons">
+            <a href="#" class="order">order now</a>
+            <a href="#" class="cart">add to cart</a>
+          </div>
+        </div>
+        <div class="preview" data-target="m-8">
+          <i class="fa-solid fa-circle-xmark"></i>
+          <img
+            src="./public/assets/img/kopi/menu-coffee/iced-americano.jpg"
+            alt=""
+          />
+          <h2>Iced Americano</h2>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+            eaque culpa officia laboriosam magnam reprehenderit! Ipsam, ad quis?
+            Harum, commodi.
+          </p>
+          <div class="price">Rp 15.000</div>
+          <div class="buttons">
+            <a href="#" class="order">order now</a>
+            <a href="#" class="cart">add to cart</a>
+          </div>
+        </div>
+        <div class="preview" data-target="m-9">
+          <i class="fa-solid fa-circle-xmark"></i>
+          <img
+            src="./public/assets/img/kopi/menu-coffee/cappucino-cincau.jpg"
+            alt=""
+          />
+          <h2>Cappucino Cincau</h2>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+            eaque culpa officia laboriosam magnam reprehenderit! Ipsam, ad quis?
+            Harum, commodi.
+          </p>
+          <div class="price">Rp 15.000</div>
+          <div class="buttons">
+            <a href="#" class="order">order now</a>
+            <a href="#" class="cart">add to cart</a>
+          </div>
+        </div>
+      </div>
+      >
       <!-- hero footer -->
       <section class="hero-footer">
         <h2><span>SE.Kopi</span>Services</h2>
@@ -278,5 +530,6 @@
 
     <!-- custom js link -->
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/menu.js"></script>
   </body>
 </html>
