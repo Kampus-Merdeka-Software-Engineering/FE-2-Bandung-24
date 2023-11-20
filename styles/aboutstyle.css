@@ -190,16 +190,18 @@ header .icons #menu-bars {
 }
 
 .hero-story {
+  display: flex;
   margin-top: 7rem;
   margin-bottom: 7rem;
+  gap: 15rem;
 }
 .hero-story .content-story {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
   gap: 2rem;
   padding: 3.5rem;
   align-items: center;
-  float: left;
 }
 
 .hero-story .content-story h3 {
@@ -227,4 +229,186 @@ header .icons #menu-bars {
   display: flex;
   text-transform: none;
   text-align: justify;
+}
+/* 
+.member .slider-wrapper {
+  margin-top: 5rem;
+  display: flex;
+  background-color: var(--green-light);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  border-radius: 3.75rem;
+  margin: auto;
+  overflow: hidden;
+}
+
+.member .slider-wrapper .member-name img {
+  background-color: var(--white);
+  border-radius: 50%;
+  width: 25rem;
+  height: 25rem;
+}
+
+.member .slider-wrapper .member-name h2 {
+  display: flex;
+  color: var(--green-dark);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.member .slider-wrapper .member-name h4 {
+  display: flex;
+  color: var(--green-dark);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.member .slider-wrapper .content-member h1 {
+  display: flex;
+  text-transform: none;
+  text-align: justify;
+  font-size: 4rem;
+  padding: 3rem 0;
+  padding-left: 4rem;
+  line-height: 1.5;
+  color: var(--green-dark);
+  margin-left: 6rem;
+}
+
+.member .slider-wrapper .content-member p {
+  display: flex;
+  text-transform: none;
+  text-align: justify;
+  font-size: 2.4rem;
+  padding: 1rem 0;
+  padding-left: 5rem;
+  line-height: 1.5;
+  color: var(--black);
+  margin-left: 5rem;
+} */
+
+.member .slider-wrapper {
+  margin-top: 5rem;
+  display: flex;
+  width: 100%;
+  border-radius: 3.75rem;
+  overflow: hidden; /* Hide overflowing content */
+  background-color: var(--green-light);
+  position: relative;
+}
+
+.member .slider-wrapper .content-member {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.member .slider-wrapper .content-member .member-name {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.member .slider-wrapper .member-name {
+  margin: auto;
+  margin-left: 5rem;
+  text-align: center;
+  padding: auto;
+}
+
+.member .slider-wrapper .member-name img {
+  background-color: var(--white);
+  border-radius: 50%;
+  width: 25rem;
+  height: 25rem;
+}
+
+.member .slider-wrapper .member-name h2 {
+  color: var(--green-dark);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-left: 1rem;
+}
+
+.member .slider-wrapper .member-name h4 {
+  color: var(--green-dark);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-left: 1rem;
+}
+
+.member .slider-wrapper .content-member h1 {
+  text-transform: none;
+  text-align: justify;
+  font-size: 4rem;
+  padding: 3rem 0;
+  padding-left: 4rem;
+  line-height: 1.5;
+  color: var(--green-dark);
+  margin-left: 6rem;
+}
+
+.member .slider-wrapper .content-member p {
+  text-transform: none;
+  text-align: justify;
+  font-size: 2.4rem;
+  padding: 1rem 0;
+  padding-left: 5rem;
+  line-height: 1.5;
+  color: var(--black);
+  margin-left: 5rem;
+}
+
+.member button {
+  font-size: 4.5rem;
+  color: var(--green-dark);
+  opacity: 0.5;
+  background-color: var(--green-light);
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.sekopi-galery .content-galery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 5rem 0;
+  gap: 25rem;
+}
+
+.sekopi-galery .content-galery h3 {
+  font-size: 6.3rem;
+  color: var(--green-dark);
+  margin-right: 2rem;
+  margin-left: 1.3rem; /* Adjust the margin between the heading and paragraph */
+}
+
+.sekopi-galery .content-galery p {
+  font-size: 2.4rem;
+  line-height: 1.5;
+  color: var(--green-dark);
+}
+
+.sekopi-galery .image-galery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.sekopi-galery .image-galery img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
 }
