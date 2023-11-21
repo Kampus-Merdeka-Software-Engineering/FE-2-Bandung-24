@@ -168,7 +168,26 @@ header .icons #menu-bars {
   display: none;
 }
 
+/* scroll indicator */
+.scroll-indicator {
+  height: 5px;
+  background-color: var(--green);
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: width 0.3s;
+  display: block;
+}
+
 /* media queries */
+@media (min-width: 768px) {
+  .scroll-indicator {
+    display: none;
+  }
+}
+
 /* tablet */
 @media (max-width: 991px) {
   html {

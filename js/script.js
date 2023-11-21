@@ -23,6 +23,28 @@ window.addEventListener("load", function () {
     }
 });
 
+// scroll indicator function
+document.addEventListener('DOMContentLoaded', function () {
+    const header = document.querySelector('header');
+    const scrollIndicator = document.getElementById('scrollIndicator');
+
+    function updateScrollIndicator() {
+        const scrollPosition = window.scrollY;
+        const headerHeight = header.offsetHeight;
+        const contentHeight = document.body.clientHeight - window.innerHeight;
+
+        const scrollPercentage = (scrollPosition / contentHeight) * 100;
+        const indicatorWidth = (scrollPercentage * headerHeight) / 100;
+
+        scrollIndicator.style.width = `${indicatorWidth}rem`;
+    }
+
+    window.addEventListener('scroll', updateScrollIndicator);
+    window.addEventListener('resize', updateScrollIndicator);
+
+    updateScrollIndicator();
+});
+
 window.addEventListener("hashchange", function () {
     const currentUrl = window.location.href;
     const navItems = document.querySelectorAll(".navbar a");
