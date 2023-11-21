@@ -211,12 +211,12 @@ header .icons #menu-bars {
   color: var(--green-dark);
   flex-direction: column;
   font-weight: 600;
-  text-transform: capitalize;
 }
 
 .hero-story .content-story h3 span {
   font-weight: bolder;
 }
+
 .hero-story .our-story {
   /* flex: 1 1 45rem; */
   display: flex;
