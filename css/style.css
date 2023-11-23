@@ -177,16 +177,10 @@ header .icons #menu-bars {
   left: 0;
   z-index: 1000;
   transition: width 0.3s;
-  display: block;
+  display: none;
 }
 
 /* media queries */
-@media (min-width: 768px) {
-  .scroll-indicator {
-    display: none;
-  }
-}
-
 /* tablet */
 @media (max-width: 991px) {
   html {
@@ -238,10 +232,15 @@ header .icons #menu-bars {
     background-color: var(--white);
     font-size: 2rem;
   }
+
+  .scroll-indicator {
+    display: block;
+  }
 }
 
 /* hero section */
 .home .home-slider .slide {
+  height: 100vh;
   display: flex;
   align-items: center;
   flex-wrap: wrap;

@@ -1,3 +1,4 @@
+/* google fonts link */
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
 
 :root {
@@ -33,10 +34,6 @@ html {
 body {
   background-color: var(--white-dark);
   color: var(--black-light);
-}
-
-section {
-  padding: 2rem 9%;
 }
 
 section {
@@ -127,16 +124,10 @@ header .icons #menu-bars {
   left: 0;
   z-index: 1000;
   transition: width 0.3s;
-  display: block;
+  display: none;
 }
 
 /* media queries */
-@media (min-width: 768px) {
-  .scroll-indicator {
-    display: none;
-  }
-}
-
 /* tablet */
 @media (max-width: 991px) {
   html {
@@ -188,10 +179,34 @@ header .icons #menu-bars {
     background-color: var(--white);
     font-size: 2rem;
   }
+
+  .our-story {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .our-story .content-story {
+    flex: 1;
+  }
+
+  .our-story .story-description {
+    width: 100%;
+    margin-top: 3rem;
+  }
+
+  .scroll-indicator {
+    display: block;
+  }
+
+  .sekopi-galery .galery-data {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* hero section */
 .hero .menu-content {
+  height: 100vh;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -228,163 +243,101 @@ header .icons #menu-bars {
   color: var(--green-dark);
 }
 
-.hero-story {
+/* our story section */
+.our-story {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 7rem;
   margin-bottom: 7rem;
-  gap: 15rem;
 }
 
-.hero-story .content-story {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
+.our-story .content-story {
+  flex: 2;
   gap: 2rem;
   padding: 3.5rem;
-  align-items: center;
 }
 
-.hero-story .content-story h3 {
-  display: flex;
-  align-items: center;
+.our-story .content-story h3 {
   font-size: 6.3rem;
   color: var(--green-dark);
-  flex-direction: column;
   font-weight: 600;
 }
 
-.hero-story .content-story h3 span {
+.our-story .content-story h3 span {
   font-weight: bolder;
+  font-style: italic;
 }
 
-.hero-story .our-story {
-  display: flex;
-  align-content: center;
-  float: right;
-  width: 50%;
+.our-story .story-description {
+  flex: 2;
+  text-align: justify;
+}
+
+.our-story .story-description p {
+  text-transform: none;
   font-size: 2rem;
 }
 
-.hero-story .our-story p {
-  display: flex;
-  text-transform: none;
-  text-align: justify;
-}
-
 /* member section */
-.member-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.member-card {
-  padding-block: 5rem;
-}
-
-.member-content {
-  margin-inline: 1.75rem;
-  border-radius: 1.25rem;
-  overflow: hidden;
-}
-
-.member-name {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Center content horizontally */
-  margin-bottom: 2rem;
-}
-
-.member-name img {
-  background-color: var(--white);
-  border-radius: 50%;
-  width: 12rem; /* Adjust the size as needed */
-  height: 12rem; /* Adjust the size as needed */
-  object-fit: cover; /* Maintain aspect ratio while covering the container */
-}
-
-.member-name h2,
-.member-name h4 {
-  color: var(--green-dark);
-  margin-left: 1rem;
-}
-
-.content-member {
-  flex: 1;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.content-member h1 {
-  text-transform: none;
-  text-align: justify;
-  font-size: 4rem;
-  padding: 3rem 0;
-  line-height: 1.5;
-  color: var(--green-dark);
-  margin-left: 2rem; /* Adjust the margin as needed */
-}
-
-.content-member p {
-  text-transform: none;
-  text-align: justify;
-  font-size: 2.4rem;
-  padding: 1rem 0;
-  line-height: 1.5;
-  color: var(--black);
-  margin-left: 2rem; /* Adjust the margin as needed */
-}
-
-.btn-member {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 5rem;
-}
-
-.btn-member button {
-  font-size: 4.5rem;
-  color: var(--green-dark);
-  opacity: 0.5;
-  background-color: var(--green-light);
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
 
 /* galery section */
-.sekopi-galery .content-galery {
-  position: relative;
+.sekopi-galery {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin: 5rem 0;
-  gap: 25rem;
+  margin-top: 7rem;
+  margin-bottom: 7rem;
 }
 
-.sekopi-galery .content-galery h3 {
-  font-size: 6.3rem;
+.sekopi-galery .galery-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3.5rem;
+  text-align: center;
+}
+
+.sekopi-galery .galery-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.sekopi-galery .galery-data h3 {
+  font-size: 4rem;
   color: var(--green-dark);
-  margin-right: 2rem;
-  margin-left: 1.3rem;
+  margin: 0;
 }
 
-.sekopi-galery .content-galery p {
-  font-size: 2.4rem;
+.sekopi-galery .galery-data h3 span {
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.sekopi-galery .galery-data p {
+  font-size: 2rem;
   line-height: 1.5;
   color: var(--green-dark);
+  margin-top: 1rem;
 }
 
 .sekopi-galery .image-galery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   margin-top: 3rem;
 }
 
 .sekopi-galery .image-galery img {
-  width: 100%;
+  width: 250px;
   height: auto;
   border-radius: 0.5rem;
+  object-fit: cover;
+  max-width: 100%;
 }
 
 /* footer */

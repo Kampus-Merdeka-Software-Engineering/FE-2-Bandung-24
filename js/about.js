@@ -75,28 +75,3 @@ function darkMode() {
 }
 
 // members slider function
-let swiperCards = new Swiper(".member-content", {
-    loop: true,
-    spaceBetween: 32,
-    grabCursor: true,
-
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        dynamicBullets: true,
-    },
-
-    navigation: {
-        nextEl: "#btn-next",
-        prevEl: "#btn-prev",
-    },
-
-    breakpoints: {
-        600: {
-            slidesPerView: 1,
-        },
-        968: {
-            slidesPerView: 1,
-        },
-    },
-});
