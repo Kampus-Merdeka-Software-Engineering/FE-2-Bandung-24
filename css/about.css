@@ -1,0 +1,496 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+
+:root {
+  --white: #fff;
+  --white-milk: #faf1e4;
+  --white-dark: #f5f5f5;
+  --black: #000;
+  --black-light: #1b1c1e;
+  --green: #9eb384;
+  --green-light: #cedebd;
+  --green-dark: #435334;
+  --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  transition: all 0.2s linear;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 5.5rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--white-dark);
+  color: var(--black-light);
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+section {
+  flex: 1 1 auto;
+  padding: 2rem 9%;
+  margin: 0;
+}
+
+.hero {
+  background-color: var(--green-light);
+}
+
+/* header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+}
+
+header .logo {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: var(--green-dark);
+}
+
+header .logo i {
+  margin-right: 1rem;
+  color: var(--green);
+}
+
+header .navbar a {
+  font-size: 1.7rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  color: var(--green-dark);
+}
+
+header .navbar a.active {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+header .navbar a:hover {
+  color: var(--white);
+  background-color: var(--green);
+}
+
+header .icons i,
+header .icons a {
+  cursor: pointer;
+  margin-left: 0.5rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  width: 4.5rem;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 1.7rem;
+  color: var(--green-dark);
+  background-color: var(--white-milk);
+}
+
+header .icons i:hover,
+header .icons a:hover {
+  color: var(--white);
+  background-color: var(--green);
+  transform: scale(1.1);
+}
+
+header .icons #menu-bars {
+  display: none;
+}
+
+/* scroll indicator */
+.scroll-indicator {
+  height: 5px;
+  background-color: var(--green);
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: width 0.3s;
+  display: block;
+}
+
+/* media queries */
+@media (min-width: 768px) {
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+/* tablet */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  header {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  header .icons #menu-bars {
+    display: inline-block;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    border-top: 0.1rem, solid var(--green-dark);
+    border-bottom: 0.1rem, solid var(--green-dark);
+    padding: 1rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  header .navbar a.active {
+    background-color: var(--green);
+    color: var(--white);
+  }
+
+  header .navbar a {
+    display: block;
+    padding: 1.5rem;
+    margin: 1rem;
+    background-color: var(--white);
+    font-size: 2rem;
+  }
+}
+
+/* hero section */
+.hero .menu-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 9rem;
+}
+
+.hero .menu-content .content {
+  flex: 1 1 45rem;
+}
+
+.hero .menu-content .image {
+  flex: 1 1 45rem;
+}
+
+.hero .menu-content .image img {
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.hero .menu-content .image img:hover {
+  transform: scale(1.1);
+}
+
+.hero .menu-content .content h3 {
+  font-size: 6.2rem;
+  color: var(--green-dark);
+}
+
+.hero .menu-content .content p {
+  font-size: 2.2rem;
+  padding: 3rem 0;
+  line-height: 1.5;
+  color: var(--green-dark);
+}
+
+.hero-story {
+  display: flex;
+  margin-top: 7rem;
+  margin-bottom: 7rem;
+  gap: 15rem;
+}
+
+.hero-story .content-story {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  gap: 2rem;
+  padding: 3.5rem;
+  align-items: center;
+}
+
+.hero-story .content-story h3 {
+  display: flex;
+  align-items: center;
+  font-size: 6.3rem;
+  color: var(--green-dark);
+  flex-direction: column;
+  font-weight: 600;
+}
+
+.hero-story .content-story h3 span {
+  font-weight: bolder;
+}
+
+.hero-story .our-story {
+  display: flex;
+  align-content: center;
+  float: right;
+  width: 50%;
+  font-size: 2rem;
+}
+
+.hero-story .our-story p {
+  display: flex;
+  text-transform: none;
+  text-align: justify;
+}
+
+/* member section */
+.member-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.member-card {
+  padding-block: 5rem;
+}
+
+.member-content {
+  margin-inline: 1.75rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.member-name {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content horizontally */
+  margin-bottom: 2rem;
+}
+
+.member-name img {
+  background-color: var(--white);
+  border-radius: 50%;
+  width: 12rem; /* Adjust the size as needed */
+  height: 12rem; /* Adjust the size as needed */
+  object-fit: cover; /* Maintain aspect ratio while covering the container */
+}
+
+.member-name h2,
+.member-name h4 {
+  color: var(--green-dark);
+  margin-left: 1rem;
+}
+
+.content-member {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-member h1 {
+  text-transform: none;
+  text-align: justify;
+  font-size: 4rem;
+  padding: 3rem 0;
+  line-height: 1.5;
+  color: var(--green-dark);
+  margin-left: 2rem; /* Adjust the margin as needed */
+}
+
+.content-member p {
+  text-transform: none;
+  text-align: justify;
+  font-size: 2.4rem;
+  padding: 1rem 0;
+  line-height: 1.5;
+  color: var(--black);
+  margin-left: 2rem; /* Adjust the margin as needed */
+}
+
+.btn-member {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5rem;
+}
+
+.btn-member button {
+  font-size: 4.5rem;
+  color: var(--green-dark);
+  opacity: 0.5;
+  background-color: var(--green-light);
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/* galery section */
+.sekopi-galery .content-galery {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 5rem 0;
+  gap: 25rem;
+}
+
+.sekopi-galery .content-galery h3 {
+  font-size: 6.3rem;
+  color: var(--green-dark);
+  margin-right: 2rem;
+  margin-left: 1.3rem;
+}
+
+.sekopi-galery .content-galery p {
+  font-size: 2.4rem;
+  line-height: 1.5;
+  color: var(--green-dark);
+}
+
+.sekopi-galery .image-galery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.sekopi-galery .image-galery img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+/* footer */
+footer {
+  background-color: var(--green-dark);
+  color: var(--white-dark);
+  font-size: 16px;
+}
+
+.row {
+  padding: 5rem 5%;
+}
+
+.row.primary {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: space-around;
+}
+
+.column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2em;
+  min-height: 15em;
+}
+
+.footer-text {
+  width: 100%;
+  text-align: left;
+  color: white;
+  font-size: 2.4rem;
+  white-space: nowrap;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+li:not(:first-child) {
+  margin-top: 0.8em;
+}
+
+ul li a {
+  color: var(--white-dark);
+  text-decoration: none;
+}
+
+ul li a:hover {
+  color: var(--green);
+}
+
+.about p {
+  text-align: justify;
+  line-height: 2;
+  margin: 0;
+}
+
+div.social {
+  display: flex;
+  font-size: 2.2em;
+  flex-direction: row;
+  margin-top: 1.5rem;
+}
+
+.social i {
+  color: var(--white-dark);
+  margin-right: 1rem;
+}
+
+.social i:hover {
+  color: var(--green-light);
+}
+
+.copyright {
+  padding: 2rem 5%;
+  background-color: var(--black-light);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.copyright p {
+  font-size: 1.5rem;
+}
+
+.copyright a {
+  color: var(--white-dark);
+}
+
+.copyright a:hover {
+  color: var(--green);
+}
+
+@media screen and (max-width: 850px) {
+  .row.primary {
+    grid-template-columns: 1fr;
+    grid-gap: 0rem;
+    display: flex;
+    flex-direction: column;
+  }
+}

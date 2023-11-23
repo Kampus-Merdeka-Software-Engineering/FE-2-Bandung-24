@@ -10,7 +10,6 @@
   --green: #9eb384;
   --green-light: #cedebd;
   --green-dark: #435334;
-
   --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
 }
 
@@ -554,58 +553,125 @@ header .icons #menu-bars {
   border-radius: 1rem;
 }
 
-/* review section */
-.review .review-card {
+.card-promo-container {
+  max-width: 120em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+  margin: 3em 2em 3em 2em;
+  min-height: 30em;
+  padding: 3em 1em 3em 1em;
+  box-sizing: border-box;
+}
+
+.card-div {
+  width: 35em;
+  min-height: 20em;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  padding: 0.5rem;
+  justify-items: center;
+  align-items: center;
+  background-color: var(--green);
+  margin: 1.4em;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: transform 0.2s ease-in-out;
+}
+
+.img-div {
+  width: 100%;
+  height: 15em;
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.2rem;
+  padding-top: 1rem;
+  z-index: 1;
+  border-radius: 0 0 10px 10px;
 }
 
-.review .review-card h4 {
-  font-size: 4rem;
-  font-weight: 700;
-  margin-top: 3rem;
-  line-height: 2.5;
-  color: var(--green-dark);
-  word-wrap: break-word;
+.img-div img {
+  transform-origin: bottom;
+  transform: translateY(7.5%);
+  transition: transform 0.3s ease-in-out;
 }
 
-.review .review-card .line {
-  width: 10rem;
-  height: 0.5rem;
-  background: var(--green-dark);
-  border-radius: 1rem;
+.promo-img-div img {
+  width: 75%;
+  transform: translateY(7.5%);
 }
 
-/* article section */
-.article .article-card {
+.text-promo-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  padding: 0.5rem;
-  justify-content: center;
-  align-items: center;
-  gap: 0.2rem;
+  padding: 0 1.5em;
+  padding-top: 7em;
+  padding-bottom: 1em;
+  box-sizing: border-box;
 }
 
-.article .article-card h4 {
-  font-size: 4rem;
+.text-promo-container .item-name,
+.text-promo-container {
+  margin: 0.25em 0;
+  text-align: center;
+}
+
+.text-promo-container .item-name {
+  font-size: 3rem;
   font-weight: 700;
-  margin-top: 3rem;
-  line-height: 2.5;
-  color: var(--green-dark);
-  word-wrap: break-word;
+  color: var(--white-dark);
 }
 
-.article .article-card .line {
-  width: 10rem;
-  height: 0.5rem;
-  background: var(--green-dark);
-  border-radius: 1rem;
+.pricing-and-cart {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0.25em 0 1em 0;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.previous-price {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--green-dark);
+  text-decoration: line-through;
+  text-align: left;
+}
+
+.current-price {
+  color: var(--white-dark);
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.pricing-and-cart {
+  width: 100%;
+  padding-top: 2em;
+  margin: 1em 0 1em 0;
+}
+
+.fa-shopping-cart {
+  color: var(--white-dark);
+  font-size: 2rem;
+  top: 0;
+  transform: translateY(50%);
+}
+
+.card-div:hover .img-div img {
+  transform: translateY(7.5%) scale(1.2);
+}
+
+.card-div:hover {
+  transform: translate(0, -10px);
 }
 
 /* mail floating */
@@ -649,6 +715,7 @@ header .icons #menu-bars {
 .sponsor {
   margin-bottom: 3rem;
 }
+
 .sponsor .sponsor-container {
   display: flex;
   flex-direction: row;
