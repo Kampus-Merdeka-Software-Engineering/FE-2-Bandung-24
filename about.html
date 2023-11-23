@@ -1,285 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- meta SEO -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="#" />
-    <meta name="keywords" content="#" />
-    <meta name="robots" content="index,follow" />
-    <meta property="og:title" content="SE.Kopi" />
-    <meta property="og:image" content="#" />
-    <meta property="og:description" content="#" />
-    <meta name="og:url" content="#" />
-    <meta name="og:type" content="food & beverages" />
-    <meta name="og:site_name" content="SE.Kopi" />
 
-    <!-- custom css link -->
-    <link rel="stylesheet" href="./styles/aboutstyle.css" />
+<head>
+  <!-- meta SEO -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="#">
+  <meta name="keywords" content="#">
+  <meta name='robots' content='index,follow'>
+  <meta property="og:title" content="SE.Kopi">
+  <meta property="og:image" content="#">
+  <meta property="og:description" content="#">
+  <meta name='og:url' content='#'>
+  <meta name='og:type' content='food & beverages'>
+  <meta name='og:site_name' content='SE.Kopi'>
 
-    <!-- font awesome link -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
+  <!-- swiper js link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./css/about.css">
+  <!-- font awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
+  <!-- warna tab mobile  -->
+  <!-- Chrome, Firefox OS, Opera -->
+  <meta name=”theme-color” content=”#faf1e4>
+  <!-- Windows Phone -->
+  <meta name=”msapplication-navbutton-color” content=”#faf1e4>
+  <!-- iOS Safari -->
+  <meta name=”apple-mobile-web-app-status-bar-style” content=”#faf1e4>
 
-    <title>SE.Kopi - About</title>
-  </head>
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./public/assets/img/logo/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./public/assets/img/logo/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./public/assets/img/logo/favicon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
 
-  <body>
-    <!-- header -->
-    <header>
-      <!-- logo -->
-      <a href="/index.html" class="logo"
-        ><i class="fa-solid fa-mug-hot"></i>SE.Kopi</a
-      >
+  <title>SE.Kopi - About</title>
+</head>
 
-      <!-- navigation -->
-      <nav class="navbar">
-        <a class="active" href="/index.html">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/menu.html">Menu</a>
-        <a href="/location.html">Location</a>
-      </nav>
+<body>
+  <!-- header -->
+  <header>
 
-      <!-- icons -->
-      <div class="icons">
-        <i class="fa-solid fa-bars" id="menu-bars"></i>
-        <a href="#" class="fa-solid fa-language"></a>
-        <a href="#" class="fa-solid fa-cart-shopping"></a>
+    <!-- logo -->
+    <a href="/index.html" class="logo"><i class="fa-solid fa-mug-hot"></i>SE.Kopi</a>
+
+    <!-- navigation -->
+    <nav class="navbar">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/menu.html">Menu</a>
+      <a href="/location.html">Location</a>
+    </nav>
+
+    <!-- icons -->
+    <div class="icons">
+      <i class="fa-solid fa-bars" id="menu-bars"></i>
+      <i id="dark-btn" class="fa-solid fa-circle-half-stroke" onclick="darkMode()"></i>
+      <a href="#" class="fa-solid fa-cart-shopping"></a>
+    </div>
+
+    <!-- scroll indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+
+  </header>
+
+  <!-- main -->
+  <main>
+
+    <!-- section hero -->
+    <section class="hero" id="hero">
+      <div class="menu-content">
+        <div class="content">
+          <h3>Our Story</h3>
+          <p>Get to know about us, store, environment and people behind it</p>
+        </div>
+        <div class="image">
+          <img src="./public/assets/img/kopi/no-bg.png" alt="SE.Kopi" />
+        </div>
       </div>
-    </header>
+    </section>
 
-    <!-- main -->
-    <main>
-      <section class="hero" id="hero">
-        <div class="menu-content">
-          <div class="content">
-            <h3>Our Story</h3>
-            <p>Get to know about us, store, environment and people behind it</p>
-          </div>
-          <div class="image">
-            <img src="./public/assets/img/kopi/no-bg.png" alt="SE.Kopi" />
-          </div>
-        </div>
-      </section>
-      <section class="hero-story" id="hero-story">
-        <div class="content-story">
-          <h3>About <span> SE.Kopi ? </span></h3>
-        </div>
-        <div class="our-story">
-          <p>
-            Established in 2023, SE.Kopi is a stage where the art of coffee
-            meets modern technology. Just as software brings unforgettable
-            experiences to end-users, we understand that each cup of coffee we
-            serve is an opportunity to create something special for our
-            customers. With an interior designed for comfort and a diverse menu,
-            SE.Kopi is not just a place to enjoy the finest specialty coffee but
-            also a unique journey into the world of taste and beauty. Welcome to
-            SE.Kopi, where coffee is an ever-evolving art.
-          </p>
-        </div>
-      </section>
+    <!-- section story -->
+    <section class="hero-story" id="hero-story">
+      <div class="content-story">
+        <h3>About <span> SE.Kopi ? </span></h3>
+      </div>
+      <div class="our-story">
+        <p>
+          Established in 2023, SE.Kopi is a stage where the art of coffee
+          meets modern technology. Just as software brings unforgettable
+          experiences to end-users, we understand that each cup of coffee we
+          serve is an opportunity to create something special for our
+          customers. With an interior designed for comfort and a diverse menu,
+          SE.Kopi is not just a place to enjoy the finest specialty coffee but
+          also a unique journey into the world of taste and beauty. Welcome to
+          SE.Kopi, where coffee is an ever-evolving art.
+        </p>
+      </div>
+    </section>
 
-      <!-- Section member -->
-      <section class="member" id="member">
-        <div class="slider-wrapper">
-          <button
-            id="prev-slide"
-            class="fa-solid fa-circle-arrow-left"
-          ></button>
-          <div class="member-name">
-            <img src="./public/assets/img/member/amel.jpg" alt="Linda" />
-            <h2>Amelia Zulfa Farida</h2>
-            <h4>Student RevoU Batch 5</h4>
-          </div>
-          <div class="content-member">
-            <h1>What are they saying?</h1>
-            <p>
-              Selamat datang di Se.kopi, di mana kami berkomitmen memberikan
-              pengalaman kopi istimewa dengan biji terbaik dan teknik roasting
-              terbaik. Kami melihat kopi sebagai budaya penghubung dan ingin
-              se.kopi menjadi tempat bagi Anda untuk berbagi cerita dan
-              merayakan kehidupan bersama. Terima kasih telah memilih se.kopi
-              untuk mengejar kenikmatan kopi; bersama-sama, mari nikmati
-              petualangan rasa yang tak terlupakan.
-            </p>
-          </div>
-          <button
-            id="next-slide"
-            class="fa-solid fa-circle-arrow-right"
-          ></button>
-        </div>
-        <div class="slider-wrapper">
-          <button
-            id="prev-slide"
-            class="fa-solid fa-circle-arrow-left"
-          ></button>
-          <div class="member-name">
-            <img src="./public/assets/img/member/Linda.jpg" alt="Husain" />
-            <h2>Husain Hammam Arrosyid</h2>
-            <h4>Student RevoU Batch 5</h4>
-          </div>
-          <div class="content-member">
-            <h1>What are they saying?</h1>
-            <p>
-              Selamat datang di Se.kopi, di mana kami berkomitmen memberikan
-              pengalaman kopi istimewa dengan biji terbaik dan teknik roasting
-              terbaik. Kami melihat kopi sebagai budaya penghubung dan ingin
-              se.kopi menjadi tempat bagi Anda untuk berbagi cerita dan
-              merayakan kehidupan bersama. Terima kasih telah memilih se.kopi
-              untuk mengejar kenikmatan kopi; bersama-sama, mari nikmati
-              petualangan rasa yang tak terlupakan.
-            </p>
-          </div>
-          <button
-            id="next-slide"
-            class="fa-solid fa-circle-arrow-right"
-          ></button>
-        </div>
-        <div class="slider-wrapper">
-          <button
-            id="prev-slide"
-            class="fa-solid fa-circle-arrow-left"
-          ></button>
-          <div class="member-name">
-            <img src="./public/assets/img/member/Linda.jpg" alt="Linda" />
-            <h2>Linda Oktavia Amanda</h2>
-            <h4>Student RevoU Batch 5</h4>
-          </div>
-          <div class="content-member">
-            <h1>What are they saying?</h1>
-            <p>
-              Selamat datang di Se.kopi, di mana kami berkomitmen memberikan
-              pengalaman kopi istimewa dengan biji terbaik dan teknik roasting
-              terbaik. Kami melihat kopi sebagai budaya penghubung dan ingin
-              se.kopi menjadi tempat bagi Anda untuk berbagi cerita dan
-              merayakan kehidupan bersama. Terima kasih telah memilih se.kopi
-              untuk mengejar kenikmatan kopi; bersama-sama, mari nikmati
-              petualangan rasa yang tak terlupakan.
-            </p>
-          </div>
-          <button
-            id="next-slide"
-            class="fa-solid fa-circle-arrow-right"
-          ></button>
-        </div>
-        <div class="slider-wrapper">
-          <button
-            id="prev-slide"
-            class="fa-solid fa-circle-arrow-left"
-          ></button>
-          <div class="member-name">
-            <img src="./public/assets/img/member/htm.jpg" alt="Hatami" />
-            <h2>Mohammad Hatami</h2>
-            <h4>Student RevoU Batch 5</h4>
-          </div>
-          <div class="content-member">
-            <h1>What are they saying?</h1>
-            <p>
-              Selamat datang di Se.kopi, di mana kami berkomitmen memberikan
-              pengalaman kopi istimewa dengan biji terbaik dan teknik roasting
-              terbaik. Kami melihat kopi sebagai budaya penghubung dan ingin
-              se.kopi menjadi tempat bagi Anda untuk berbagi cerita dan
-              merayakan kehidupan bersama. Terima kasih telah memilih se.kopi
-              untuk mengejar kenikmatan kopi; bersama-sama, mari nikmati
-              petualangan rasa yang tak terlupakan.
-            </p>
-          </div>
-          <button
-            id="next-slide"
-            class="fa-solid fa-circle-arrow-right"
-          ></button>
-        </div>
-        <div class="slider-wrapper">
-          <button
-            id="prev-slide"
-            class="fa-solid fa-circle-arrow-left"
-          ></button>
-          <div class="member-name">
-            <img src="./public/assets/img/member/Linda.jpg" alt="Linda" />
-            <h2>Nur'aini</h2>
-            <h4>Student RevoU Batch 5</h4>
-          </div>
-          <div class="content-member">
-            <h1>What are they saying?</h1>
-            <p>
-              Selamat datang di Se.kopi, di mana kami berkomitmen memberikan
-              pengalaman kopi istimewa dengan biji terbaik dan teknik roasting
-              terbaik. Kami melihat kopi sebagai budaya penghubung dan ingin
-              se.kopi menjadi tempat bagi Anda untuk berbagi cerita dan
-              merayakan kehidupan bersama. Terima kasih telah memilih se.kopi
-              untuk mengejar kenikmatan kopi; bersama-sama, mari nikmati
-              petualangan rasa yang tak terlupakan.
-            </p>
-          </div>
-          <button
-            id="next-slide"
-            class="fa-solid fa-circle-arrow-right"
-          ></button>
-        </div>
-        <div class="slider-wrapper">
-          <button
-            id="prev-slide"
-            class="fa-solid fa-circle-arrow-left"
-          ></button>
-          <div class="member-name">
-            <img src="./public/assets/img/member/Linda.jpg" alt="Linda" />
-            <h2>Siti Aisyah</h2>
-            <h4>Student RevoU Batch 5</h4>
-          </div>
-          <div class="content-member">
-            <h1>What are they saying?</h1>
-            <p>
-              Selamat datang di Se.kopi, di mana kami berkomitmen memberikan
-              pengalaman kopi istimewa dengan biji terbaik dan teknik roasting
-              terbaik. Kami melihat kopi sebagai budaya penghubung dan ingin
-              se.kopi menjadi tempat bagi Anda untuk berbagi cerita dan
-              merayakan kehidupan bersama. Terima kasih telah memilih se.kopi
-              untuk mengejar kenikmatan kopi; bersama-sama, mari nikmati
-              petualangan rasa yang tak terlupakan.
-            </p>
-          </div>
-          <button
-            id="next-slide"
-            class="fa-solid fa-circle-arrow-right"
-          ></button>
-        </div>
-      </section>
-      <!-- section galery -->
+    <!-- section member -->
+    <section class="member-container">
+      <div class="member-card swiper">
+        <div class="member-content">
+          <div class="swiper-wrapper">
+            <article class="member-article swiper-slide">
+              <div class="member-image">
+                <img src="./public/assets/img/member/htm.jpg" alt="image" class="member SE.Kopi">
+                <div class="card-shadow"></div>
+              </div>
 
-      <section class="sekopi-galery" id="sekopi-galery">
-        <div class="content-galery">
-          <h3>SE.Kopi <span> Galery</span></h3>
-          <p>Find Out Photos About SE.Kopi</p>
-        </div>
-        <div class="image-galery">
-          <img src="./public/assets/img/kopi/coffee.jpg" alt="" />
-          <img src="./public/assets/img/kopi/coffee.jpg" alt="" />
-          <img src="./public/assets/img/kopi/coffee.jpg" alt="" />
-          <img src="./public/assets/img/kopi/coffee.jpg" alt="" />
-          <img src="./public/assets/img/kopi/coffee.jpg" alt="" />
-          <img src="./public/assets/img/kopi/coffee.jpg" alt="" />
-          <img src="./public/assets/img/kopi/coffee.jpg" alt="" />
-          <img src="./public/assets/img/kopi/coffee.jpg" alt="" />
-          <img src="./public/assets/img/kopi/coffee.jpg" alt="" />
-        </div>
-      </section>
-    </main>
+              <div class="member-data">
+                <h3 class="member-name">Mohammad Hatami</h3>
+                <h4 class="member-status">Student RevoU Batch 5</h4>
+                <p class="member-description">
+                  Selamat datang di SE.Kopi, di mana kami berkomitmen untuk memberikan pengalaman kopi istimewa dengan
+                  menggunakan biji terbaik dan teknik roasting terbaik. Kami menganggap kopi sebagai budaya penghubung,
+                  dan
+                  kami ingin SE.Kopi menjadi tempat bagi Anda untuk berbagi cerita serta merayakan kehidupan bersama.
+                  Terima
+                  kasih atas kepercayaan Anda memilih SE.Kopi untuk mengejar kenikmatan kopi bersama-sama, mari nikmati
+                  petualangan rasa yang tak terlupakan.
+                </p>
 
-    <!-- footer -->
-    <footer></footer>
+              </div>
+            </article>
 
-    <!-- custom js link -->
-    <script src="./scripts/script.js"></script>
-  </body>
+            <article class="member-article swiper-slide">
+              <div class="member-image">
+                <img src="./public/assets/img/member/htm.jpg" alt="image" class="member SE.Kopi">
+                <div class="card-shadow"></div>
+              </div>
+
+              <div class="member-data">
+                <h3 class="member-name">Mohammad Hatami</h3>
+                <h4 class="member-status">Student RevoU Batch 5</h4>
+                <p class="member-description">
+                  Selamat datang di SE.Kopi, di mana kami berkomitmen untuk memberikan pengalaman kopi istimewa dengan
+                  menggunakan biji terbaik dan teknik roasting terbaik. Kami menganggap kopi sebagai budaya penghubung,
+                  dan
+                  kami ingin SE.Kopi menjadi tempat bagi Anda untuk berbagi cerita serta merayakan kehidupan bersama.
+                  Terima
+                  kasih atas kepercayaan Anda memilih SE.Kopi untuk mengejar kenikmatan kopi bersama-sama, mari nikmati
+                  petualangan rasa yang tak terlupakan.
+                </p>
+
+              </div>
+            </article>
+
+            <article class="member-article swiper-slide">
+              <div class="member-image">
+                <img src="./public/assets/img/member/htm.jpg" alt="image" class="member SE.Kopi">
+                <div class="card-shadow"></div>
+              </div>
+
+              <div class="member-data">
+                <h3 class="member-name">Mohammad Hatami</h3>
+                <h4 class="member-status">Student RevoU Batch 5</h4>
+                <p class="member-description">
+                  Selamat datang di SE.Kopi, di mana kami berkomitmen untuk memberikan pengalaman kopi istimewa dengan
+                  menggunakan biji terbaik dan teknik roasting terbaik. Kami menganggap kopi sebagai budaya penghubung,
+                  dan
+                  kami ingin SE.Kopi menjadi tempat bagi Anda untuk berbagi cerita serta merayakan kehidupan bersama.
+                  Terima
+                  kasih atas kepercayaan Anda memilih SE.Kopi untuk mengejar kenikmatan kopi bersama-sama, mari nikmati
+                  petualangan rasa yang tak terlupakan.
+                </p>
+
+              </div>
+            </article>
+
+            <article class="member-article swiper-slide">
+              <div class="member-image">
+                <img src="./public/assets/img/member/htm.jpg" alt="image" class="member SE.Kopi">
+                <div class="card-shadow"></div>
+              </div>
+
+              <div class="member-data">
+                <h3 class="member-name">Mohammad Hatami</h3>
+                <h4 class="member-status">Student RevoU Batch 5</h4>
+                <p class="member-description">
+                  Selamat datang di SE.Kopi, di mana kami berkomitmen untuk memberikan pengalaman kopi istimewa dengan
+                  menggunakan biji terbaik dan teknik roasting terbaik. Kami menganggap kopi sebagai budaya penghubung,
+                  dan
+                  kami ingin SE.Kopi menjadi tempat bagi Anda untuk berbagi cerita serta merayakan kehidupan bersama.
+                  Terima
+                  kasih atas kepercayaan Anda memilih SE.Kopi untuk mengejar kenikmatan kopi bersama-sama, mari nikmati
+                  petualangan rasa yang tak terlupakan.
+                </p>
+
+              </div>
+            </article>
+
+            <article class="member-article swiper-slide">
+              <div class="member-image">
+                <img src="./public/assets/img/member/htm.jpg" alt="image" class="member SE.Kopi">
+                <div class="card-shadow"></div>
+              </div>
+
+              <div class="member-data">
+                <h3 class="member-name">Mohammad Hatami</h3>
+                <h4 class="member-status">Student RevoU Batch 5</h4>
+                <p class="member-description">
+                  Selamat datang di SE.Kopi, di mana kami berkomitmen untuk memberikan pengalaman kopi istimewa dengan
+                  menggunakan biji terbaik dan teknik roasting terbaik. Kami menganggap kopi sebagai budaya penghubung,
+                  dan
+                  kami ingin SE.Kopi menjadi tempat bagi Anda untuk berbagi cerita serta merayakan kehidupan bersama.
+                  Terima
+                  kasih atas kepercayaan Anda memilih SE.Kopi untuk mengejar kenikmatan kopi bersama-sama, mari nikmati
+                  petualangan rasa yang tak terlupakan.
+                </p>
+
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="btn-member">
+          <i id="btn-prev" class="fa-solid fa-circle-arrow-left"></i>
+          <i id="btn-next" class="fa-solid fa-circle-arrow-right"></i>
+        </div>
+
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <!-- section galery -->
+    <section class="sekopi-galery" id="sekopi-galery">
+      <div class="content-galery">
+        <h3>SE.Kopi <span> Galery</span></h3>
+        <p>Find Out Photos About SE.Kopi</p>
+      </div>
+      <div class="image-galery">
+        <img src="./public/assets/img/kopi/coffee.jpg" alt="SE.Kopi Gallery" />
+        <img src="./public/assets/img/kopi/coffee.jpg" alt="SE.Kopi Gallery" />
+        <img src="./public/assets/img/kopi/coffee.jpg" alt="SE.Kopi Gallery" />
+        <img src="./public/assets/img/kopi/coffee.jpg" alt="SE.Kopi Gallery" />
+        <img src="./public/assets/img/kopi/coffee.jpg" alt="SE.Kopi Gallery" />
+        <img src="./public/assets/img/kopi/coffee.jpg" alt="SE.Kopi Gallery" />
+        <img src="./public/assets/img/kopi/coffee.jpg" alt="SE.Kopi Gallery" />
+        <img src="./public/assets/img/kopi/coffee.jpg" alt="SE.Kopi Gallery" />
+        <img src="./public/assets/img/kopi/coffee.jpg" alt="SE.Kopi Gallery" />
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer>
+    <div class="row primary">
+      <div class="column about">
+        <h3 class="footer-text">SE.Kopi</h3>
+        <p>
+          Drinking Coffee, Creating Moments.
+        </p>
+        <div class="social">
+          <a href="https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-24" target="_blank"><i
+              class="fa-brands fa-instagram-square"></i></a>
+          <a href="https://www.instagram.com/se.kopidev" target="_blank"><i class="fa-brands fa-github-square"></i></a>
+        </div>
+      </div>
+      <div class="column links">
+        <h3 class="footer-text">About</h3>
+        <ul>
+          <li>
+            <a href="#story">Our Story</a>
+          </li>
+          <li>
+            <a href="#menu">Favorite Menu</a>
+          </li>
+          <li>
+            <a href="#promo">Promo</a>
+          </li>
+          <li>
+            <a href="#review">Review</a>
+          </li>
+        </ul>
+      </div>
+      <div class="column links">
+        <h3 class="footer-text">Navigation</h3>
+        <ul>
+          <li>
+            <a href="./index.html">Home</a>
+          </li>
+          <li>
+            <a href="./about.html">About</a>
+          </li>
+          <li>
+            <a href="./menu.html">Menu</a>
+          </li>
+          <li>
+            <a href="./location.html">Location</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Copyright &copy; 2023 - <a href="./about.html">SE.Kopi</a></p>
+    </div>
+  </footer>
+
+  <!-- swiper js link -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- custom js link -->
+  <script src="./js/about.js"></script>
+</body>
+
 </html>
