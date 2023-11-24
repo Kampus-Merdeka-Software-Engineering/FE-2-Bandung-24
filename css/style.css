@@ -36,6 +36,12 @@ body {
   color: var(--black-light);
 }
 
+section {
+  flex: 1 1 auto;
+  padding: 2rem 9%;
+  margin: 0;
+}
+
 /* dark mode */
 .dark-mode {
   background-color: var(--black-light);
@@ -87,16 +93,6 @@ body {
 .fa-solid.active {
   transform: rotate(180deg);
   color: var(--green);
-}
-
-section {
-  flex: 1 1 auto;
-  padding: 2rem 9%;
-  margin: 0;
-}
-
-.home {
-  background-color: var(--green-light);
 }
 
 /* header */
@@ -239,8 +235,11 @@ header .icons #menu-bars {
 }
 
 /* hero section */
+.home {
+  background-color: var(--green-light);
+}
+
 .home .home-slider .slide {
-  height: 100vh;
   display: flex;
   align-items: center;
   flex-wrap: wrap;

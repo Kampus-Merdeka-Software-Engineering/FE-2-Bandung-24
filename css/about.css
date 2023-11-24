@@ -42,8 +42,45 @@ section {
   margin: 0;
 }
 
-.hero {
-  background-color: var(--green-light);
+/* dark mode */
+.dark-mode {
+  background-color: var(--black-light);
+  color: var(--white-dark);
+}
+
+.dark-mode section {
+  /* border-top: 0.5px solid grey; */
+  border-bottom: 0.5px solid grey;
+}
+
+.dark-mode .hero {
+  background-color: var(--green-dark);
+}
+
+.dark-mode .our-story,
+.dark-mode .member-container,
+.dark-mode .sekopi-galery {
+  background-color: var(--black-light);
+  color: var(--white-dark);
+}
+
+.dark-mode .hero .menu-content .content h3,
+.dark-mode .hero .menu-content .content p,
+.dark-mode .our-story .content-story h3,
+.dark-mode .our-story .content-story h3 span,
+.dark-mode .our-story .story-description p,
+.dark-mode .user-text h4,
+.dark-mode .user-text p,
+.dark-mode .user-text span,
+.dark-mode .sekopi-galery .galery-data h3,
+.dark-mode .sekopi-galery .galery-data h3 span,
+.dark-mode .sekopi-galery .galery-data p {
+  color: var(--white-dark);
+}
+
+.fa-solid.active {
+  transform: rotate(180deg);
+  color: var(--green);
 }
 
 /* header */
@@ -210,11 +247,27 @@ header .icons #menu-bars {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+
+  .member-container .member-card .testimonial .testimonial-text {
+    height: 70rem;
+  }
+
+  .member-container .user-text {
+    font-size: 20px;
+    color: var(--white);
+  }
+
+  .scroll-container::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* hero section */
+.hero {
+  background-color: var(--green-light);
+}
+
 .hero .menu-content {
-  height: 100vh;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -258,6 +311,7 @@ header .icons #menu-bars {
   align-items: center;
   margin-top: 7rem;
   margin-bottom: 7rem;
+  padding-bottom: 5rem;
 }
 
 .our-story .content-story {
@@ -288,6 +342,101 @@ header .icons #menu-bars {
 }
 
 /* member section */
+.testimonial {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-text {
+  background-color: var(--green);
+  color: var(--white);
+  width: 100%;
+  height: 350px;
+  border-radius: 2em;
+  position: relative;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.user-text {
+  width: 80%;
+  text-align: center;
+  line-height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.user-text .fas {
+  font-size: 30px;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.user-text h4 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.user-text p {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.user-text span {
+  display: block;
+  font-size: 14px;
+  margin-top: 60px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.scroll-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.member-img {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-pic {
+  width: 65px;
+  padding: 5px;
+  border-radius: 50%;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.user-text.active-text {
+  display: block;
+  animation: moveup 0.9s linear forwards;
+}
+
+.user-pic.active-pic {
+  width: 100px;
+  border: 5px solid var(--green);
+}
+
+@keyframes moveup {
+  0% {
+    margin-top: 25px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
 
 /* galery section */
 .sekopi-galery {

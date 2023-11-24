@@ -75,3 +75,26 @@ function darkMode() {
 }
 
 // members slider function
+let userTexts = document.getElementsByClassName("user-text");
+let userPics = document.getElementsByClassName("user-pic");
+let scrollContainer = document.querySelector(".scroll-container");
+
+function showReview() {
+    for (userPic of userPics) {
+        userPic.classList.remove("active-pic");
+    }
+    for (userText of userTexts) {
+        userText.classList.remove("active-text");
+    }
+
+    let i = Array.from(userPics).indexOf(event.target);
+
+    userPics[i].classList.add("active-pic");
+    userTexts[i].classList.add("active-text");
+
+    let scrollOffset = userPics[i].offsetLeft - (scrollContainer.offsetWidth - userPics[i].offsetWidth) / 2;
+    scrollContainer.scroll({
+        left: scrollOffset,
+        behavior: 'smooth'
+    });
+}
