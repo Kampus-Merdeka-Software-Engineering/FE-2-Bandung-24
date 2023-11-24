@@ -336,6 +336,7 @@ header .icons #menu-bars {
   padding: 2rem 0;
   line-height: 1.5;
   color: var(--black);
+  text-align: justify;
 }
 
 .story .our-story .content-story .btn {
