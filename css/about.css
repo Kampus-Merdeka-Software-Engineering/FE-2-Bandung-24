@@ -78,6 +78,19 @@ section {
   color: var(--white-dark);
 }
 
+.dark-mode .cd-container {
+  background-color: var(--green);
+}
+
+.dark-mode .cd-timeline-img {
+  box-shadow: 0 0 0 4px var(--green-light), inset 0 2px 0 rgba(0, 0, 0, 0.08),
+    0 3px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode #cd-timeline::before {
+  background: var(--green-light);
+}
+
 .fa-solid.active {
   transform: rotate(180deg);
   color: var(--green);
@@ -244,7 +257,7 @@ header .icons #menu-bars {
 @media (max-width: 991px) {
   .sekopi-galery .image-galery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
 
