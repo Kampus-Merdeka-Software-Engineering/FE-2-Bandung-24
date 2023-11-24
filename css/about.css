@@ -204,6 +204,14 @@ header .icons #menu-bars {
   }
 }
 
+@media (max-width: 991px) {
+  .sekopi-galery .image-galery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
 /* hero section */
 .hero .menu-content {
   height: 100vh;
@@ -325,8 +333,7 @@ header .icons #menu-bars {
 }
 
 .sekopi-galery .image-galery {
-  display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
   gap: 1rem;
   margin-top: 3rem;
