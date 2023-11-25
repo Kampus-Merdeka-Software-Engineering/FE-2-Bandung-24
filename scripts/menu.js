@@ -19,98 +19,187 @@ document.addEventListener('click', function (e) {
 })
 
 // preview function
-const previewContainer = document.querySelector('.product-preview');
-const previewBox = previewContainer.querySelectorAll('.preview');
+// const previewContainer = document.querySelector('.product-preview');
+// const previewBox = previewContainer.querySelectorAll('.preview');
 
-document.querySelectorAll('.menu .menucard').forEach(menucard => {
-    menucard.onclick = (e) => {
-        previewContainer.style.display = 'flex';
-        const name = menucard.getAttribute('data-name');
-        previewBox.forEach(preview => {
-            const target = preview.getAttribute('data-target');
-            if (name == target) {
-                preview.classList.add('active');
-            };
-        });
-        e.preventDefault();
-    };
-});
+// document.querySelectorAll('.menu .menucard').forEach(menucard => {
+//     menucard.onclick = (e) => {
+//         previewContainer.style.display = 'flex';
+//         const name = menucard.getAttribute('data-name');
+//         previewBox.forEach(preview => {
+//             const target = preview.getAttribute('data-target');
+//             if (name == target) {
+//                 preview.classList.add('active');
+//             };
+//         });
+//         e.preventDefault();
+//     };
+// });
 
-previewBox.forEach(close => {
-    close.querySelector('.fa-circle-xmark').onclick = (e) => {
-        close.classList.remove('active');
-        previewContainer.style.display = 'none';
-        e.preventDefault();
-    };
-});
+// previewBox.forEach(close => {
+//     close.querySelector('.fa-circle-xmark').onclick = (e) => {
+//         close.classList.remove('active');
+//         previewContainer.style.display = 'none';
+//         e.preventDefault();
+//     };
+// });
 
 // close diluar preview box
-window.onclick = (e) => {
-    if (e.target === previewContainer) {
-        previewContainer.style.display = 'none';
+// window.onclick = (e) => {
+//     if (e.target === previewContainer) {
+//         previewContainer.style.display = 'none';
+//     }
+// }
+
+// navbar function
+const menu = document.querySelector('#menu-bars');
+const navbar = document.querySelector('.navbar');
+
+menu.onclick = () => {
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+}
+
+// navbar highlight function
+window.addEventListener("load", function () {
+    const currentUrl = window.location.href;
+    const navItems = document.querySelectorAll(".navbar a");
+
+    for (const navItem of navItems) {
+        navItem.classList.remove("active");
+    }
+
+    for (const navItem of navItems) {
+        if (navItem.href === currentUrl) {
+            navItem.classList.add("active");
+        }
+    }
+});
+
+// scroll indicator function
+document.addEventListener('DOMContentLoaded', function () {
+    const header = document.querySelector('header');
+    const scrollIndicator = document.getElementById('scrollIndicator');
+
+    function updateScrollIndicator() {
+        const scrollPosition = window.scrollY;
+        const headerHeight = header.offsetHeight;
+        const contentHeight = document.body.clientHeight - window.innerHeight;
+
+        const scrollPercentage = (scrollPosition / contentHeight) * 100;
+        const indicatorWidth = (scrollPercentage * headerHeight) / 100;
+
+        scrollIndicator.style.width = '${indicatorWidth} rem';
+    }
+
+    window.addEventListener('scroll', updateScrollIndicator);
+    window.addEventListener('resize', updateScrollIndicator);
+
+    updateScrollIndicator();
+});
+
+window.addEventListener("hashchange", function () {
+    const currentUrl = window.location.href;
+    const navItems = document.querySelectorAll(".navbar a");
+
+    for (const navItem of navItems) {
+        navItem.classList.remove("active");
+    }
+
+    for (const navItem of navItems) {
+        if (navItem.href === currentUrl) {
+            navItem.classList.add("active");
+        }
+    }
+});
+
+// dark mode function
+function darkMode() {
+    const body = document.body;
+    const darkBtn = document.getElementById('dark-btn');
+
+    if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        darkBtn.classList.remove('active');
+    } else {
+        body.classList.add('dark-mode');
+        darkBtn.classList.add('active');
     }
 }
 
-// function untuk beralih menu-category
-function loadContent(url) {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            document.getElementById("menu").innerHTML = xhr.responseText;
-        } else if (xhr.readyState == 4 && xhr.status != 200) {
-            document.getElementsById("menu").innerHTML = "Gagal memuat menu.";
+// menu function
+// filter category function
+document.addEventListener('DOMContentLoaded', function () {
+    const categoryMenu = document.getElementById('category-menu');
+
+    categoryMenu.addEventListener('click', function (event) {
+        const clickedElement = event.target.closest('.category-link');
+
+        if (clickedElement) {
+            const category = clickedElement.dataset.category;
+
+            document.querySelectorAll('.category-link').forEach(link => link.classList.remove('active'));
+
+            clickedElement.classList.add('active');
+
+            filterMenu(category);
         }
-    };
-    xhr.open("GET", url, true);
-    xhr.send();
-}
+    });
 
-// shopping cart
-let previewCard = document.querySelector('.preview');
-let total = document.querySelector('.total');
-let quantity = document.querySelector('.quantity');
-let list = document.querySelector('.menu');
-let listCard = document.querySelector('.shopping-cart');
-let body = document.querySelector('body');
+    filterMenu('coffee');
 
-let products = [
-    {
-        id: 1,
-        name: 'PRODUCT NAME 1',
-        image: 'cappucino.jpg',
-        price: 120000
-    },
-    {
-        id: 2,
-        name: 'PRODUCT NAME 2',
-        image: 'cappucino.jpg',
-        price: 120000
-    },
-    {
-        id: 3,
-        name: 'PRODUCT NAME 3',
-        image: 'cappucino.jpg',
-        price: 220000
-    },
-];
+    function filterMenu(category) {
+        const menuItemsContainer = document.getElementById('menu-item');
+        menuItemsContainer.innerHTML = '';
 
-let listCards = [];
-function initApp() {
-    products.forEach((value, key) => {
-        let newDiv = document.createElement('div');
-        newDiv.classList.add('item');
-        newDiv.innerHTML = `
-            <section class="menu" id="menu">
-                <div class="menucard" data-name="m-1">
-                    <img src="./public/assets/img/kopi/menu-coffee/${value, image}">
-                    <h2>${value.name}</h2>
-                    <div class="price">${value.price.toLocaleString()}</div>
-                </div
-            </section>
-            <img src="image/${value.image}">
-            <div class="title">${value.name}</div>
-            <div class="price">${value.price.toLocaleString()}</div>
-            <button onclick="addToCard(${key})">Add To Card</button>`;
-        list.appendChild(newDiv);
-    })
-}
+        // API URL
+        const apiUrl = 'https://api.jsonbin.io/v3/b/6561f0c954105e766fd511cf/latest';
+
+        fetch(apiUrl, {
+            headers: {
+                'X-Master-Key': '$2a$10$IPPZLE/nU/Bo8LLs7limteP08mfk5X4ye2SDFIx3yeYBoTYsfkDka',
+            },
+        })
+            .then(response => response.json())
+            .then(data => {
+                const categoryItems = data.record[category];
+                categoryItems.forEach(item => {
+                    const cardElement = createMenuCard(item);
+                    menuItemsContainer.appendChild(cardElement);
+                });
+            })
+            .catch(error => console.error('Error fetching menu data:', error));
+    }
+
+    // menu item function
+    function createMenuCard(item) {
+        const cardElement = document.createElement('div');
+        cardElement.classList.add('menu-card');
+        cardElement.dataset.name = item.id;
+
+        const imgElement = document.createElement('img');
+        imgElement.src = item.img;
+        imgElement.alt = item.name;
+
+        const h2Element = document.createElement('h2');
+        h2Element.textContent = item.name;
+
+        const priceElement = document.createElement('div');
+        priceElement.classList.add('menu-price');
+        priceElement.textContent = item.price;
+
+        const orderButton = document.createElement('button');
+        orderButton.textContent = 'Order Now';
+        orderButton.classList.add('order-button');
+        orderButton.addEventListener('click', () => orderNow(item));
+
+
+
+        cardElement.appendChild(imgElement);
+        cardElement.appendChild(h2Element);
+        cardElement.appendChild(priceElement);
+        cardElement.appendChild(orderButton);
+
+        return cardElement;
+    }
+});
