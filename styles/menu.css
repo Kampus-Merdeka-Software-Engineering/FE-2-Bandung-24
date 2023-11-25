@@ -152,8 +152,11 @@ header .navbar a:hover {
   background-color: var(--green);
 }
 
-header .icons i,
-header .icons a {
+header .icons {
+  display: flex;
+}
+
+header .icons i {
   cursor: pointer;
   margin-left: 0.5rem;
   height: 4.5rem;
@@ -165,6 +168,61 @@ header .icons a {
   color: var(--green-dark);
   background-color: var(--white-milk);
 }
+
+header .icons .cart a {
+  cursor: pointer;
+  margin-left: 0.5rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  width: 4.5rem;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 1.7rem;
+  color: var(--green-dark);
+  background-color: var(--white-milk);
+}
+
+header .icons .cart span {
+  background-color: var(--white-creamy);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--black-light);
+  position: absolute;
+  top: 6px;
+  left: 92%;
+  padding: 3px 5px;
+}
+
+.checkout {
+  /* position: absolute; */
+  bottom: 70px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+}
+
+.checkout div {
+  background-color: var(--white-dark);
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* .list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1px;
+  row-gap: 20px;
+  margin-top: 50px;
+} */
 
 header .icons i:hover,
 header .icons a:hover {

@@ -64,3 +64,53 @@ function loadContent(url) {
     xhr.open("GET", url, true);
     xhr.send();
 }
+
+// shopping cart
+let previewCard = document.querySelector('.preview');
+let total = document.querySelector('.total');
+let quantity = document.querySelector('.quantity');
+let list = document.querySelector('.menu');
+let listCard = document.querySelector('.shopping-cart');
+let body = document.querySelector('body');
+
+let products = [
+    {
+        id: 1,
+        name: 'PRODUCT NAME 1',
+        image: 'cappucino.jpg',
+        price: 120000
+    },
+    {
+        id: 2,
+        name: 'PRODUCT NAME 2',
+        image: 'cappucino.jpg',
+        price: 120000
+    },
+    {
+        id: 3,
+        name: 'PRODUCT NAME 3',
+        image: 'cappucino.jpg',
+        price: 220000
+    },
+];
+
+let listCards = [];
+function initApp() {
+    products.forEach((value, key) => {
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('item');
+        newDiv.innerHTML = `
+            <section class="menu" id="menu">
+                <div class="menucard" data-name="m-1">
+                    <img src="./public/assets/img/kopi/menu-coffee/${value, image}">
+                    <h2>${value.name}</h2>
+                    <div class="price">${value.price.toLocaleString()}</div>
+                </div
+            </section>
+            <img src="image/${value.image}">
+            <div class="title">${value.name}</div>
+            <div class="price">${value.price.toLocaleString()}</div>
+            <button onclick="addToCard(${key})">Add To Card</button>`;
+        list.appendChild(newDiv);
+    })
+}

@@ -81,7 +81,11 @@
           class="fa-solid fa-circle-half-stroke"
           onclick="darkMode()"
         ></i>
-        <a href="#" class="fa-solid fa-cart-shopping" id="cart-btn"></a>
+        <div class="cart">
+          <a href="#" class="fa-solid fa-cart-shopping" id="cart-btn"></a>
+          <span class="quantity">0</span>
+        </div>
+        <div class="list"></div>
       </div>
 
       <!-- shopping cart start -->
@@ -118,6 +122,9 @@
             <div class="item-price">Rp 15.000</div>
           </div>
           <i class="fa-solid fa-trash-can" id="remove-item"></i>
+        </div>
+        <div class="checkout">
+          <div class="total">0</div>
         </div>
       </div>
       <!-- shopping cart end -->
