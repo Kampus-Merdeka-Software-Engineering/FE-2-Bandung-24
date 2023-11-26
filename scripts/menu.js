@@ -1,22 +1,22 @@
 // toggle class active untuk shopping cart
-const shoppingCart = document.querySelector('.shopping-cart');
-document.querySelector('.fa-solid.fa-cart-shopping').onclick = (e) => {
-    shoppingCart.classList.toggle('active');
-    e.preventDefault();
-};
+// const shoppingCart = document.querySelector('.shopping-cart');
+// document.querySelector('.fa-solid.fa-cart-shopping').onclick = (e) => {
+//     shoppingCart.classList.toggle('active');
+//     e.preventDefault();
+// };
 
-const sc = document.querySelector('#cart-btn');
-const mb = document.querySelector('#menu-bars');
+// const sc = document.querySelector('#cart-btn');
+// const mb = document.querySelector('#menu-bars');
 
-document.addEventListener('click', function (e) {
-    if (!sc.contains(e.target) && !shoppingCart.contains(e.target)) {
-        shoppingCart.classList.remove('active');
-    }
+// document.addEventListener('click', function (e) {
+//     if (!sc.contains(e.target) && !shoppingCart.contains(e.target)) {
+//         shoppingCart.classList.remove('active');
+//     }
 
-    if (!mb.contains(e.target) && !menu.contains(e.target)) {
-        menu.classList.remove('active');
-    }
-})
+//     if (!mb.contains(e.target) && !menu.contains(e.target)) {
+//         menu.classList.remove('active');
+//     }
+// })
 
 // preview function
 // const previewContainer = document.querySelector('.product-preview');
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
         priceElement.textContent = item.price;
 
         const orderButton = document.createElement('button');
-        orderButton.textContent = 'Order Now';
+        orderButton.textContent = 'Add to Cart';
         orderButton.classList.add('order-button');
         orderButton.addEventListener('click', () => orderNow(item));
 
@@ -203,3 +203,29 @@ document.addEventListener('DOMContentLoaded', function () {
         return cardElement;
     }
 });
+
+let iconCart = document.querySelector('.fa-cart-shopping');
+let closeCart = document.querySelector('.close');
+let body = document.querySelector('body');
+let listCartHTML = document.querySelector('cart-item');
+let cartSpan = document.querySelector('fa-cart-shopping span');
+
+let carts = [];
+
+
+iconCart.addEventListener('click', () => {
+    body.classList.toggle('showCart');
+})
+closeCart.addEventListener('click', () => {
+    body.classList.toggle('showCart');
+})
+
+
+menuItemsContainer.addEventListener('click', (event) => {
+    let positionClick = event.target;
+    if (positionClick.classList.contains('order-button')) {
+        let item_id = positionClick.parentElement.dataset.id;
+        addToCart(item_id);
+    }
+})
+

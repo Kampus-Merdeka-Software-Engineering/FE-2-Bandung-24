@@ -1,0 +1,123 @@
+/* location */
+.location {
+  display: flex;
+  flex-direction: column; /* Adjust the direction to column */
+  align-items: center;
+  gap: 20px; /* Adjust the gap between location cards */
+}
+.location .our-location {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.location .our-location h4 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  line-height: 2.5;
+  color: var(--green-dark);
+  word-wrap: break-word;
+}
+
+.location .our-location .line {
+  width: 10rem;
+  height: 0.5rem;
+  background: var(--green-dark);
+  border-radius: 1rem;
+  margin-bottom: 1px;
+}
+.location .our-location .content-loc {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.location .location-card {
+  width: 700px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+.location-card img {
+  width: 100%;
+  height: 300px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.location-card .card-content {
+  padding: 20px;
+}
+
+.location-card h5 {
+  color: #333333;
+  font-size: 2.4rem;
+  margin-bottom: 2px;
+}
+
+.location-card p {
+  color: #666666;
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+/* dark mode */
+.dark-mode {
+  background-color: var(--black-light);
+  color: var(--white-dark);
+}
+
+.dark-mode section {
+  border-top: 0.5px solid grey;
+  border-bottom: 0.5px solid grey;
+}
+
+.dark-mode .home {
+  background-color: var(--green-dark);
+}
+
+.dark-mode .menu,
+.dark-mode .promo,
+.dark-mode .review,
+.dark-mode .article,
+.dark-mode .story {
+  background-color: var(--black-light);
+  color: var(--white-dark);
+}
+
+.dark-mode .home .home-slider .slide .content h3,
+.dark-mode .home .home-slider .slide .content p,
+.dark-mode .story .our-story h4,
+.dark-mode .story .our-story .content-story p,
+.dark-mode .menu .menu-card h4,
+.dark-mode .promo .promo-card h4,
+.dark-mode .review .review-card h4,
+.dark-mode .article .article-card h4 {
+  color: var(--white-dark);
+}
+
+.dark-mode .story .our-story .line,
+.dark-mode .story .our-story .content-story .line,
+.dark-mode .menu .menu-card .line,
+.dark-mode .promo .promo-card .line,
+.dark-mode .review .review-card .line,
+.dark-mode .article .article-card .line {
+  background-color: var(--white-dark);
+}
+
+.dark-mode .swiper-pagination-bullet-active {
+  background: var(--green);
+}
+
+.fa-solid.active {
+  transform: rotate(180deg);
+  color: var(--green);
+}

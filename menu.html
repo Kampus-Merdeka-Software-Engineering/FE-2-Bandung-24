@@ -56,7 +56,7 @@
     <title>SE.Kopi - Menu</title>
   </head>
 
-  <body>
+  <body class="">
     <!-- header -->
     <header>
       <!-- logo -->
@@ -80,7 +80,8 @@
           class="fa-solid fa-circle-half-stroke"
           onclick="darkMode()"
         ></i>
-        <a href="#" class="fa-solid fa-cart-shopping"></a>
+        <a href="#cart" class="fa-solid fa-cart-shopping"></a>
+        <span>0</span>
       </div>
 
       <!-- scroll indicator -->
@@ -88,40 +89,25 @@
 
       <!-- shopping cart start -->
       <div class="shopping-cart">
+        <h2>Shopping Cart</h2>
         <div class="cart-item">
-          <img
-            src="./public/assets/img/kopi/menu-coffee/cappucino.jpg"
-            alt="cappucino"
-          />
-          <div class="item-detail">
-            <h3>Cappucino</h3>
-            <div class="item-price">Rp 15.000</div>
+          <div class="item">
+            <div class="image">
+              <img src="./public/assets/img/kopi/coffee.jpg" alt="">
+            </div>
+            <div class="name">Coffee</div>
+            <div class="totalPrice">Rp 50.000</div>
+            <div class="quantity">
+              <span class="minus">-</span>
+              <span>1</span>
+              <span class="plus">+</span>
+            </div>
           </div>
-          <i class="fa-solid fa-trash-can" id="remove-item"></i>
         </div>
-        <div class="cart-item">
-          <img
-            src="./public/assets/img/kopi/menu-coffee/cappucino.jpg"
-            alt="cappucino"
-          />
-          <div class="item-detail">
-            <h3>Cappucino</h3>
-            <div class="item-price">Rp 15.000</div>
-          </div>
-          <i class="fa-solid fa-trash-can" id="remove-item"></i>
+        <div class="button">
+          <button class="close">Close</button>
+          <button class="checkout">Check Out</button>
         </div>
-        <div class="cart-item">
-          <img
-            src="./public/assets/img/kopi/menu-coffee/cappucino.jpg"
-            alt="cappucino"
-          />
-          <div class="item-detail">
-            <h3>Cappucino</h3>
-            <div class="item-price">Rp 15.000</div>
-          </div>
-          <i class="fa-solid fa-trash-can" id="remove-item"></i>
-        </div>
-      </div>
       <!-- shopping cart end -->
     </header>
 
