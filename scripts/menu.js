@@ -1,231 +1,340 @@
-// toggle class active untuk shopping cart
-// const shoppingCart = document.querySelector('.shopping-cart');
-// document.querySelector('.fa-solid.fa-cart-shopping').onclick = (e) => {
-//     shoppingCart.classList.toggle('active');
-//     e.preventDefault();
-// };
+// API
+const apiUrl = 'https://api.jsonbin.io/v3/b/6561f0c954105e766fd511cf/latest';
+const apiKey = '$2a$10$IPPZLE/nU/Bo8LLs7limteP08mfk5X4ye2SDFIx3yeYBoTYsfkDka';
 
-// const sc = document.querySelector('#cart-btn');
-// const mb = document.querySelector('#menu-bars');
+// state
+let shoppingCart = getCartFromLocalStorage() || [];
 
-// document.addEventListener('click', function (e) {
-//     if (!sc.contains(e.target) && !shoppingCart.contains(e.target)) {
-//         shoppingCart.classList.remove('active');
-//     }
-
-//     if (!mb.contains(e.target) && !menu.contains(e.target)) {
-//         menu.classList.remove('active');
-//     }
-// })
-
-// preview function
-// const previewContainer = document.querySelector('.product-preview');
-// const previewBox = previewContainer.querySelectorAll('.preview');
-
-// document.querySelectorAll('.menu .menucard').forEach(menucard => {
-//     menucard.onclick = (e) => {
-//         previewContainer.style.display = 'flex';
-//         const name = menucard.getAttribute('data-name');
-//         previewBox.forEach(preview => {
-//             const target = preview.getAttribute('data-target');
-//             if (name == target) {
-//                 preview.classList.add('active');
-//             };
-//         });
-//         e.preventDefault();
-//     };
-// });
-
-// previewBox.forEach(close => {
-//     close.querySelector('.fa-circle-xmark').onclick = (e) => {
-//         close.classList.remove('active');
-//         previewContainer.style.display = 'none';
-//         e.preventDefault();
-//     };
-// });
-
-// close diluar preview box
-// window.onclick = (e) => {
-//     if (e.target === previewContainer) {
-//         previewContainer.style.display = 'none';
-//     }
-// }
-
-// navbar function
+// DOM elements
 const menu = document.querySelector('#menu-bars');
 const navbar = document.querySelector('.navbar');
+const darkBtn = document.getElementById('dark-btn');
+const categoryMenu = document.getElementById('category-menu');
+const menuItemsContainer = document.getElementById('menu-item');
+const cartIcon = document.getElementById('cart-icon');
+const modal = document.getElementById('cart-modal');
+const modalItems = document.getElementById('cart-items');
+const cartCount = document.getElementById('cart-count');
 
-menu.onclick = () => {
+// event listeners
+menu.addEventListener('click', toggleMenu);
+window.addEventListener('load', highlightNavItem);
+window.addEventListener('hashchange', highlightNavItem);
+window.addEventListener('scroll', updateScrollIndicator);
+window.addEventListener('resize', updateScrollIndicator);
+categoryMenu.addEventListener('click', handleCategoryClick);
+cartIcon.addEventListener('click', openCartModal);
+darkBtn.addEventListener('click', toggleDarkMode);
+
+// initialization
+filterMenu('coffee');
+updateCartDisplay();
+
+// functions
+function toggleMenu() {
     menu.classList.toggle('fa-times');
     navbar.classList.toggle('active');
 }
 
-// navbar highlight function
-window.addEventListener("load", function () {
+function highlightNavItem() {
     const currentUrl = window.location.href;
-    const navItems = document.querySelectorAll(".navbar a");
+    const navItems = document.querySelectorAll('.navbar a');
 
-    for (const navItem of navItems) {
-        navItem.classList.remove("active");
-    }
+    navItems.forEach(navItem => {
+        navItem.classList.toggle('active', navItem.href === currentUrl);
+    });
+}
 
-    for (const navItem of navItems) {
-        if (navItem.href === currentUrl) {
-            navItem.classList.add("active");
-        }
-    }
-});
-
-// scroll indicator function
-document.addEventListener('DOMContentLoaded', function () {
-    const header = document.querySelector('header');
-    const scrollIndicator = document.getElementById('scrollIndicator');
-
-    function updateScrollIndicator() {
-        const scrollPosition = window.scrollY;
-        const headerHeight = header.offsetHeight;
-        const contentHeight = document.body.clientHeight - window.innerHeight;
-
-        const scrollPercentage = (scrollPosition / contentHeight) * 100;
-        const indicatorWidth = (scrollPercentage * headerHeight) / 100;
-
-        scrollIndicator.style.width = '${indicatorWidth} rem';
-    }
-
-    window.addEventListener('scroll', updateScrollIndicator);
-    window.addEventListener('resize', updateScrollIndicator);
-
-    updateScrollIndicator();
-});
-
-window.addEventListener("hashchange", function () {
-    const currentUrl = window.location.href;
-    const navItems = document.querySelectorAll(".navbar a");
-
-    for (const navItem of navItems) {
-        navItem.classList.remove("active");
-    }
-
-    for (const navItem of navItems) {
-        if (navItem.href === currentUrl) {
-            navItem.classList.add("active");
-        }
-    }
-});
-
-// dark mode function
-function darkMode() {
+function toggleDarkMode() {
     const body = document.body;
-    const darkBtn = document.getElementById('dark-btn');
 
-    if (body.classList.contains('dark-mode')) {
-        body.classList.remove('dark-mode');
-        darkBtn.classList.remove('active');
+    body.classList.toggle('dark-mode');
+    darkBtn.classList.toggle('active', body.classList.contains('dark-mode'));
+}
+
+function updateScrollIndicator() {
+    const scrollPosition = window.scrollY;
+    const header = document.querySelector('header');
+    const headerHeight = header.offsetHeight;
+    const contentHeight = document.body.clientHeight - window.innerHeight;
+
+    const scrollPercentage = (scrollPosition / contentHeight) * 100;
+    const indicatorWidth = (scrollPercentage * headerHeight) / 100;
+
+    scrollIndicator.style.width = `${indicatorWidth}rem`;
+}
+
+function openCartModal() {
+    modalItems.innerHTML = '';
+    shoppingCart.forEach(item => modalItems.appendChild(createCartItem(item)));
+    displayTotalItems();
+    displayTotalPrice();
+    showModal();
+    addModalCloseListeners();
+}
+
+function displayTotalItems() {
+    const totalItemsElement = createHTMLElement('div', `Items: ${calculateTotalQuantity(shoppingCart)}`, 'total-items');
+    modalItems.appendChild(totalItemsElement);
+}
+
+function displayTotalPrice() {
+    const totalPrice = calculateTotalPrice(shoppingCart);
+
+    if (!isNaN(totalPrice)) {
+        const formattedPrice = formatCurrency(totalPrice, 'IDR');
+        updateTotalPriceElement(formattedPrice);
     } else {
-        body.classList.add('dark-mode');
-        darkBtn.classList.add('active');
+        console.error('Invalid total price:', totalPrice);
     }
 }
 
-// menu function
-// filter category function
-document.addEventListener('DOMContentLoaded', function () {
-    const categoryMenu = document.getElementById('category-menu');
+function updateTotalPriceElement(formattedPrice) {
+    const existingTotalPriceElement = document.getElementById('total-price');
+    if (existingTotalPriceElement) {
+        existingTotalPriceElement.remove();
+    }
 
-    categoryMenu.addEventListener('click', function (event) {
-        const clickedElement = event.target.closest('.category-link');
+    const totalPriceElement = createHTMLElement('div', `Price: ${formattedPrice}`, 'total-price');
+    modalItems.appendChild(totalPriceElement);
+}
 
-        if (clickedElement) {
-            const category = clickedElement.dataset.category;
+function showModal() {
+    modal.style.display = 'block';
+}
 
-            document.querySelectorAll('.category-link').forEach(link => link.classList.remove('active'));
+function addModalCloseListeners() {
+    window.addEventListener('click', closeModalIfClickedOutside);
+    const closeButton = document.getElementById('close-button');
+    if (closeButton) {
+        closeButton.addEventListener('click', closeCartModal);
+    }
+}
 
-            clickedElement.classList.add('active');
+function closeModalIfClickedOutside(event) {
+    if (event.target === modal) {
+        closeCartModal();
+    }
+}
 
-            filterMenu(category);
+function closeCartModal() {
+    modal.style.display = 'none';
+}
+
+function handleCategoryClick(event) {
+    const clickedElement = event.target.closest('.category-link');
+    if (clickedElement) {
+        const category = clickedElement.dataset.category;
+        updateCategoryLinks(category);
+        filterMenu(category);
+    }
+}
+
+function updateCategoryLinks(selectedCategory) {
+    document.querySelectorAll('.category-link').forEach(link => link.classList.remove('active'));
+    const selectedLink = document.querySelector(`[data-category="${selectedCategory}"]`);
+    if (selectedLink) {
+        selectedLink.classList.add('active');
+    }
+}
+
+function filterMenu(category) {
+    menuItemsContainer.innerHTML = '';
+    fetchMenuData(apiUrl, apiKey)
+        .then(data => {
+            const categoryItems = data.record[category] || [];
+            categoryItems.forEach(item => {
+                const cardElement = createMenuCard(item);
+                menuItemsContainer.appendChild(cardElement);
+            });
+        })
+        .catch(error => console.error('Error fetching menu data:', error));
+}
+
+function createMenuCard(item) {
+    const cardElement = createHTMLElement('div', '', '', ['menu-card']);
+    cardElement.dataset.id = item.id;
+    cardElement.dataset.name = item.name;
+    cardElement.dataset.price = item.price;
+
+    const imgElement = createImageElement(item.img, item.name);
+    const h2Element = createHeadingElement(item.name);
+    const priceElement = createPriceElement(item.price);
+    const orderButton = createOrderButton(item);
+
+    cardElement.appendChild(imgElement);
+    cardElement.appendChild(h2Element);
+    cardElement.appendChild(priceElement);
+    cardElement.appendChild(orderButton);
+
+    return cardElement;
+}
+
+function createCartItem(item) {
+    const listItem = createHTMLElement('li', '', 'cart-item');
+    const itemImage = createImageElement(item.img, item.name);
+    const itemName = createHeadingElement(item.name);
+    const itemPrice = createPriceElement(item.price);
+    const btnCountContainer = createHTMLElement('div', '', 'btn-count-container');
+    const quantitySpan = createHTMLElement('span', item.quantity, 'total-item-count');
+
+    const decrementButton = createButton('-', () => decrementCartItem(item), 'delete-menu');
+    const incrementButton = createButton('+', () => incrementCartItem(item), 'add-menu');
+
+    btnCountContainer.appendChild(decrementButton);
+    btnCountContainer.appendChild(quantitySpan);
+    btnCountContainer.appendChild(incrementButton);
+
+    listItem.appendChild(itemImage);
+    listItem.appendChild(itemName);
+    listItem.appendChild(itemPrice);
+    listItem.appendChild(btnCountContainer);
+
+    return listItem;
+}
+
+function decrementCartItem(item) {
+    const index = shoppingCart.findIndex(cartItem => cartItem.id === item.id);
+    if (index !== -1 && shoppingCart[index].quantity > 1) {
+        shoppingCart[index].quantity--;
+        updateCartDisplay();
+        openCartModal();
+    } else if (index !== -1 && shoppingCart[index].quantity === 1) {
+        shoppingCart.splice(index, 1);
+        updateCartDisplay();
+        openCartModal();
+    }
+}
+
+function incrementCartItem(item) {
+    const index = shoppingCart.findIndex(cartItem => cartItem.id === item.id);
+    if (index !== -1) {
+        shoppingCart[index].quantity++;
+        updateCartDisplay();
+        openCartModal();
+    }
+}
+
+function updateCartDisplay() {
+    updateCartCount();
+    saveCartToLocalStorage();
+}
+
+function updateCartCount() {
+    cartCount.textContent = calculateTotalQuantity(shoppingCart);
+    cartCount.style.display = shoppingCart.length > 0 ? 'inline' : 'none';
+}
+
+function calculateTotalPrice(cartItems) {
+    return cartItems.reduce((total, item) => {
+        const itemPrice = parsePrice(item.price);
+        const itemQuantity = parseInt(item.quantity);
+
+        if (!isNaN(itemPrice) && !isNaN(itemQuantity)) {
+            return total + itemPrice * itemQuantity;
+        } else {
+            handleInvalidItem(item);
+            return total;
         }
+    }, 0);
+}
+
+function handleInvalidItem(item) {
+    console.error('Invalid price or quantity:', item);
+}
+
+function parsePrice(priceString) {
+    const cleanedPrice = priceString.replace(/[^\d.,]/g, '');
+    const dotFormattedPrice = cleanedPrice.replace(/,/g, '.');
+    return parseFloat(dotFormattedPrice);
+}
+
+function calculateTotalQuantity(cartItems) {
+    return cartItems.reduce((total, item) => total + item.quantity, 0);
+}
+
+function saveCartToLocalStorage() {
+    localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
+}
+
+function getCartFromLocalStorage() {
+    const cartData = localStorage.getItem('shoppingCart');
+    return cartData ? JSON.parse(cartData) : null;
+}
+
+function createImageElement(src, alt) {
+    const imgElement = createHTMLElement('img');
+    imgElement.src = src;
+    imgElement.alt = alt;
+    return imgElement;
+}
+
+function createHeadingElement(text) {
+    const h2Element = createHTMLElement('h2', text);
+    return h2Element;
+}
+
+function createPriceElement(price) {
+    const priceElement = createHTMLElement('div', price, 'menu-price');
+    return priceElement;
+}
+
+function createOrderButton(item) {
+    const orderButton = createHTMLElement('button', 'Order Now', '', ['order-button']);
+    orderButton.addEventListener('click', () => orderNow(item));
+    return orderButton;
+}
+
+function fetchMenuData(url, key) {
+    return fetch(url, {
+        headers: { 'X-Master-Key': key }
+    })
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error fetching menu data:', error);
+            throw error;
+        });
+}
+
+function orderNow(item) {
+    const index = shoppingCart.findIndex(cartItem => cartItem.id === item.id);
+
+    if (index !== -1) {
+        shoppingCart[index].quantity++;
+    } else {
+        shoppingCart.push({ id: item.id, img: item.img, name: item.name, price: item.price, quantity: 1 });
+    }
+
+    updateCartDisplay();
+    openCartModal();
+}
+
+function createHTMLElement(tag, text = '', id = '', classes = []) {
+    const element = document.createElement(tag);
+    element.textContent = text;
+    if (id) element.id = id;
+    if (classes.length > 0) element.classList.add(...classes);
+    return element;
+}
+
+function createButton(text, clickHandler, id) {
+    const button = createHTMLElement('button', text);
+    button.addEventListener('click', clickHandler);
+    if (id) button.id = id;
+    return button;
+}
+
+function formatCurrency(value, currencyCode) {
+    const formatter = new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: currencyCode,
+        minimumFractionDigits: 3,
     });
 
-    filterMenu('coffee');
-
-    function filterMenu(category) {
-        const menuItemsContainer = document.getElementById('menu-item');
-        menuItemsContainer.innerHTML = '';
-
-        // API URL
-        const apiUrl = 'https://api.jsonbin.io/v3/b/6561f0c954105e766fd511cf/latest';
-
-        fetch(apiUrl, {
-            headers: {
-                'X-Master-Key': '$2a$10$IPPZLE/nU/Bo8LLs7limteP08mfk5X4ye2SDFIx3yeYBoTYsfkDka',
-            },
-        })
-            .then(response => response.json())
-            .then(data => {
-                const categoryItems = data.record[category];
-                categoryItems.forEach(item => {
-                    const cardElement = createMenuCard(item);
-                    menuItemsContainer.appendChild(cardElement);
-                });
-            })
-            .catch(error => console.error('Error fetching menu data:', error));
+    try {
+        return formatter.format(value);
+    } catch (error) {
+        console.error('Error formatting currency:', error);
+        return value;
     }
-
-    // menu item function
-    function createMenuCard(item) {
-        const cardElement = document.createElement('div');
-        cardElement.classList.add('menu-card');
-        cardElement.dataset.name = item.id;
-
-        const imgElement = document.createElement('img');
-        imgElement.src = item.img;
-        imgElement.alt = item.name;
-
-        const h2Element = document.createElement('h2');
-        h2Element.textContent = item.name;
-
-        const priceElement = document.createElement('div');
-        priceElement.classList.add('menu-price');
-        priceElement.textContent = item.price;
-
-        const orderButton = document.createElement('button');
-        orderButton.textContent = 'Add to Cart';
-        orderButton.classList.add('order-button');
-        orderButton.addEventListener('click', () => orderNow(item));
-
-
-
-        cardElement.appendChild(imgElement);
-        cardElement.appendChild(h2Element);
-        cardElement.appendChild(priceElement);
-        cardElement.appendChild(orderButton);
-
-        return cardElement;
-    }
-});
-
-let iconCart = document.querySelector('.fa-cart-shopping');
-let closeCart = document.querySelector('.close');
-let body = document.querySelector('body');
-let listCartHTML = document.querySelector('cart-item');
-let cartSpan = document.querySelector('fa-cart-shopping span');
-
-let carts = [];
-
-
-iconCart.addEventListener('click', () => {
-    body.classList.toggle('showCart');
-})
-closeCart.addEventListener('click', () => {
-    body.classList.toggle('showCart');
-})
-
-
-menuItemsContainer.addEventListener('click', (event) => {
-    let positionClick = event.target;
-    if (positionClick.classList.contains('order-button')) {
-        let item_id = positionClick.parentElement.dataset.id;
-        addToCart(item_id);
-    }
-})
-
+}

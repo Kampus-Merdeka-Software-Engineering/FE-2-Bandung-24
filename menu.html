@@ -1,241 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- meta SEO -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="#" />
-    <meta name="keywords" content="#" />
-    <meta name="robots" content="index,follow" />
-    <meta property="og:title" content="SE.Kopi" />
-    <meta property="og:image" content="#" />
-    <meta property="og:description" content="#" />
-    <meta name="og:url" content="#" />
-    <meta name="og:type" content="food & beverages" />
-    <meta name="og:site_name" content="SE.Kopi" />
 
-    <!-- custom css link -->
-    <link rel="stylesheet" href="./styles/menu.css" />
-    <!-- font awesome link -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
+<head>
+  <!-- meta SEO -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="#">
+  <meta name="keywords" content="#">
+  <meta name='robots' content='index,follow'>
+  <meta property="og:title" content="SE.Kopi">
+  <meta property="og:image" content="#">
+  <meta property="og:description" content="#">
+  <meta name='og:url' content='#'>
+  <meta name='og:type' content='food & beverages'>
+  <meta name='og:site_name' content='SE.Kopi'>
 
-    <!-- warna tab mobile  -->
-    <!-- Chrome, Firefox OS, Opera -->
-    <meta name="”theme-color”" content="”#435334" />
-    <!-- Windows Phone -->
-    <meta name="”msapplication-navbutton-color”" content="”#435334" />
-    <!-- iOS Safari -->
-    <meta name="”apple-mobile-web-app-status-bar-style”" content="”#435334" />
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./css/menu.css">
+  <!-- font awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <!-- favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./public/assets/img/logo/favicon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./public/assets/img/logo/favicon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./public/assets/img/logo/favicon.png"
-    />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#435334" />
+  <!-- warna tab mobile  -->
+  <!-- Chrome, Firefox OS, Opera -->
+  <meta name=”theme-color” content=”#435334>
+  <!-- Windows Phone -->
+  <meta name=”msapplication-navbutton-color” content=”#435334>
+  <!-- iOS Safari -->
+  <meta name=”apple-mobile-web-app-status-bar-style” content=”#435334>
 
-    <title>SE.Kopi - Menu</title>
-  </head>
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./public/assets/img/logo/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./public/assets/img/logo/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./public/assets/img/logo/favicon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#435334">
 
-  <body class="">
-    <!-- header -->
-    <header>
-      <!-- logo -->
-      <a href="/index.html" class="logo"
-        ><i class="fa-solid fa-mug-hot"></i>SE.Kopi</a
-      >
+  <title>SE.Kopi - Menu</title>
+</head>
 
-      <!-- navigation -->
-      <nav class="navbar">
-        <a href="/index.html">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/menu.html">Menu</a>
-        <a href="/location.html">Location</a>
-      </nav>
+<body>
+  <!-- header -->
+  <header>
 
-      <!-- icons -->
-      <div class="icons">
-        <i class="fa-solid fa-bars" id="menu-bars"></i>
-        <i
-          id="dark-btn"
-          class="fa-solid fa-circle-half-stroke"
-          onclick="darkMode()"
-        ></i>
-        <a href="#cart" class="fa-solid fa-cart-shopping"></a>
-        <span>0</span>
-      </div>
+    <!-- logo -->
+    <a href="/index.html" class="logo"><i class="fa-solid fa-mug-hot"></i>SE.Kopi</a>
 
-      <!-- scroll indicator -->
-      <div class="scroll-indicator" id="scrollIndicator"></div>
+    <!-- navigation -->
+    <nav class="navbar">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/menu.html">Menu</a>
+      <a href="/location.html">Location</a>
+    </nav>
 
-      <!-- shopping cart start -->
-      <div class="shopping-cart">
-        <h2>Shopping Cart</h2>
-        <div class="cart-item">
-          <div class="item">
-            <div class="image">
-              <img src="./public/assets/img/kopi/coffee.jpg" alt="">
-            </div>
-            <div class="name">Coffee</div>
-            <div class="totalPrice">Rp 50.000</div>
-            <div class="quantity">
-              <span class="minus">-</span>
-              <span>1</span>
-              <span class="plus">+</span>
-            </div>
-          </div>
+    <!-- icons -->
+    <div class="icons">
+      <i class="fa-solid fa-bars" id="menu-bars"></i>
+      <i id="dark-btn" class="fa-solid fa-circle-half-stroke" onclick="darkMode()"></i>
+      <i class="fa-solid fa-cart-shopping" id="cart-icon"><span id="cart-count">0</span></i>
+    </div>
+
+    <!-- scroll indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+
+  </header>
+
+  <!-- main -->
+  <main>
+
+    <!-- section hero -->
+    <section class="hero" id="hero">
+      <div class="menu-content">
+        <div class="content">
+          <h3>Our Menu</h3>
+          <p>Explore a menu tailored to your desires and experience the distinctive features of each carefully
+            crafted dish we offer. Delight in the unique characteristics that define each item on our menu.
+          </p>
         </div>
-        <div class="button">
-          <button class="close">Close</button>
-          <button class="checkout">Check Out</button>
-        </div>
-      <!-- shopping cart end -->
-    </header>
-
-    <!-- main -->
-    <main>
-      <!-- section hero -->
-      <section class="hero" id="hero">
-        <div class="menu-content">
-          <div class="content">
-            <h3>Our Menu</h3>
-            <p>
-              Explore a menu tailored to your desires and experience the
-              distinctive features of each carefully crafted dish we offer.
-              Delight in the unique characteristics that define each item on our
-              menu.
-            </p>
-          </div>
-          <div class="image">
-            <img src="./public/assets/img/kopi/no-bg.png" alt="SE.Kopi" />
-          </div>
-        </div>
-      </section>
-
-      <!-- menu section -->
-      <section class="menu-section">
-        <!-- category menu -->
-        <div class="category-menu" id="category-menu">
-          <div class="choice-category">
-            <div
-              class="category-link"
-              data-category="coffee"
-              onclick="filterMenu('coffee')"
-            >
-              <img
-                src="./public/assets/img/kopi/coffee-cup.png"
-                alt="coffee menu"
-              />
-            </div>
-            <div
-              class="category-link"
-              data-category="croissant"
-              onclick="filterMenu('croissant')"
-            >
-              <img
-                src="./public/assets/img/kopi/croissant.png"
-                alt="cake menu"
-              />
-            </div>
-            <div
-              class="category-link"
-              data-category="juice"
-              onclick="filterMenu('juice')"
-            >
-              <img
-                src="./public/assets/img/kopi/orange-juice.png"
-                alt="juice menu"
-              />
-            </div>
-          </div>
-        </div>
-
-        <!-- menu item -->
-        <div class="menu-item" id="menu-item"></div>
-      </section>
-    </main>
-
-    <!-- footer -->
-    <footer>
-      <div class="row primary">
-        <div class="column about">
-          <h3 class="footer-text">SE.Kopi</h3>
-          <p>Drinking Coffee, Creating Moments.</p>
-          <div class="social">
-            <a
-              href="https://www.instagram.com/se.kopidev"
-              rel="noopener"
-              target="_blank"
-              ><i class="fa-brands fa-instagram-square"></i
-            ></a>
-            <a
-              href="https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-24"
-              rel="noopener"
-              target="_blank"
-              ><i class="fa-brands fa-github-square"></i
-            ></a>
-          </div>
-        </div>
-        <div class="column links">
-          <h3 class="footer-text">Section</h3>
-          <ul>
-            <li>
-              <a href="#our-story">Our Story</a>
-            </li>
-            <li>
-              <a href="#cd-timeline">Timeline</a>
-            </li>
-            <li>
-              <a href="#member-card">Member</a>
-            </li>
-            <li>
-              <a href="#sekopi-galery">Gallery</a>
-            </li>
-          </ul>
-        </div>
-        <div class="column links">
-          <h3 class="footer-text">Navigation</h3>
-          <ul>
-            <li>
-              <a href="./index.html">Home</a>
-            </li>
-            <li>
-              <a href="./about.html">About</a>
-            </li>
-            <li>
-              <a href="./menu.html">Menu</a>
-            </li>
-            <li>
-              <a href="./location.html">Location</a>
-            </li>
-          </ul>
+        <div class="image">
+          <img src="./public/assets/img/kopi/no-bg.webp" alt="SE.Kopi" />
         </div>
       </div>
-      <div class="copyright">
-        <p>Copyright &copy; 2023 - <a href="./about.html">SE.Kopi</a></p>
-      </div>
-    </footer>
+    </section>
 
-    <!-- custom js link -->
-    <script src="./scripts/menu.js"></script>
-  </body>
+    <!-- menu section -->
+    <section class="menu-section">
+      <!-- category menu -->
+      <div class="category-menu" id="category-menu">
+        <div class="choice-category">
+          <div class="category-link" data-category="coffee" onclick="filterMenu('coffee')">
+            <img src="./public/assets/img/category/coffee.webp" alt="coffee menu" />
+          </div>
+          <div class="category-link" data-category="juice" onclick="filterMenu('juice')">
+            <img src="./public/assets/img/category/juice.webp" alt="juice menu" />
+          </div>
+          <div class="category-link" data-category="croissant" onclick="filterMenu('croissant')">
+            <img src="./public/assets/img/category/cake.webp" alt="cake menu" />
+          </div>
+        </div>
+      </div>
+
+      <!-- menu item -->
+      <div class="menu-item" id="menu-item"></div>
+    </section>
+
+    <!-- modal cart -->
+    <div id="cart-modal" class="cart-modal">
+      <div class="modal-content">
+        <ul id="cart-items" class="cart-items">
+          <!-- list item -->
+        </ul>
+        <div class="modal-btn">
+          <button id="close-button">Close</button>
+          <button id="pay-button">Pay</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- footer -->
+  <footer>
+    <div class="row primary">
+      <div class="column about">
+        <h3 class="footer-text">SE.Kopi</h3>
+        <p>
+          Drinking Coffee, Creating Moments.
+        </p>
+        <div class="social">
+          <a href="https://www.instagram.com/se.kopidev" rel="noopener" target="_blank"><i
+              class="fa-brands fa-instagram-square"></i></a>
+          <a href="https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-24" rel="noopener"
+            target="_blank"><i class="fa-brands fa-github-square"></i></a>
+        </div>
+      </div>
+      <div class="column links">
+        <h3 class="footer-text">Section</h3>
+        <ul>
+          <li>
+            <a href="#our-story">Our Story</a>
+          </li>
+          <li>
+            <a href="#cd-timeline">Timeline</a>
+          </li>
+          <li>
+            <a href="#member-card">Member</a>
+          </li>
+          <li>
+            <a href="#sekopi-galery">Gallery</a>
+          </li>
+        </ul>
+      </div>
+      <div class="column links">
+        <h3 class="footer-text">Navigation</h3>
+        <ul>
+          <li>
+            <a href="./index.html">Home</a>
+          </li>
+          <li>
+            <a href="./about.html">About</a>
+          </li>
+          <li>
+            <a href="./menu.html">Menu</a>
+          </li>
+          <li>
+            <a href="./location.html">Location</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Copyright &copy; 2023 - <a href="./about.html">SE.Kopi</a></p>
+    </div>
+  </footer>
+
+  <!-- custom js link -->
+  <script src="./js/menu.js"></script>
+</body>
+
 </html>
