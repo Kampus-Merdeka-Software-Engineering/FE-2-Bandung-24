@@ -36,6 +36,19 @@ body {
   color: var(--black-light);
 }
 
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--green);
+  border-radius: 6px;
+}
+
 section {
   flex: 1 1 auto;
   padding: 2rem 9%;
@@ -54,7 +67,8 @@ section {
 }
 
 .dark-mode .home {
-  background-color: var(--green-dark);
+  background: linear-gradient(to right, var(--green-dark), var(--green));
+  background-size: 200% 50%;
 }
 
 .dark-mode .menu,
@@ -236,7 +250,8 @@ header .icons #menu-bars {
 
 /* hero section */
 .home {
-  background-color: var(--green-light);
+  background: linear-gradient(to right, var(--green), var(--green-light));
+  background-size: 200% 100%;
 }
 
 .home .home-slider .slide {
@@ -345,12 +360,13 @@ header .icons #menu-bars {
   margin-top: 1rem;
   font-size: 2rem;
   color: var(--white);
-  background-color: var(--green);
+  background: linear-gradient(to right, var(--green), var(--green-dark));
+  background-size: 200% 100%;
   border-radius: 10px;
 }
 
 .story .our-story .content-story .btn:hover {
-  background-color: var(--green-dark);
+  background-position: right;
 }
 
 .story .our-story .video-container {
@@ -415,7 +431,7 @@ header .icons #menu-bars {
   display: flex;
   cursor: pointer;
   font-size: 5rem;
-  background: var(--green-dark);
+  background: var(--white);
   align-items: center;
   justify-content: center;
   border-radius: 50%;
@@ -423,7 +439,7 @@ header .icons #menu-bars {
 }
 
 .slider-wrapper .fa-solid:hover {
-  background: var(--white);
+  background: var(--green-dark);
 }
 
 .slider-wrapper .fa-solid#prev-slide {
@@ -565,23 +581,24 @@ header .icons #menu-bars {
 }
 
 .card-div {
-  width: 35em;
+  width: 25em;
   min-height: 20em;
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  background-color: var(--green);
+  background: linear-gradient(to right, var(--green), var(--green-light));
+  background-size: 200% 100%;
   margin: 1.4em;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: transform 0.2s ease-in-out;
 }
 
 .img-div {
   width: 100%;
-  height: 15em;
+  height: 14em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -618,7 +635,7 @@ header .icons #menu-bars {
 }
 
 .text-promo-container .item-name {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: var(--white-dark);
 }
@@ -638,8 +655,8 @@ header .icons #menu-bars {
 }
 
 .previous-price {
-  font-size: 1.3rem;
-  font-weight: 300;
+  font-size: 1.2rem;
+  font-weight: 400;
   color: var(--green-dark);
   text-decoration: line-through;
   text-align: left;
@@ -647,8 +664,8 @@ header .icons #menu-bars {
 
 .current-price {
   color: var(--white-dark);
-  font-size: 1.8rem;
-  font-weight: 400;
+  font-size: 1.6rem;
+  font-weight: 600;
   margin: 0;
 }
 
@@ -658,9 +675,24 @@ header .icons #menu-bars {
   margin: 1em 0 1em 0;
 }
 
+.shop-btn {
+  display: flex;
+  background-color: #66784f;
+  padding-bottom: 2em;
+  padding-top: 0.4em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  border-radius: 12px;
+  position: relative;
+}
+
+.shop-btn:hover {
+  background-color: var(--green-dark);
+}
+
 .fa-shopping-cart {
   color: var(--white-dark);
-  font-size: 2rem;
+  font-size: 1.5rem;
   top: 0;
   transform: translateY(50%);
 }
@@ -683,14 +715,15 @@ header .icons #menu-bars {
   bottom: 15px;
   z-index: 9999;
   padding: 12px;
-  background-color: var(--green);
+  background: linear-gradient(to right, var(--green), var(--green-dark));
+  background-size: 200% 100%;
   border-radius: 10px;
   border: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .mail-floating .right-button:hover {
-  background-color: var(--green-dark);
+  background-position: right;
 }
 
 .mail-floating i {
@@ -733,7 +766,8 @@ header .icons #menu-bars {
 
 /* footer */
 footer {
-  background-color: var(--green-dark);
+  background: linear-gradient(to right, var(--green-dark), var(--green));
+  background-size: 200% 50%;
   color: var(--white-dark);
   font-size: 16px;
 }
@@ -811,7 +845,7 @@ div.social {
 
 .copyright {
   padding: 2rem 5%;
-  background-color: var(--black-light);
+  background-color: #2c3821;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -823,6 +857,7 @@ div.social {
 }
 
 .copyright a {
+  font-weight: bold;
   color: var(--white-dark);
 }
 

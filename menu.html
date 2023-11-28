@@ -15,10 +15,8 @@
     <meta name='og:type' content='food & beverages'>
     <meta name='og:site_name' content='SE.Kopi'>
 
-    <!-- swiper js link -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- custom css link -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/menu.css">
     <!-- font awesome link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
@@ -61,7 +59,7 @@
         <div class="icons">
             <i class="fa-solid fa-bars" id="menu-bars"></i>
             <i id="dark-btn" class="fa-solid fa-circle-half-stroke" onclick="darkMode()"></i>
-            <a href="#" class="fa-solid fa-cart-shopping"></a>
+            <i class="fa-solid fa-cart-shopping" id="cart-icon"><span id="cart-count">0</span></i>
         </div>
 
         <!-- scroll indicator -->
@@ -72,21 +70,114 @@
     <!-- main -->
     <main>
 
-        <section>
-
+        <!-- section hero -->
+        <section class="hero" id="hero">
+            <div class="menu-content">
+                <div class="content">
+                    <h3>Our Menu</h3>
+                    <p>Explore a menu tailored to your desires and experience the distinctive features of each carefully
+                        crafted dish we offer. Delight in the unique characteristics that define each item on our menu.
+                    </p>
+                </div>
+                <div class="image">
+                    <img src="./public/assets/img/kopi/no-bg.webp" alt="SE.Kopi" />
+                </div>
+            </div>
         </section>
+
+        <!-- menu section -->
+        <section class="menu-section">
+            <!-- category menu -->
+            <div class="category-menu" id="category-menu">
+                <div class="choice-category">
+                    <div class="category-link" data-category="coffee" onclick="filterMenu('coffee')">
+                        <img src="./public/assets/img/category/coffee.webp" alt="coffee menu" />
+                    </div>
+                    <div class="category-link" data-category="juice" onclick="filterMenu('juice')">
+                        <img src="./public/assets/img/category/juice.webp" alt="juice menu" />
+                    </div>
+                    <div class="category-link" data-category="croissant" onclick="filterMenu('croissant')">
+                        <img src="./public/assets/img/category/cake.webp" alt="cake menu" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- menu item -->
+            <div class="menu-item" id="menu-item"></div>
+        </section>
+
+        <!-- modal cart -->
+        <div id="cart-modal" class="cart-modal">
+            <div class="modal-content">
+                <ul id="cart-items" class="cart-items">
+                    <!-- list item -->
+                </ul>
+                <div class="modal-btn">
+                    <button id="close-button">Close</button>
+                    <button id="pay-button">Pay</button>
+                </div>
+            </div>
+        </div>
 
     </main>
 
     <!-- footer -->
     <footer>
-
+        <div class="row primary">
+            <div class="column about">
+                <h3 class="footer-text">SE.Kopi</h3>
+                <p>
+                    Drinking Coffee, Creating Moments.
+                </p>
+                <div class="social">
+                    <a href="https://www.instagram.com/se.kopidev" rel="noopener" target="_blank"><i
+                            class="fa-brands fa-instagram-square"></i></a>
+                    <a href="https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-24" rel="noopener"
+                        target="_blank"><i class="fa-brands fa-github-square"></i></a>
+                </div>
+            </div>
+            <div class="column links">
+                <h3 class="footer-text">Section</h3>
+                <ul>
+                    <li>
+                        <a href="#our-story">Our Story</a>
+                    </li>
+                    <li>
+                        <a href="#cd-timeline">Timeline</a>
+                    </li>
+                    <li>
+                        <a href="#member-card">Member</a>
+                    </li>
+                    <li>
+                        <a href="#sekopi-galery">Gallery</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column links">
+                <h3 class="footer-text">Navigation</h3>
+                <ul>
+                    <li>
+                        <a href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="./about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="./menu.html">Menu</a>
+                    </li>
+                    <li>
+                        <a href="./location.html">Location</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright &copy; 2023 - <a href="./about.html">SE.Kopi</a></p>
+        </div>
     </footer>
 
-    <!-- swiper js link -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- custom js link -->
-    <script src="./js/script.js"></script>
+    <script src="./js/menu.js"></script>
 </body>
 
 </html>
