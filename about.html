@@ -1,13 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
-    <title>SE.Kopi - About</title>
+  <!-- meta SEO -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="#">
+  <meta name="keywords" content="#">
+  <meta name='robots' content='index,follow'>
+  <meta property="og:title" content="SE.Kopi">
+  <meta property="og:image" content="#">
+  <meta property="og:description" content="#">
+  <meta name='og:url' content='#'>
+  <meta name='og:type' content='food & beverages'>
+  <meta name='og:site_name' content='SE.Kopi'>
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./css/about.css">
+  <!-- font awesome link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- warna tab mobile  -->
+  <!-- Chrome, Firefox OS, Opera -->
+  <meta name=”theme-color” content=”#435334>
+  <!-- Windows Phone -->
+  <meta name=”msapplication-navbutton-color” content=”#435334>
+  <!-- iOS Safari -->
+  <meta name=”apple-mobile-web-app-status-bar-style” content=”#435334>
+
+  <!-- favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./public/assets/img/logo/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./public/assets/img/logo/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./public/assets/img/logo/favicon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#435334">
+
+  <title>SE.Kopi - About</title>
 </head>
+
 <body>
-    
-    <script src="./scripts/script.js"></script>
+  <!-- header -->
+  <header>
+
+    <!-- logo -->
+    <a href="/index.html" class="logo"><i class="fa-solid fa-mug-hot"></i>SE.Kopi</a>
+
+    <!-- navigation -->
+    <nav class="navbar">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/menu.html">Menu</a>
+      <a href="/location.html">Location</a>
+    </nav>
+
+    <!-- icons -->
+    <div class="icons">
+      <i class="fa-solid fa-bars" id="menu-bars"></i>
+      <i id="dark-btn" class="fa-solid fa-circle-half-stroke" onclick="darkMode()"></i>
+      <a href="#" class="fa-solid fa-cart-shopping"></a>
+    </div>
+
+    <!-- scroll indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+
+  </header>
+
+  <!-- main -->
+  <main>
+
+    <!-- section hero -->
+    <section class="hero" id="hero">
+      <div class="menu-content">
+        <div class="content">
+          <h3>Our Story</h3>
+          <p>Welcome to SE.Kopi. Find out about our story of building this brand, our story is a story of dedication and
+            commitment to provide you with unique and extraordinary experiences.</p>
+        </div>
+        <div class="image">
+          <img src="./public/assets/img/kopi/no-bg.webp" alt="SE.Kopi" />
+        </div>
+      </div>
+    </section>
+
+    <!-- section story -->
+    <section class="our-story" id="our-story">
+      <div class="content-story">
+        <h3>About <span> SE.Kopi? </span></h3>
+      </div>
+      <div class="story-description">
+        <p>
+          Established in 2023, SE.Kopi is a stage where the art of coffee
+          meets modern technology. Just as software brings unforgettable
+          experiences to end-users, we understand that each cup of coffee we
+          serve is an opportunity to create something special for our
+          customers. With an interior designed for comfort and a diverse menu,
+          SE.Kopi is not just a place to enjoy the finest specialty coffee but
+          also a unique journey into the world of taste and beauty. Welcome to
+          SE.Kopi, where coffee is an ever-evolving art.
+        </p>
+      </div>
+    </section>
+
+    <!-- section timeline -->
+    <section id="cd-timeline" class="cd-container">
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie"></div>
+
+        <div class="cd-timeline-content">
+          <div class="content-wrapper">
+            <h2>Make ideas</h2>
+            <div class="timeline-content-info">
+              <span class="timeline-content-info-date">
+                <i class="fa-regular fa-calendar"></i>
+                30 October 2023
+              </span>
+            </div>
+            <p>Create ideas using the design thinking method with a team using Figjam.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie"></div>
+
+        <div class="cd-timeline-content">
+          <div class="content-wrapper">
+            <h2>Implementation ideas to design</h2>
+            <div class="timeline-content-info">
+              <span class="timeline-content-info-date">
+                <i class="fa-regular fa-calendar"></i>
+                2 November 2023
+              </span>
+            </div>
+            <p>Design a user interface from the ideas gathered with the team using Figma.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cd-timeline-block">
+        <div class="cd-timeline-img cd-movie"></div>
+
+        <div class="cd-timeline-content">
+          <div class="content-wrapper">
+            <h2>Implementation design to code</h2>
+            <div class="timeline-content-info">
+              <span class="timeline-content-info-date">
+                <i class="fa-regular fa-calendar"></i>
+                5 November 2023
+              </span>
+            </div>
+            <p>Implementation of the design that has been made from Figma into code (Front End) using VSCode.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section member -->
+    <section class="member-container" id="member-card">
+      <div class="member-card">
+        <div class="testimonial">
+          <div class="testimonial-text">
+            <div class="user-text active-text">
+              <i class="fas fa-quote-left"></i>
+              <h4> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat nemo quidem exercitationem
+                natus. Doloribus sit hic molestias ratione nisi? Voluptatibus, id totam. Magnam quis, nulla quasi
+                similique quo nobis. </h4>
+              <span>Mohammad Hatami</span>
+              <p>Front End Engineer</p>
+            </div>
+            <div class="user-text">
+              <i class="fas fa-quote-left"></i>
+              <h4> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat nemo quidem exercitationem
+                natus. Doloribus sit hic molestias ratione nisi? Voluptatibus, id totam. Magnam quis, nulla quasi
+                similique quo nobis. </h4>
+              <span>Linda Oktavia A.</span>
+              <p>Front End Engineer</p>
+            </div>
+            <div class="user-text">
+              <i class="fas fa-quote-left"></i>
+              <h4> Jika dia bukan jodohku, maka izinkanlah aku bergelut bersama jodohnya. </h4>
+              <span>Husain Hamam A.</span>
+              <p>Back End Engineer</p>
+            </div>
+            <div class="user-text">
+              <i class="fas fa-quote-left"></i>
+              <h4> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat nemo quidem exercitationem
+                natus. Doloribus sit hic molestias ratione nisi? Voluptatibus, id totam. Magnam quis, nulla quasi
+                similique quo nobis. </h4>
+              <span>Amelia Zulfa F.</span>
+              <p>Back End Engineer</p>
+            </div>
+            <div class="user-text">
+              <i class="fas fa-quote-left"></i>
+              <h4> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat nemo quidem exercitationem
+                natus. Doloribus sit hic molestias ratione nisi? Voluptatibus, id totam. Magnam quis, nulla quasi
+                similique quo nobis. </h4>
+              <span>Siti Aisyah</span>
+              <p>QA Engineer</p>
+            </div>
+            <div class="user-text">
+              <i class="fas fa-quote-left"></i>
+              <h4> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat nemo quidem exercitationem
+                natus. Doloribus sit hic molestias ratione nisi? Voluptatibus, id totam. Magnam quis, nulla quasi
+                similique quo nobis. </h4>
+              <span>Nur Aini</span>
+              <p>QA Engineer</p>
+            </div>
+          </div>
+          <div class="scroll-container">
+            <div class="member-img">
+              <img src="./public/assets/img/member/htm.webp" class="user-pic active-pic" alt="SE.Kopi Member"
+                onclick="showReview()">
+              <img src="./public/assets/img/member/linda.webp" class="user-pic" alt="SE.Kopi Member"
+                onclick="showReview()">
+              <img src="./public/assets/img/member/husain.webp" class="user-pic" alt="SE.Kopi Member"
+                onclick="showReview()">
+              <img src="./public/assets/img/member/amel.webp" class="user-pic" alt="SE.Kopi Member"
+                onclick="showReview()">
+              <img src="./public/assets/img/member/aisyah.webp" class="user-pic" alt="SE.Kopi Member"
+                onclick="showReview()">
+              <img src="./public/assets/img/member/aini.webp" class="user-pic" alt="SE.Kopi Member"
+                onclick="showReview()">
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- section galery -->
+    <section class="sekopi-galery" id="sekopi-galery">
+      <div class="galery-content">
+        <div class="galery-data">
+          <h3> <span> SE.Kopi </span> Galery</h3>
+          <p>Find Out Photos About SE.Kopi</p>
+        </div>
+        <div class="image-galery">
+          <img src="./public/assets/img/kopi/coffee.webp" class="img-data" alt="SE.Kopi Gallery" />
+          <img src="./public/assets/img/kopi/coffee.webp" class="img-data" alt="SE.Kopi Gallery" />
+          <img src="./public/assets/img/kopi/coffee.webp" class="img-data" alt="SE.Kopi Gallery" />
+          <img src="./public/assets/img/kopi/coffee.webp" class="img-data" alt="SE.Kopi Gallery" />
+          <img src="./public/assets/img/kopi/coffee.webp" class="img-data" alt="SE.Kopi Gallery" />
+          <img src="./public/assets/img/kopi/coffee.webp" class="img-data" alt="SE.Kopi Gallery" />
+          <img src="./public/assets/img/kopi/coffee.webp" class="img-data" alt="SE.Kopi Gallery" />
+          <img src="./public/assets/img/kopi/coffee.webp" class="img-data" alt="SE.Kopi Gallery" />
+          <img src="./public/assets/img/kopi/coffee.webp" class="img-data" alt="SE.Kopi Gallery" />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer>
+    <div class="row primary">
+      <div class="column about">
+        <h3 class="footer-text">SE.Kopi</h3>
+        <p>
+          Drinking Coffee, Creating Moments.
+        </p>
+        <div class="social">
+          <a href="https://www.instagram.com/se.kopidev" rel="noopener" target="_blank"><i
+              class="fa-brands fa-instagram-square"></i></a>
+          <a href="https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-24" rel="noopener"
+            target="_blank"><i class="fa-brands fa-github-square"></i></a>
+        </div>
+      </div>
+      <div class="column links">
+        <h3 class="footer-text">Section</h3>
+        <ul>
+          <li>
+            <a href="#our-story">Our Story</a>
+          </li>
+          <li>
+            <a href="#cd-timeline">Timeline</a>
+          </li>
+          <li>
+            <a href="#member-card">Member</a>
+          </li>
+          <li>
+            <a href="#sekopi-galery">Gallery</a>
+          </li>
+        </ul>
+      </div>
+      <div class="column links">
+        <h3 class="footer-text">Navigation</h3>
+        <ul>
+          <li>
+            <a href="./index.html">Home</a>
+          </li>
+          <li>
+            <a href="./about.html">About</a>
+          </li>
+          <li>
+            <a href="./menu.html">Menu</a>
+          </li>
+          <li>
+            <a href="./location.html">Location</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Copyright &copy; 2023 - <a href="./about.html">SE.Kopi</a></p>
+    </div>
+  </footer>
+
+  <!-- custom js link -->
+  <script src="./js/about.js"></script>
 </body>
+
 </html>
