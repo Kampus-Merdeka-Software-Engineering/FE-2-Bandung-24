@@ -1,76 +1,16 @@
-// navbar
-const menu = document.querySelector('#menu-bars');
-const navbar = document.querySelector('.navbar');
+// menu
+import { fetchMenuData } from './data.js';
 
-menu.addEventListener('click', toggleNavbar);
+document.addEventListener('DOMContentLoaded', initializeApp);
 
-function toggleNavbar() {
-    menu.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
-}
-
-// navbar highlight
-function highlightNavItem() {
-    const currentUrl = window.location.href;
-    const navItems = document.querySelectorAll('.navbar a');
-
-    navItems.forEach(navItem => {
-        navItem.classList.remove('active');
-        if (navItem.href === currentUrl) {
-            navItem.classList.add('active');
-        }
-    });
-}
-
-window.addEventListener('load', highlightNavItem);
-window.addEventListener('hashchange', highlightNavItem);
-
-// scroll indicator
-document.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('header');
-    const scrollIndicator = document.getElementById('scrollIndicator');
-
-    function updateScrollIndicator() {
-        const { scrollY } = window;
-        const headerHeight = header.offsetHeight;
-        const contentHeight = document.body.clientHeight - window.innerHeight;
-
-        const scrollPercentage = (scrollY / contentHeight) * 100;
-        const indicatorWidth = (scrollPercentage * headerHeight) / 100;
-
-        scrollIndicator.style.width = `${indicatorWidth}rem`;
-    }
-
-    window.addEventListener('scroll', updateScrollIndicator);
-    window.addEventListener('resize', updateScrollIndicator);
-
-    updateScrollIndicator();
-});
-
-// dark mode
-function darkMode() {
-    const body = document.body;
-    const darkBtn = document.getElementById('dark-btn');
-
-    if (body.classList.contains('dark-mode')) {
-        body.classList.remove('dark-mode');
-        darkBtn.classList.remove('active');
-    } else {
-        body.classList.add('dark-mode');
-        darkBtn.classList.add('active');
-    }
-}
-
-// menu items
-document.addEventListener('DOMContentLoaded', () => {
+function initializeApp() {
     const categoryMenu = document.getElementById('category-menu');
     const menuItemsContainer = document.getElementById('menu-item');
     const cartIcon = document.getElementById('cart-icon');
     const modal = document.getElementById('cart-modal');
     const modalItems = document.getElementById('cart-items');
     const cartCount = document.getElementById('cart-count');
-    const apiUrl = 'https://api.jsonbin.io/v3/b/6561f0c954105e766fd511cf/latest';
-    const apiKey = '$2a$10$IPPZLE/nU/Bo8LLs7limteP08mfk5X4ye2SDFIx3yeYBoTYsfkDka';
+
     let shoppingCart = getCartFromLocalStorage() || [];
 
     function updateCartDisplay() {
@@ -95,10 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return total;
             }
         }, 0);
-    }
-
-    function handleInvalidItem(item) {
-        console.error('Invalid price or quantity:', item);
     }
 
     function parsePrice(priceString) {
@@ -175,15 +111,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function addModalCloseListeners() {
-        window.addEventListener('click', event => {
-            if (event.target === modal) {
-                closeCartModal();
-            }
-        });
+        window.addEventListener('click', closeModalOnOutsideClick);
 
         const closeButton = document.getElementById('close-button');
         if (closeButton) {
             closeButton.addEventListener('click', closeCartModal);
+        }
+    }
+
+    function closeModalOnOutsideClick(event) {
+        if (event.target === modal) {
+            closeCartModal();
         }
     }
 
@@ -208,17 +146,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function filterMenu(category) {
+    async function filterMenu(category) {
         menuItemsContainer.innerHTML = '';
-        fetchMenuData(apiUrl, apiKey)
-            .then(data => {
-                const categoryItems = data.record[category] || [];
-                categoryItems.forEach(item => {
-                    const cardElement = createMenuCard(item);
-                    menuItemsContainer.appendChild(cardElement);
-                });
-            })
-            .catch(error => console.error('Error fetching menu data:', error));
+        try {
+            const data = await fetchMenuData.fetchData();
+            const categoryItems = data[category] || [];
+            categoryItems.forEach(item => {
+                const cardElement = createMenuCard(item);
+                menuItemsContainer.appendChild(cardElement);
+            });
+        } catch (error) {
+            console.error('Error fetching menu data:', error);
+        }
     }
 
     function createMenuCard(item) {
@@ -261,17 +200,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const orderButton = createHTMLElement('button', 'Order Now', '', ['order-button']);
         orderButton.addEventListener('click', () => orderNow(item));
         return orderButton;
-    }
-
-    function fetchMenuData(url, key) {
-        return fetch(url, {
-            headers: { 'X-Master-Key': key }
-        })
-            .then(response => response.json())
-            .catch(error => {
-                console.error('Error fetching menu data:', error);
-                throw error;
-            });
     }
 
     function orderNow(item) {
@@ -362,4 +290,4 @@ document.addEventListener('DOMContentLoaded', () => {
     filterMenu('coffee');
 
     updateCartDisplay();
-});
+}
