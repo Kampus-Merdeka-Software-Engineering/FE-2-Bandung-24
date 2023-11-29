@@ -389,6 +389,7 @@ header .icons #menu-bars {
   font-weight: 900;
   font-size: 2rem;
   margin: auto;
+  padding: 2px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -399,7 +400,8 @@ header .icons #menu-bars {
   text-align: center;
   color: var(--black);
   font-size: 1.8rem;
-  margin: auto;
+  margin: 3px 0;
+  padding: 0 auto;
 }
 
 .order-button {
@@ -421,19 +423,32 @@ header .icons #menu-bars {
   color: var(--white);
   transition: 0s linear;
 }
+@media (max-width: 768px) {
+  .menu-item .menu-card {
+    display: flex;
+    height: 100%;
+    gap: 1rem;
+  }
+
+  .order-button {
+    border-radius: 5px;
+    width: 80%;
+  }
+}
 
 /* modal cart */
 .cart-modal {
   position: fixed;
   top: 0;
   right: 0;
-  width: 250px;
+  width: 230px;
   height: 100%;
   background-color: var(--white);
   box-shadow: -3px 0 10px rgba(0, 0, 0, 0.2);
   display: none;
   background-size: cover;
   padding-top: 7rem;
+  /* grid-template-rows: 70px 1fr 70px; */
 }
 
 .modal-content {
@@ -445,7 +460,7 @@ header .icons #menu-bars {
   flex-direction: column;
   border-bottom: 1px solid var(--green);
   overflow-y: auto;
-  max-height: 500px;
+  max-height: 450px;
 }
 
 .cart-items::-webkit-scrollbar {
@@ -468,8 +483,8 @@ header .icons #menu-bars {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 120px;
-  height: 80px;
+  width: 110px;
+  height: 95px;
   border-radius: 5px;
   margin: 0 auto;
 }
@@ -554,7 +569,7 @@ header .icons #menu-bars {
   font-weight: 600;
   width: 80px;
   border-radius: 10px;
-  background-color: #e74c3c;
+  background-color: #c8c5c5;
   color: var(--white);
 }
 
@@ -569,7 +584,7 @@ header .icons #menu-bars {
 }
 
 #close-button:hover {
-  background-color: #730303;
+  background-color: #7e7b7b;
 }
 
 #pay-button:hover {
@@ -580,6 +595,27 @@ button:hover {
   background-color: darken(var(--green-dark), 30%);
 }
 
+/* mobile */
+@media (max-width: 768px) {
+  .cart-modal {
+    width: 50%;
+  }
+
+  .cart-items {
+    max-height: 470px;
+  }
+}
+
+/* tablet */
+/* @media (max-width: 991px) {
+  .cart-modal {
+    width: 30%;
+  }
+
+  .cart-items {
+    max-height: 450px;
+  }
+} */
 /* footer */
 footer {
   background-color: var(--green-dark);

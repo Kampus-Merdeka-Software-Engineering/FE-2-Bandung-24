@@ -128,3 +128,20 @@ window.addEventListener("load", initSlider);
 
 
 
+// location preview
+// let previewCard = document.querySelector('.modal-container');
+// let previewBoxs = document.querySelectorAll('.fa-arrow-right');
+
+// document.querySelectorAll('.location-container .location-card').forEach(location => {
+//     location.onclick = () => {
+//         previewContainer.style.display = 'flex';
+//         let card = location.getAttribute('data-name');
+//         previewBox.forEach(preview => {
+//             let target = preview.getAttribute('data-target');
+//             if (card == target) {
+//                 location.classList.add('active')
+//             }
+
+//         })
+//     }
+// })
