@@ -53,9 +53,33 @@ document.addEventListener('DOMContentLoaded', function () {
 const body = document.body;
 const darkBtn = document.getElementById('dark-btn');
 
-darkBtn.addEventListener('click', toggleDarkMode);
+function initDarkMode() {
+    const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+
+    if (isDarkMode) {
+        enableDarkMode();
+    }
+}
+
+function enableDarkMode() {
+    body.classList.add('dark-mode');
+    darkBtn.classList.add('active');
+    localStorage.setItem('darkMode', 'enabled');
+}
+
+function disableDarkMode() {
+    body.classList.remove('dark-mode');
+    darkBtn.classList.remove('active');
+    localStorage.setItem('darkMode', null);
+}
 
 function toggleDarkMode() {
-    body.classList.toggle('dark-mode');
-    darkBtn.classList.toggle('active');
+    if (body.classList.contains('dark-mode')) {
+        disableDarkMode();
+    } else {
+        enableDarkMode();
+    }
 }
+
+document.addEventListener('DOMContentLoaded', initDarkMode);
+darkBtn.addEventListener('click', toggleDarkMode);
