@@ -1,47 +1,13 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "/index.html",
-      "use": "@now/static-build",
-      "config": { "distDir": "public" }
-    },
-    {
-      "src": "/css/**/*",
-      "use": "@now/static-build",
-      "config": { "distDir": "public/css" }
-    },
-    {
-      "src": "/js/**/*",
-      "use": "@now/static-build",
-      "config": { "distDir": "public/js" }
-    },
-    {
-      "src": "/public/**/*",
-      "use": "@now/static-build",
-      "config": { "distDir": "public" }
-    }
+    { "src": "/public/**/*", "use": "@now/static" },
+    { "src": "/css/**/*", "use": "@now/static" },
+    { "src": "/js/**/*", "use": "@now/static" }
   ],
   "routes": [
-    {
-      "src": "/css/(.*)",
-      "dest": "/public/css/$1"
-    },
-    {
-      "src": "/js/(.*)",
-      "dest": "/public/js/$1"
-    },
-    {
-      "src": "/public/img/(.*)",
-      "dest": "/public/img/$1"
-    },
-    {
-      "src": "/public/(.*)",
-      "dest": "/public/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/public/$1"
-    }
+    { "src": "/css/(.*)", "dest": "/public/css/$1" },
+    { "src": "/js/(.*)", "dest": "/public/js/$1" },
+    { "src": "/(.*)", "dest": "/public/$1" }
   ]
 }
