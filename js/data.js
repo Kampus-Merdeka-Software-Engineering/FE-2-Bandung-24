@@ -1,6 +1,6 @@
 // API url
 export const fetchMenuData = {
-    apiUrl: 'https://www.sekopi.biz.id/api/v1/menu',
+    apiUrl: 'https://api.sekopi.biz.id/v1/menu',
 
     async fetchData() {
         try {
