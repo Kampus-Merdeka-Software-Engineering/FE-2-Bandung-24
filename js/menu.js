@@ -38,6 +38,15 @@ function initializeApp() {
     }
 
     function parsePrice(priceString) {
+        if (typeof priceString === 'number' && !isNaN(priceString)) {
+            return priceString;
+        }
+
+        if (typeof priceString !== 'string') {
+            console.error('Invalid price string:', priceString);
+            return NaN;
+        }
+
         const cleanedPrice = priceString.replace(/[^\d.,]/g, '');
         const dotFormattedPrice = cleanedPrice.replace(/,/g, '.');
         return parseFloat(dotFormattedPrice);
@@ -95,11 +104,11 @@ function initializeApp() {
         const formatter = new Intl.NumberFormat('id-ID', {
             style: 'currency',
             currency: currencyCode,
-            minimumFractionDigits: 3,
+            minimumFractionDigits: 0,
         });
 
         try {
-            return formatter.format(value);
+            return formatter.format(value).replace(/,/g, '');
         } catch (error) {
             console.error('Error formatting currency:', error);
             return value;
@@ -148,26 +157,28 @@ function initializeApp() {
 
     async function filterMenu(category) {
         menuItemsContainer.innerHTML = '';
+
         try {
-            const data = await fetchMenuData.fetchData();
-            const categoryItems = data[category] || [];
+            const menuList = await fetchMenuData.fetchData();
+            const categoryItems = menuList.filter(item => item.category === category) || [];
+
             categoryItems.forEach(item => {
                 const cardElement = createMenuCard(item);
                 menuItemsContainer.appendChild(cardElement);
             });
         } catch (error) {
-            console.error('Error fetching menu data:', error);
+            console.error('Error fetching or processing menu data:', error);
         }
     }
 
     function createMenuCard(item) {
         const cardElement = createHTMLElement('div', '', '', ['menu-card']);
         cardElement.dataset.id = item.id;
-        cardElement.dataset.name = item.name;
+        cardElement.dataset.title = item.title;
         cardElement.dataset.price = item.price;
 
-        const imgElement = createImageElement(item.img, item.name);
-        const h2Element = createHeadingElement(item.name);
+        const imgElement = createImageElement(item.img, item.title);
+        const h2Element = createHeadingElement(item.title);
         const priceElement = createPriceElement(item.price);
         const orderButton = createOrderButton(item);
 
@@ -192,7 +203,8 @@ function initializeApp() {
     }
 
     function createPriceElement(price) {
-        const priceElement = createHTMLElement('div', price, 'menu-price');
+        const formattedPrice = formatCurrency(price, 'IDR');
+        const priceElement = createHTMLElement('div', `${formattedPrice}`, 'menu-price');
         return priceElement;
     }
 
@@ -208,7 +220,7 @@ function initializeApp() {
         if (index !== -1) {
             shoppingCart[index].quantity++;
         } else {
-            shoppingCart.push({ id: item.id, img: item.img, name: item.name, price: item.price, quantity: 1 });
+            shoppingCart.push({ id: item.id, img: item.img, title: item.title, price: item.price, quantity: 1 });
         }
 
         updateCartDisplay();
@@ -220,8 +232,8 @@ function initializeApp() {
 
     function createCartItem(item) {
         const listItem = createHTMLElement('li', '', 'cart-item');
-        const itemImage = createImageElement(item.img, item.name);
-        const itemName = createHeadingElement(item.name);
+        const itemImage = createImageElement(item.img, item.title);
+        const itemTitle = createHeadingElement(item.title);
         const itemPrice = createPriceElement(item.price);
         const btnCountContainer = createHTMLElement('div', '', 'btn-count-container');
         const quantitySpan = createHTMLElement('span', item.quantity, 'total-item-count');
@@ -234,7 +246,7 @@ function initializeApp() {
         btnCountContainer.appendChild(incrementButton);
 
         listItem.appendChild(itemImage);
-        listItem.appendChild(itemName);
+        listItem.appendChild(itemTitle);
         listItem.appendChild(itemPrice);
         listItem.appendChild(btnCountContainer);
 
@@ -288,6 +300,5 @@ function initializeApp() {
     cartIcon.addEventListener('click', openCartModal);
 
     filterMenu('coffee');
-
     updateCartDisplay();
 }
