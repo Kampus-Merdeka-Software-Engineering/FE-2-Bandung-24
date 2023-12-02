@@ -515,6 +515,10 @@
   .slider-scrollbar .scrollbar-thumb {
     width: 20%;
   }
+
+  .story .our-story .content-story {
+    text-align: center;
+  }
 }
 
 /* promo section */

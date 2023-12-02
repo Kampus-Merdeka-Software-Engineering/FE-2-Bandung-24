@@ -1,16 +1,15 @@
 // API url
 export const fetchMenuData = {
-    apiUrl: 'https://api.jsonbin.io/v3/b/6561f0c954105e766fd511cf/latest',
-    apiKey: '$2a$10$IPPZLE/nU/Bo8LLs7limteP08mfk5X4ye2SDFIx3yeYBoTYsfkDka',
+    apiUrl: 'https://www.sekopi.biz.id/api/v1/menu',
 
     async fetchData() {
         try {
-            const response = await fetch(this.apiUrl, { headers: { 'X-Master-Key': this.apiKey } });
+            const response = await fetch(this.apiUrl);
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
-            const { record } = await response.json();
-            return record;
+            const { data } = await response.json();
+            return data;
         } catch (error) {
             console.error('Error fetching menu data:', error);
             throw error;
