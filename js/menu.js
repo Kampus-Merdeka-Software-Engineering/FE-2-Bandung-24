@@ -1,5 +1,5 @@
 // menu
-import { fetchMenuData } from './menuData.js';
+import { fetchMenuData } from './api/menuData.js';
 
 document.addEventListener('DOMContentLoaded', initializeApp);
 
