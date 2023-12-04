@@ -30,7 +30,6 @@ const initFavoriteMenuSlider = () => {
             const newThumbPosition = thumbPosition + deltaX;
             const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
             const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
-
             scrollbarThumb.style.left = `${boundedPosition}px`;
             imageList.scrollLeft = scrollPosition;
         };

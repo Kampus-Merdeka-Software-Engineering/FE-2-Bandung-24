@@ -1,5 +1,5 @@
 // menu
-import { fetchMenuData } from './data.js';
+import { fetchMenuData } from './api/menuData.js';
 
 document.addEventListener('DOMContentLoaded', initializeApp);
 
@@ -13,16 +13,19 @@ function initializeApp() {
 
     let shoppingCart = getCartFromLocalStorage() || [];
 
+    // fungsi untuk mengupdate cart display
     function updateCartDisplay() {
         updateCartCount();
         saveCartToLocalStorage();
     }
 
+    // fungsi untuk mengupdate cart count
     function updateCartCount() {
         cartCount.textContent = calculateTotalQuantity(shoppingCart);
         cartCount.style.display = shoppingCart.length > 0 ? 'inline' : 'none';
     }
 
+    // fungsi untuk kalkulasi total harga
     function calculateTotalPrice(cartItems) {
         return cartItems.reduce((total, item) => {
             const itemPrice = parsePrice(item.price);
@@ -37,6 +40,7 @@ function initializeApp() {
         }, 0);
     }
 
+    // fungsi untuk mengurai harga
     function parsePrice(priceString) {
         if (typeof priceString === 'number' && !isNaN(priceString)) {
             return priceString;
@@ -52,19 +56,23 @@ function initializeApp() {
         return parseFloat(dotFormattedPrice);
     }
 
+    // fungsi untuk kalkulasi total quantity
     function calculateTotalQuantity(cartItems) {
         return cartItems.reduce((total, item) => total + item.quantity, 0);
     }
 
+    // fungsi untuk menyimpan cart ke local storage
     function saveCartToLocalStorage() {
         localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
     }
 
+    // fungsi untuk mendapatkan cart dari local storage
     function getCartFromLocalStorage() {
         const cartData = localStorage.getItem('shoppingCart');
         return cartData ? JSON.parse(cartData) : null;
     }
 
+    // fungsi untuk membuka modal cart
     function openCartModal() {
         modalItems.innerHTML = '';
         shoppingCart.forEach(item => modalItems.appendChild(createCartItem(item)));
@@ -74,11 +82,13 @@ function initializeApp() {
         addModalCloseListeners();
     }
 
+    // fungsi untuk menampilkan total items
     function displayTotalItems() {
         const totalItemsElement = createHTMLElement('div', `Items: ${calculateTotalQuantity(shoppingCart)}`, 'total-items');
         modalItems.appendChild(totalItemsElement);
     }
 
+    // fungsi untuk menampilkan total price
     function displayTotalPrice() {
         const totalPrice = calculateTotalPrice(shoppingCart);
 
@@ -90,6 +100,7 @@ function initializeApp() {
         }
     }
 
+    // fungsi untuk mengupdate total price element
     function updateTotalPriceElement(formattedPrice) {
         const existingTotalPriceElement = document.getElementById('total-price');
         if (existingTotalPriceElement) {
@@ -100,6 +111,7 @@ function initializeApp() {
         modalItems.appendChild(totalPriceElement);
     }
 
+    // fungsi untuk format mata uang
     function formatCurrency(value, currencyCode) {
         const formatter = new Intl.NumberFormat('id-ID', {
             style: 'currency',
@@ -115,10 +127,12 @@ function initializeApp() {
         }
     }
 
+    // fungsi untuk menampilkan modal
     function showModal() {
         modal.style.display = 'block';
     }
 
+    // fungsi untuk menambahkan modal close listeners
     function addModalCloseListeners() {
         window.addEventListener('click', closeModalOnOutsideClick);
 
@@ -128,16 +142,19 @@ function initializeApp() {
         }
     }
 
+    // fungsi untuk menutup modal ketika klik di luar modal
     function closeModalOnOutsideClick(event) {
         if (event.target === modal) {
             closeCartModal();
         }
     }
 
+    // fungsi untuk menutup modal
     function closeCartModal() {
         modal.style.display = 'none';
     }
 
+    // fungsi untuk handle klik category
     function handleCategoryClick(event) {
         const clickedElement = event.target.closest('.category-link');
         if (clickedElement) {
@@ -147,6 +164,7 @@ function initializeApp() {
         }
     }
 
+    // fungsi untuk update category links
     function updateCategoryLinks(selectedCategory) {
         document.querySelectorAll('.category-link').forEach(link => link.classList.remove('active'));
         const selectedLink = document.querySelector(`[data-category="${selectedCategory}"]`);
@@ -155,6 +173,7 @@ function initializeApp() {
         }
     }
 
+    // fungsi untuk filter menu berdasarkan category
     async function filterMenu(category) {
         menuItemsContainer.innerHTML = '';
 
@@ -171,6 +190,7 @@ function initializeApp() {
         }
     }
 
+    // fungsi untuk membuat menu card
     function createMenuCard(item) {
         const cardElement = createHTMLElement('div', '', '', ['menu-card']);
         cardElement.dataset.id = item.id;
@@ -190,6 +210,7 @@ function initializeApp() {
         return cardElement;
     }
 
+    // fungsi untuk membuat image element
     function createImageElement(src, alt) {
         const imgElement = createHTMLElement('img');
         imgElement.src = src;
@@ -197,23 +218,27 @@ function initializeApp() {
         return imgElement;
     }
 
+    // fungsi untuk membuat heading element
     function createHeadingElement(text) {
         const h2Element = createHTMLElement('h2', text);
         return h2Element;
     }
 
+    // fungsi untuk membuat price element
     function createPriceElement(price) {
         const formattedPrice = formatCurrency(price, 'IDR');
         const priceElement = createHTMLElement('div', `${formattedPrice}`, 'menu-price');
         return priceElement;
     }
 
+    // fungsi untuk membuat order button
     function createOrderButton(item) {
         const orderButton = createHTMLElement('button', 'Order Now', '', ['order-button']);
         orderButton.addEventListener('click', () => orderNow(item));
         return orderButton;
     }
 
+    // fungsi ketika klik button order now
     function orderNow(item) {
         const index = shoppingCart.findIndex(cartItem => cartItem.id === item.id);
 
@@ -230,6 +255,7 @@ function initializeApp() {
         }
     }
 
+    // fungsi untuk membuat cart item
     function createCartItem(item) {
         const listItem = createHTMLElement('li', '', 'cart-item');
         const itemImage = createImageElement(item.img, item.title);
@@ -253,6 +279,7 @@ function initializeApp() {
         return listItem;
     }
 
+    // fungsi untuk membuat button
     function createButton(text, clickHandler, id) {
         const button = createHTMLElement('button', text);
         button.addEventListener('click', clickHandler);
@@ -260,6 +287,7 @@ function initializeApp() {
         return button;
     }
 
+    // fungsi untuk mengurangi item di cart
     function decrementCartItem(item) {
         const index = shoppingCart.findIndex(cartItem => cartItem.id === item.id);
         if (index !== -1 && shoppingCart[index].quantity > 1) {
@@ -277,6 +305,7 @@ function initializeApp() {
         }
     }
 
+    // fungsi untuk menambah item di cart
     function incrementCartItem(item) {
         const index = shoppingCart.findIndex(cartItem => cartItem.id === item.id);
         if (index !== -1) {
@@ -288,6 +317,7 @@ function initializeApp() {
         }
     }
 
+    // fungsi untuk membuat element HTML
     function createHTMLElement(tag, text = '', id = '', classes = []) {
         const element = document.createElement(tag);
         element.textContent = text;

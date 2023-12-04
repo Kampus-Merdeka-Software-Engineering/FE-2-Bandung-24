@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const scrollPosition = window.scrollY;
         const headerHeight = header.offsetHeight;
         const contentHeight = document.body.clientHeight - window.innerHeight;
-
         const scrollPercentage = (scrollPosition / contentHeight) * 100;
         const indicatorWidth = (scrollPercentage * headerHeight) / 100;
 
