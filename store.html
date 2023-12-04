@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- meta SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Drinking Coffee, Creating Moments.">
+    <meta name="keywords" content="Coffee, Juice, Cake, Croissant">
+    <meta name='robots' content='index,follow'>
+    <meta property="og:title" content="SE.Kopi">
+    <meta property="og:image" content="https://i.ibb.co/1sTJ5QQ/sekopi.png">
+    <meta property="og:description" content="Drinking Coffee, Creating Moments.">
+    <meta name='og:url' content='sekopi.biz.id'>
+    <meta name='og:type' content='food & beverages'>
+    <meta name='og:site_name' content='SE.Kopi'>
+
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- custom css link -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/store.css">
+
+    <!-- warna tab mobile  -->
+    <!-- Chrome, Firefox OS, Opera -->
+    <meta name=”theme-color” content=”#435334>
+    <!-- Windows Phone -->
+    <meta name=”msapplication-navbutton-color” content=”#435334>
+    <!-- iOS Safari -->
+    <meta name=”apple-mobile-web-app-status-bar-style” content=”#435334>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/logo/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/logo/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/logo/favicon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#435334">
+
+    <title>SE.Kopi - Store</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+
+        <!-- logo -->
+        <a href="/index.html" class="logo"><i class="fa-solid fa-mug-hot"></i>SE.Kopi</a>
+
+        <!-- navigation -->
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/about.html">About</a>
+            <a href="/menu.html">Menu</a>
+            <a href="/store.html">Store</a>
+        </nav>
+
+        <!-- icons -->
+        <div class="icons">
+            <i class="fa-solid fa-bars" id="menu-bars"></i>
+            <i id="dark-btn" class="fa-solid fa-circle-half-stroke" onclick="darkMode()"></i>
+        </div>
+
+        <!-- scroll indicator -->
+        <div class="scroll-indicator" id="scrollIndicator"></div>
+
+    </header>
+
+    <!-- main -->
+    <main>
+
+        <!-- section hero -->
+        <section class="hero" id="hero">
+            <div class="store-content">
+                <div class="content">
+                    <h3>Our Store</h3>
+                    <p>Experience culinary delights at SE.Kopi! Invite loved ones for an unforgettable dining
+                        experience. Visit our nearest outlet now to relish delicious dishes in a delightful atmosphere!
+                    </p>
+                </div>
+                <div class="image">
+                    <img src="https://i.ibb.co/2hVML6z/store.png" alt="SE.Kopi" />
+                </div>
+            </div>
+        </section>
+
+        <!-- store section -->
+        <section class="store-section" id="store-section">
+            <div class="our-store" id="our-store">
+                <h4>Our store</h4>
+                <div class="line"></div>
+            </div>
+            <div class="content-loc"></div>
+            <div class="store-container">
+                <div class="store-card" data-name="l-1">
+                    <img src="https://i.ibb.co/qn5zvd2/store-1.webp" alt="Store Image" />
+                    <div class="card-content">
+                        <h5>SE.Kopi Jakarta</h5>
+                        <p>Jl. H. Sidik No.7, RT.4/RW.6, Kuningan, Daerah Khusus Ibukota Jakarta</p>
+                        <i class="fa-solid fa-location-arrow"></i>
+                    </div>
+                </div>
+                <div class="store-card" data-name="l-2">
+                    <img src="https://i.ibb.co/kxdZzsc/store-2.webp" alt="Store Image" />
+                    <div class="card-content">
+                        <h5>SE.Kopi Bogor</h5>
+                        <p>Jl. Loader No.9, RT.04/RW.11, Baranangsiang, Kota Bogor</p>
+                        <i class="fa-solid fa-location-arrow"></i>
+                    </div>
+                </div>
+                <div class="store-card" data-name="l-3">
+                    <img src="https://i.ibb.co/gRmH58X/store-3.webp" alt="Store Image" />
+                    <div class="card-content">
+                        <h5>SE.Kopi Depok</h5>
+                        <p>Jl. Margonda No.38, Depok, Kota Depok</p>
+                        <i class="fa-solid fa-location-arrow"></i>
+                    </div>
+                </div>
+                <div class="store-card" data-name="l-4">
+                    <img src="https://i.ibb.co/sHTXs58/store-4.webp" alt="Store Image" />
+                    <div class="card-content">
+                        <h5>SE.Kopi Tangerang</h5>
+                        <p>Jl. Kemuning 5, Pamulang Bar., Kec. Pamulang, Kota Tangerang Selatan</p>
+                        <i class="fa-solid fa-location-arrow"></i>
+                    </div>
+                </div>
+                <div class="store-card" data-name="l-5">
+                    <img src="https://i.ibb.co/tQtqVVY/store-5.webp" alt="Store Image" />
+                    <div class="card-content">
+                        <h5>SE.Kopi Bekasi</h5>
+                        <p>Jl. Boulevard Raya, RT.008/RW.014, Pekayon Jaya, Kota Bekasi</p>
+                        <i class="fa-solid fa-location-arrow"></i>
+                    </div>
+                </div>
+                <div class="store-card" data-name="l-6">
+                    <img src="https://i.ibb.co/ZBdK6nq/store-6.webp" alt="Store Image" />
+                    <div class="card-content">
+                        <h5>SE.Kopi Surabaya</h5>
+                        <p>Jalan Raya Rungkut Mejoyo Blok AJ No.8, Kali Rungkut, Kec. Rungkut, Surabaya</p>
+                        <i class="fa-solid fa-location-arrow"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- modal store -->
+        <div class="modal-container" data-target="l-1">
+            <div class="modal-preview">
+                <div class="preview-content">
+                    <img src="https://i.ibb.co/qn5zvd2/store-1.webp" alt="Store Image" />
+                    <div class="loc-content">
+                        <h2>SE.Kopi Jakarta</h2>
+                        <p>Jl. H. Sidik No.7, RT.4/RW.6, Kuningan, Daerah Khusus Ibukota Jakarta</p>
+                        <div class="maps">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7932.656704302764!2d106.8139316935791!3d-6.220360999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3fed15383eb%3A0x137057061c668f0f!2sFillmore%20Coffee!5e0!3m2!1sid!2sid!4v1701686804920!5m2!1sid!2sid"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-container" data-target="l-2">
+            <div class="modal-preview">
+                <div class="preview-content">
+                    <img src="https://i.ibb.co/kxdZzsc/store-2.webp" alt="Store Image" />
+                    <div class="loc-content">
+                        <h2>SE.Kopi Bogor</h2>
+                        <p>Jl. Loader No.9, RT.04/RW.11, Baranangsiang, Kota Bogor</p>
+                        <div class="maps">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d63416.2720743281!2d106.73485424197516!3d-6.582466726303399!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c5ddc12bd873%3A0x6a6781329e0cafd9!2sPOPOLO%20Coffee!5e0!3m2!1sid!2sid!4v1701686888635!5m2!1sid!2sid"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-container" data-target="l-3">
+            <div class="modal-preview">
+                <div class="preview-content">
+                    <img src="https://i.ibb.co/gRmH58X/store-3.webp" alt="Store Image" />
+                    <div class="loc-content">
+                        <h2>SE.Kopi Depok</h2>
+                        <p>Jl. Margonda No.38, Depok, Kota Depok</p>
+                        <div class="maps">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d253665.10128713184!2d106.610809!3d-6.5824413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69eb9b9ebc6ce9%3A0x3f35d853d6f1c144!2sWarung%20Nako%20Kopi%20Nako%20Depok!5e0!3m2!1sid!2sid!4v1701686976175!5m2!1sid!2sid"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-container" data-target="l-4">
+            <div class="modal-preview">
+                <div class="preview-content">
+                    <img src="https://i.ibb.co/sHTXs58/store-4.webp" alt="Store Image" />
+                    <div class="loc-content">
+                        <h2>SE.Kopi Tangerang</h2>
+                        <p>Jl. Kemuning 5, Pamulang Bar., Kec. Pamulang, Kota Tangerang Selatan</p>
+                        <div class="maps">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31723.101274431625!2d106.70339739083536!3d-6.343815391634251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ef6f50e5191b%3A0xd6d6a7fae250e189!2sJingga%20Coffee!5e0!3m2!1sid!2sid!4v1701687094232!5m2!1sid!2sid"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-container" data-target="l-5">
+            <div class="modal-preview">
+                <div class="preview-content">
+                    <img src="https://i.ibb.co/tQtqVVY/store-5.webp" alt="Store Image" />
+                    <div class="loc-content">
+                        <h2>SE.Kopi Bekasi</h2>
+                        <p>Jl. Boulevard Raya, RT.008/RW.014, Pekayon Jaya, Kota Bekasi</p>
+                        <div class="maps">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.021893683512!2d106.96984220979876!3d-6.260846193701571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698d2887567f35%3A0x53f206ad4ae53412!2sKOZI%20Coffee%20Bekasi%20x%20Rama%20Ramen!5e0!3m2!1sid!2sid!4v1701687147416!5m2!1sid!2sid"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-container" data-target="l-6">
+            <div class="modal-preview">
+                <div class="preview-content">
+                    <img src="https://i.ibb.co/ZBdK6nq/store-6.webp" alt="Store Image" />
+                    <div class="loc-content">
+                        <h2>SE.Kopi Surabaya</h2>
+                        <p>Jalan Raya Rungkut Mejoyo Blok AJ No.8, Kali Rungkut, Kec. Rungkut, Surabaya</p>
+                        <div class="maps">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15829.183012924332!2d112.75586024865788!3d-7.320637967885437!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fbfd14d041f1%3A0xc073c09a98cc51b1!2sKopi%20Janji%20Jiwa%20Ubaya!5e0!3m2!1sid!2sid!4v1701687215670!5m2!1sid!2sid"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- mail floating -->
+        <div class="mail-floating">
+            <a href="mailto:se.kopidev@gmail.com?subject=Chat&body=Halo SE.Kopi!" target="_blank"
+                rel="noopener noreferrer" class="right-button">
+                <i class="fa-solid fa-envelope"></i>
+                <span class="mail-label">
+                    Contact Me
+                    <img src="./assets/img/more/hand-emoji.png" class="emoji" alt="">
+                </span>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- footer -->
+    <footer>
+        <div class="row primary">
+            <div class="column about">
+                <h3 class="footer-text">SE.Kopi</h3>
+                <p>
+                    Drinking Coffee, Creating Moments.
+                </p>
+                <div class="social">
+                    <a href="https://www.instagram.com/se.kopidev" rel="noopener" target="_blank"><i
+                            class="fa-brands fa-instagram-square"></i></a>
+                    <a href="https://github.com/Kampus-Merdeka-Software-Engineering/FE-2-Bandung-24" rel="noopener"
+                        target="_blank"><i class="fa-brands fa-github-square"></i></a>
+                </div>
+            </div>
+            <div class="column links">
+                <h3 class="footer-text">Section</h3>
+                <ul>
+                    <li>
+                        <a href="#our-store">Our Store</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="column links">
+                <h3 class="footer-text">Navigation</h3>
+                <ul>
+                    <li>
+                        <a href="./index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="./about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="./menu.html">Menu</a>
+                    </li>
+                    <li>
+                        <a href="./store.html">Store</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright &copy; 2023 - <a href="./about.html">SE.Kopi</a></p>
+        </div>
+    </footer>
+
+    <!-- custom js link -->
+    <script defer src="./js/script.js"></script>
+    <script defer src="./js/store.js"></script>
+</body>
+
+</html>

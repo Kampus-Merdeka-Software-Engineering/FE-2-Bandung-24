@@ -47,6 +47,10 @@
   background: var(--green);
 }
 
+.dark-mode .sponsor .sponsor-container .sponsor-txt h4 {
+  color: var(--white-dark);
+}
+
 .fa-solid.active {
   transform: rotate(180deg);
   color: var(--green);
@@ -278,9 +282,10 @@
 }
 
 .slider-wrapper .image-list .image-item {
-  width: 325px;
+  width: 400px;
   height: 400px;
   object-fit: cover;
+  border-radius: 15px;
 }
 
 .fav-menu-card .slider-scrollbar {
@@ -508,8 +513,8 @@
   }
 
   .slider-wrapper .image-list .image-item {
-    width: 280px;
-    height: 380px;
+    width: 200px;
+    height: 200px;
   }
 
   .slider-scrollbar .scrollbar-thumb {

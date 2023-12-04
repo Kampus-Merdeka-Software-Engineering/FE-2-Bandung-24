@@ -10,6 +10,7 @@ function initializeApp() {
     const modal = document.getElementById('cart-modal');
     const modalItems = document.getElementById('cart-items');
     const cartCount = document.getElementById('cart-count');
+    const payButton = document.getElementById('pay-button');
 
     let shoppingCart = getCartFromLocalStorage() || [];
 
@@ -152,6 +153,12 @@ function initializeApp() {
     // fungsi untuk menutup modal
     function closeCartModal() {
         modal.style.display = 'none';
+    }
+    
+    // fungsi untuk handle button pay
+    function handlePayButtonClick() {
+        saveCartToLocalStorage();
+        window.location.href = 'transaction.html';
     }
 
     // fungsi untuk handle klik category
@@ -328,6 +335,7 @@ function initializeApp() {
 
     categoryMenu.addEventListener('click', handleCategoryClick);
     cartIcon.addEventListener('click', openCartModal);
+    payButton.addEventListener('click', handlePayButtonClick);
 
     filterMenu('coffee');
     updateCartDisplay();
