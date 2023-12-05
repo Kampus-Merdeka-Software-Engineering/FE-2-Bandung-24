@@ -62,17 +62,6 @@ Our F&B Website is built using a variety of technologies and tools to provide a 
 ![Logo](https://i.ibb.co/PTvM1T9/2.png)
 - **JavaScript:** Adding interactivity and dynamic behavior to the frontend.
 ![Logo](https://i.ibb.co/pQjh4Vm/3.png)
-- **Figma:** Designing and prototyping user interfaces.
-![Logo](https://i.ibb.co/s2CdRmS/4.png)
-
-## Backend
-
-- **Node.js:** The JavaScript runtime for server-side development.
-![Logo](https://i.ibb.co/t386rGY/5.png)
-- **Express.js:** A web application framework for Node.js, used for building the backend.
-![Logo](https://i.ibb.co/h78sDjn/6.png)
-- **PostgreSQL:** A powerful, open-source relational database for storing data.
-![Logo](https://i.ibb.co/RN0Cx2P/7.png)
 
 ## Deployment and Hosting
 
@@ -81,11 +70,10 @@ Our F&B Website is built using a variety of technologies and tools to provide a 
   
 ## Development Tools
 
+- **Figma:** Designing and prototyping user interfaces.
+![Logo](https://i.ibb.co/s2CdRmS/4.png)
 - **Visual Studio Code:** Our preferred code editor for efficient development.
 ![Logo](https://i.ibb.co/Px1TjR5/9.png)
-
-- **Postman:** Testing and debugging API endpoints during development.
-![Logo](https://i.ibb.co/J5HkFw7/10.png)
 
 ## Version Control and Collaboration
 
