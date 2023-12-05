@@ -1,0 +1,73 @@
+/* dark mode */
+.dark-mode {
+  background-color: var(--black-light);
+  color: var(--white-dark);
+}
+
+.dark-mode section {
+  border-top: 0.5px solid grey;
+  border-bottom: 0.5px solid grey;
+}
+
+.dark-mode .payment-section {
+  background-color: var(--black-light);
+  color: var(--white-dark);
+}
+
+.dark-mode .hero {
+  background: linear-gradient(to right, var(--green-dark), var(--green));
+  background-size: 200% 50%;
+}
+
+.dark-mode .hero .payment-content .content h3,
+.dark-mode .hero .payment-content .content p {
+  color: var(--white-dark);
+}
+
+.fa-solid.active {
+  transform: rotate(180deg);
+  color: var(--green);
+}
+
+/* hero section */
+.hero {
+  background: linear-gradient(to right, var(--green), var(--green-light));
+  background-size: 200% 100%;
+}
+
+.hero .payment-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-top: 9rem;
+}
+
+.hero .payment-content .content {
+  flex: 1 1 45rem;
+}
+
+.hero .payment-content .image {
+  flex: 1 1 45rem;
+}
+
+.hero .payment-content .image img {
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.hero .payment-content .image img:hover {
+  transform: scale(1.1);
+}
+
+.hero .payment-content .content h3 {
+  font-size: 6.2rem;
+  color: var(--green-dark);
+}
+
+.hero .payment-content .content p {
+  font-size: 2.2rem;
+  padding: 3rem 0;
+  line-height: 1.5;
+  color: var(--green-dark);
+}
