@@ -1,4 +1,3 @@
-# FE-2-Bandung-24
 # SE.Kopi
 
 Welcome to the SE.Kopi Website project! This web application is designed to showcase various food and beverage items, provide information about the menu, and allow users to place orders.
@@ -6,7 +5,7 @@ Welcome to the SE.Kopi Website project! This web application is designed to show
 ## Table of Contents
 
 - [Features](#features)
-- [Technologies Used](#technologiesused)
+- [Technologies Used](#technologies-used)
 - [Acknowledgements](#acknowledgements)
 - [Authors](#Authors)
 
@@ -51,7 +50,6 @@ Feel free to explore the website and let us know your feedback! We're constantly
 
 
 
-
 # Technologies Used
 
 Our F&B Website is built using a variety of technologies and tools to provide a seamless experience for users.
@@ -59,9 +57,9 @@ Our F&B Website is built using a variety of technologies and tools to provide a 
 ## Frontend
 
 - **HTML:** Structuring the content of our web pages.
-![Logo](https://i.ibb.co/PTvM1T9/2.png)
-- **CSS:** Styling the layout and design elements.
 ![Logo](https://i.ibb.co/Z6Z2pt3/1.png)
+- **CSS:** Styling the layout and design elements.
+![Logo](https://i.ibb.co/PTvM1T9/2.png)
 - **JavaScript:** Adding interactivity and dynamic behavior to the frontend.
 ![Logo](https://i.ibb.co/pQjh4Vm/3.png)
 - **Figma:** Designing and prototyping user interfaces.
@@ -125,3 +123,4 @@ We appreciate everyone who has played a role, big or small, in the development a
 **Siti Aisyah**
   - GitHub: [@SitiAisyah16](https://github.com/SitiAisyah16)
 
+[Visit our website](https://www.sekopi.biz.id/)
