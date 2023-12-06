@@ -5,12 +5,10 @@ Welcome to the SE.Kopi Website project! This web application is designed to show
 ## Table of Contents
 
 - [Features](#features)
-- [Technologies Used](#technologiesused)
-- [Website Demo](websitedemo)
+- [Technologies Used](#technologies_used)
+- [Website Demo](website_demo)
 - [Acknowledgements](#Acknowledgements)
 - [Authors](#Authors)
-
-
 
 # Features
 
@@ -63,7 +61,6 @@ Our F&B Website is built using a variety of technologies and tools to provide a 
 Feel free to explore the website and let us know your feedback! We're constantly working to enhance your dining experience. 
 
 Visit SE.Kopi website at [https://www.sekopi.biz.id/](https://www.sekopi.biz.id/)
-
 
 # Acknowledgements
 
