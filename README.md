@@ -7,8 +7,10 @@ Welcome to the SE.Kopi Website project! This web application is designed to show
 - [Features](#features)
 - [Technologies Used](#technologiesused)
 - [Website Demo](websitedemo)
-- [Authors](#Authors)
 - [Acknowledgements](#Acknowledgements)
+- [Authors](#Authors)
+
+
 
 # Features
 
@@ -45,7 +47,6 @@ Enjoy a visually comfortable experience with our Dark Mode feature. Toggle betwe
 ![Dark Mode](https://i.ibb.co/0FcYqVL/Darkmode.jpg)
 
 
-
 # Technologies Used
 
 Our F&B Website is built using a variety of technologies and tools to provide a seamless experience for users.
@@ -72,7 +73,6 @@ We would like to express our gratitude to the following individuals and organiza
 Thank you to **RevoU** (https://revou.co/) for providing best tutor such as **Kak Tandry Syawaludin, Kak Fitra Rahma Muliani, and Kak Ichsan Natawijaya** that gave us valuable knowledge related to this project. Kak **Nabil Haidar Pribadi** as mentor who providing valuable guidance and feedback throughout the development process. **Jihan Amella Bale** as Section Manager (SM) who always try to give the best for RevoU students. Thank you to **Hatami & Husain**, for your tireless commitment to making this project a success.
 
 We appreciate everyone who has played a role, big or small, in the development and success of our project.
-
 
 # Authors
 
