@@ -5,10 +5,10 @@ Welcome to the SE.Kopi Website project! This web application is designed to show
 ## Table of Contents
 
 - [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Acknowledgements](#acknowledgements)
+- [Technologies Used](#technologiesused)
+- [Website Demo](websitedemo)
 - [Authors](#Authors)
-
+- [Acknowledgements](#Acknowledgements)
 
 # Features
 
@@ -44,43 +44,26 @@ Enjoy a visually comfortable experience with our Dark Mode feature. Toggle betwe
 
 ![Dark Mode](https://i.ibb.co/0FcYqVL/Darkmode.jpg)
 
-## Getting Started
-
-Feel free to explore the website and let us know your feedback! We're constantly working to enhance your dining experience.
-
 
 
 # Technologies Used
 
 Our F&B Website is built using a variety of technologies and tools to provide a seamless experience for users.
 
-## Frontend
+| Technologies | Annotation |
+|----------|----------|
+| HTML | Structuring the content of our web pages.| 
+| CSS| Styling the layout and design elements. |
+| JavaScript| Adding interactivity and dynamic behavior to the frontend.|
+| Figma | Designing and prototyping user interfaces.|
 
-- **HTML:** Structuring the content of our web pages.
-![Logo](https://i.ibb.co/Z6Z2pt3/1.png)
-- **CSS:** Styling the layout and design elements.
-![Logo](https://i.ibb.co/PTvM1T9/2.png)
-- **JavaScript:** Adding interactivity and dynamic behavior to the frontend.
-![Logo](https://i.ibb.co/pQjh4Vm/3.png)
+# Website Demo
 
-## Deployment and Hosting
+Feel free to explore the website and let us know your feedback! We're constantly working to enhance your dining experience. 
 
-- **Vercel:** Our platform for hosting and deploying the web application.
-![Logo](https://i.ibb.co/Pj1zKbz/8.png)
-  
-## Development Tools
+Visit SE.Kopi website at [https://www.sekopi.biz.id/](https://www.sekopi.biz.id/)
 
-- **Figma:** Designing and prototyping user interfaces.
-![Logo](https://i.ibb.co/s2CdRmS/4.png)
-- **Visual Studio Code:** Our preferred code editor for efficient development.
-![Logo](https://i.ibb.co/Px1TjR5/9.png)
 
-## Version Control and Collaboration
-
-- **GitHub:** Hosting our version-controlled code repository.
-![Logo](https://i.ibb.co/tLCBCQy/11.png)
-
-Feel free to explore these technologies and tools, and don't hesitate to reach out if you have any questions about our development stack!
 # Acknowledgements
 
 We would like to express our gratitude to the following individuals and organizations for their contributions and support:
@@ -111,4 +94,3 @@ We appreciate everyone who has played a role, big or small, in the development a
 **Siti Aisyah**
   - GitHub: [@SitiAisyah16](https://github.com/SitiAisyah16)
 
-## 🚀 [Visit Our Website Demo](https://www.sekopi.biz.id/)
