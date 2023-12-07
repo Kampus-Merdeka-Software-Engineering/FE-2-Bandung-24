@@ -81,8 +81,6 @@ function getCartFromLocalStorage() {
 
 // handle server response
 function handleServerResponse(response) {
-    console.log('Server Response:', response);
-
     // clear local storage after successful transaction
     localStorage.removeItem('shoppingCart');
 
@@ -92,7 +90,7 @@ function handleServerResponse(response) {
 // handle error function
 function handleError(error) {
     console.error('Error:', error.message);
-    alert('Error submitting transaction. Please try again.');
+    alert('Anda belum mengisi form, mohon diisi');
 }
 
 // kalkulasi total quantity
