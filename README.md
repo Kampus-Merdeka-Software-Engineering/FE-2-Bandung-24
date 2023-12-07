@@ -5,10 +5,10 @@ Welcome to the SE.Kopi Website project! This web application is designed to show
 ## Table of Contents
 
 - [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Acknowledgements](#acknowledgements)
+- [Technologies Used](#technologies_used)
+- [Website Demo](website_demo)
+- [Acknowledgements](#Acknowledgements)
 - [Authors](#Authors)
-
 
 # Features
 
@@ -44,55 +44,24 @@ Enjoy a visually comfortable experience with our Dark Mode feature. Toggle betwe
 
 ![Dark Mode](https://i.ibb.co/0FcYqVL/Darkmode.jpg)
 
-## Getting Started
-
-Feel free to explore the website and let us know your feedback! We're constantly working to enhance your dining experience.
-
-
 
 # Technologies Used
 
 Our F&B Website is built using a variety of technologies and tools to provide a seamless experience for users.
 
-## Frontend
+| Technologies | Annotation |
+|----------|----------|
+| HTML | Structuring the content of our web pages.| 
+| CSS| Styling the layout and design elements. |
+| JavaScript| Adding interactivity and dynamic behavior to the frontend.|
+| Figma | Designing and prototyping user interfaces.|
 
-- **HTML:** Structuring the content of our web pages.
-![Logo](https://i.ibb.co/Z6Z2pt3/1.png)
-- **CSS:** Styling the layout and design elements.
-![Logo](https://i.ibb.co/PTvM1T9/2.png)
-- **JavaScript:** Adding interactivity and dynamic behavior to the frontend.
-![Logo](https://i.ibb.co/pQjh4Vm/3.png)
-- **Figma:** Designing and prototyping user interfaces.
-![Logo](https://i.ibb.co/s2CdRmS/4.png)
+# Website Demo
 
-## Backend
+Feel free to explore the website and let us know your feedback! We're constantly working to enhance your dining experience. 
 
-- **Node.js:** The JavaScript runtime for server-side development.
-![Logo](https://i.ibb.co/t386rGY/5.png)
-- **Express.js:** A web application framework for Node.js, used for building the backend.
-![Logo](https://i.ibb.co/h78sDjn/6.png)
-- **PostgreSQL:** A powerful, open-source relational database for storing data.
-![Logo](https://i.ibb.co/RN0Cx2P/7.png)
+Visit SE.Kopi website at [https://www.sekopi.biz.id/](https://www.sekopi.biz.id/)
 
-## Deployment and Hosting
-
-- **Vercel:** Our platform for hosting and deploying the web application.
-![Logo](https://i.ibb.co/Pj1zKbz/8.png)
-  
-## Development Tools
-
-- **Visual Studio Code:** Our preferred code editor for efficient development.
-![Logo](https://i.ibb.co/Px1TjR5/9.png)
-
-- **Postman:** Testing and debugging API endpoints during development.
-![Logo](https://i.ibb.co/J5HkFw7/10.png)
-
-## Version Control and Collaboration
-
-- **GitHub:** Hosting our version-controlled code repository.
-![Logo](https://i.ibb.co/tLCBCQy/11.png)
-
-Feel free to explore these technologies and tools, and don't hesitate to reach out if you have any questions about our development stack!
 # Acknowledgements
 
 We would like to express our gratitude to the following individuals and organizations for their contributions and support:
@@ -101,7 +70,6 @@ We would like to express our gratitude to the following individuals and organiza
 Thank you to **RevoU** (https://revou.co/) for providing best tutor such as **Kak Tandry Syawaludin, Kak Fitra Rahma Muliani, and Kak Ichsan Natawijaya** that gave us valuable knowledge related to this project. Kak **Nabil Haidar Pribadi** as mentor who providing valuable guidance and feedback throughout the development process. **Jihan Amella Bale** as Section Manager (SM) who always try to give the best for RevoU students. Thank you to **Hatami & Husain**, for your tireless commitment to making this project a success.
 
 We appreciate everyone who has played a role, big or small, in the development and success of our project.
-
 
 # Authors
 
@@ -123,4 +91,3 @@ We appreciate everyone who has played a role, big or small, in the development a
 **Siti Aisyah**
   - GitHub: [@SitiAisyah16](https://github.com/SitiAisyah16)
 
-[Visit our website](https://www.sekopi.biz.id/)
