@@ -1,6 +1,7 @@
 // transaction API url
 const transactionUrl = 'https://api.sekopi.biz.id/v1/transaction';
 
+// fungsi handle response
 async function handleResponse(response) {
     try {
         if (!response.ok) {
@@ -18,7 +19,7 @@ async function handleResponse(response) {
 // fungsi create transaction
 async function addTransaction(transactionData) {
     try {
-        const response = await fetch(transactionUrl, {
+        const requestOptions = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -27,7 +28,9 @@ async function addTransaction(transactionData) {
                 ...transactionData,
                 orders: JSON.stringify(transactionData.orders),
             }),
-        });
+        };
+
+        const response = await fetch(transactionUrl, requestOptions);
 
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
