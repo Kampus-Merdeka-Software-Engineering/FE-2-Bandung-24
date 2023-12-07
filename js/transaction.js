@@ -15,7 +15,7 @@ async function initializeTransaction() {
             displayMenu(shoppingCart);
             displayTotalItemsAndPrice(shoppingCart);
         } else {
-            alert('Keranjang belanja kosong. Anda akan dialihkan ke halaman menu.');
+            alert('Empty shopping cart. Please add items to your shopping cart!');
             window.location.href = 'menu.html';
         }
     } catch (error) {
@@ -90,7 +90,7 @@ function handleServerResponse(response) {
 // handle error function
 function handleError(error) {
     console.error('Error:', error.message);
-    alert('Anda belum mengisi form, mohon diisi');
+    alert('You have not filled out the form, please fill it out now!');
 }
 
 // kalkulasi total quantity
@@ -155,7 +155,7 @@ function displayTotalItemsAndPrice(cartItems) {
         totalItemsElement.textContent = 'Total Items: 0';
         totalPriceElement.textContent = 'Total Price: Rp 0';
 
-        alert('Keranjang belanja kosong. Silakan tambahkan item ke keranjang belanja Anda.');
+        alert('Empty shopping cart. Please add items to your shopping cart!');
         window.location.href = 'menu.html';
     } else {
         const totalItems = calculateTotalQuantity(cartItems);
