@@ -84,7 +84,9 @@ function handleServerResponse(response) {
     // clear local storage after successful transaction
     localStorage.removeItem('shoppingCart');
 
-    alert('Transaction successful!');
+    alert('Transaction successful! Redirecting to menu page...');
+
+    window.location.href = 'menu.html';
 }
 
 // handle error function
