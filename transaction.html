@@ -11,8 +11,8 @@
     <meta property="og:title" content="SE.Kopi">
     <meta property="og:image" content="https://i.ibb.co/1sTJ5QQ/sekopi.png">
     <meta property="og:description" content="Drinking Coffee, Creating Moments.">
-    <meta name='og:url' content='sekopi.biz.id'>
-    <meta name='og:type' content='food & beverages'>
+    <meta name='og:url' content='https://sekopi.biz.id'>
+    <meta property="og:type" content="website">
     <meta name='og:site_name' content='SE.Kopi'>
 
     <!-- font awesome link -->
@@ -21,22 +21,18 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/transaction.css">
 
-    <!-- warna tab mobile  -->
-    <!-- Chrome, Firefox OS, Opera -->
-    <meta name=”theme-color” content=”#435334>
-    <!-- Windows Phone -->
-    <meta name=”msapplication-navbutton-color” content=”#435334>
-    <!-- iOS Safari -->
-    <meta name=”apple-mobile-web-app-status-bar-style” content=”#435334>
+    <!-- warna tab mobile -->
+    <!-- chrome, firefox OS, opera -->
+    <meta name="theme-color" content="#435334">
+    <!-- windows phone -->
+    <meta name="msapplication-navbutton-color" content="#435334">
+    <!-- iOS safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#435334">
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/logo/favicon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/logo/favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/logo/favicon.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#435334">
 
     <title>SE.Kopi - Transaction</title>
 </head>
@@ -74,21 +70,56 @@
         <section class="hero" id="hero">
             <div class="payment-content">
                 <div class="content">
-                    <h3>My Transaction</h3>
+                    <h3>Transaction</h3>
                     <p>
-                        Engage in secure, swift transactions with SE.Kopi optimized payment system, ensuring your
-                        comfort throughout. Rely on us for worry-free and efficient transactions, allowing you to focus
-                        on enjoying our exceptional offerings without any concerns.
+                        Experience secure, swift transactions with SE.Kopi's optimized payment system. Trust us for
+                        worry-free and efficient payments, so you can focus on enjoying our exceptional offerings
+                        without concerns.
                     </p>
                 </div>
                 <div class="image">
-                    <img src="https://i.ibb.co/Jt2HswN/payment.png" alt="SE.Kopi" />
+                    <img src="https://i.ibb.co/L61GVkF/order.png" alt="SE.Kopi" />
                 </div>
             </div>
         </section>
 
         <!-- section payment -->
         <section class="payment-section" id="payment-section">
+            <div class="my-payment" id="my-payment">
+                <h4>Your Order</h4>
+                <div class="line"></div>
+            </div>
+            <div id="transaction-menu">
+                <div class="table-container">
+                    <div id="order-items"></div>
+                </div>
+            </div>
+
+            <div class="form-payment">
+                <div class="form-container">
+                    <h4 class="txt-transaction">Form Transaction</h4>
+                    <form id="transactionForm">
+                        <label for="nomorMeja">Nomor Meja:</label>
+                        <input type="number" id="nomorMeja" name="nomorMeja" placeholder="Nomor Meja" required>
+
+                        <label for="namaPemesan">Nama Pemesan:</label>
+                        <input type="text" id="namaPemesan" name="namaPemesan" placeholder="Nama Pemesan" required>
+
+                        <label for="statusPembayaran">Status Pembayaran:</label>
+                        <select id="statusPembayaran" name="statusPembayaran" required>
+                            <option value="true">Lunas</option>
+                            <option value="false">Belum Lunas</option>
+                        </select>
+
+                        <div id="ordersContainer"></div>
+
+                        <br>
+                        <br>
+                        <button class="btn-submit" type="button" id="submitButton"
+                            onclick="submitTransaction()">Submit</button>
+                    </form>
+                </div>
+            </div>
 
         </section>
 
@@ -125,7 +156,7 @@
                 <h3 class="footer-text">Section</h3>
                 <ul>
                     <li>
-                        <a href="#payment-section">My Transaction</a>
+                        <a href="#payment-section">Transaction</a>
                     </li>
                 </ul>
             </div>
@@ -154,6 +185,8 @@
 
     <!-- custom js link -->
     <script defer src="./js/script.js"></script>
+    <script defer type="module" src="./js/api/transactionData.js"></script>
+    <script defer type="module" src="./js/transaction.js"></script>
 </body>
 
 </html>

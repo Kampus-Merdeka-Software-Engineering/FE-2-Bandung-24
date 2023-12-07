@@ -200,7 +200,7 @@ function initializeApp() {
     // fungsi untuk membuat menu card
     function createMenuCard(item) {
         const cardElement = createHTMLElement('div', '', '', ['menu-card']);
-        cardElement.dataset.id = item.id;
+        cardElement.dataset.id = item.menu_id;
         cardElement.dataset.title = item.title;
         cardElement.dataset.price = item.price;
 
@@ -247,12 +247,12 @@ function initializeApp() {
 
     // fungsi ketika klik button order now
     function orderNow(item) {
-        const index = shoppingCart.findIndex(cartItem => cartItem.id === item.id);
+        const index = shoppingCart.findIndex(cartItem => cartItem.id === item.menu_id);
 
         if (index !== -1) {
             shoppingCart[index].quantity++;
         } else {
-            shoppingCart.push({ id: item.id, img: item.img, title: item.title, price: item.price, quantity: 1 });
+            shoppingCart.push({ id: item.menu_id, img: item.img, title: item.title, price: item.price, quantity: 1 });
         }
 
         updateCartDisplay();

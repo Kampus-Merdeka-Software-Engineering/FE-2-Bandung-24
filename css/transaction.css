@@ -24,6 +24,23 @@
   color: var(--white-dark);
 }
 
+.dark-mode .payment-section .my-payment h4 {
+  color: var(--white-dark);
+}
+
+.dark-mode .payment-section .my-payment .line {
+  background: var(--white-dark);
+}
+
+.dark-mode tbody {
+  background: var(--green-light);
+}
+
+.dark-mode th,
+.dark-mode td {
+  color: var(--black-light);
+}
+
 .fa-solid.active {
   transform: rotate(180deg);
   color: var(--green);
@@ -70,4 +87,195 @@
   padding: 3rem 0;
   line-height: 1.5;
   color: var(--green-dark);
+}
+
+/* payment section */
+/* total order */
+.payment-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 4rem;
+}
+
+.payment-section .my-payment {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.payment-section .my-payment h4 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  line-height: 2.5;
+  color: var(--green-dark);
+  word-wrap: break-word;
+}
+
+.payment-section .my-payment .line {
+  width: 10rem;
+  height: 0.5rem;
+  background: var(--green-dark);
+  border-radius: 1rem;
+}
+
+#transaction-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  max-height: 400px;
+}
+
+.table-container::-webkit-scrollbar {
+  display: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 18px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: var(--green);
+  color: white;
+}
+
+tr {
+  font-size: 1.6rem;
+}
+
+#total-items,
+#total-price {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.order-table tfoot {
+  background-color: var(--green);
+  font-weight: bold;
+  color: white;
+}
+
+/* form transactions */
+.txt-transaction {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-top: 3rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: var(--green-light);
+}
+
+#transactionForm {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  padding: 30px;
+}
+
+label {
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid var(--green-dark);
+  border-radius: 10px;
+  font-size: 1.4rem;
+  color: var(--green-dark);
+}
+
+input::placeholder,
+select::placeholder {
+  font-size: 1.4rem;
+}
+
+.btn-order,
+.btn-submit {
+  background-color: var(--green);
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  width: 50%;
+  margin: auto;
+  max-width: 200px;
+}
+
+.btn-order:hover,
+.btn-submit:hover {
+  background-color: var(--green-dark);
+}
+
+/* media queries */
+/* mobile */
+@media (max-width: 768px) {
+  th,
+  td {
+    padding: 12px;
+  }
+
+  tr {
+    font-size: 1.2rem;
+  }
+
+  #transaction-menu {
+    text-align: center;
+  }
+
+  .table-container {
+    width: 100%;
+    max-height: 255px;
+  }
+
+  #transactionForm {
+    padding: 50px;
+    width: 100%;
+    height: auto;
+  }
+
+  .btn-order,
+  .btn-submit {
+    width: 100%;
+    max-width: none;
+  }
 }
