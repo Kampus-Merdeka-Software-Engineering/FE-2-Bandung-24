@@ -5,10 +5,10 @@ Welcome to the SE.Kopi Website project! This web application is designed to show
 ## Table of Contents
 
 - [Features](#features)
-- [Technologies Used](#technologies_used)
-- [Website Demo](website_demo)
-- [Acknowledgements](#Acknowledgements)
-- [Authors](#Authors)
+- [Technologies Used](#technologies-used)
+- [Website Demo](#website-demo)
+- [Acknowledgements](#acknowledgements)
+- [Authors](#authors)
 
 # Features
 
@@ -51,23 +51,26 @@ Our F&B Website is built using a variety of technologies and tools to provide a 
 
 | Technologies | Annotation |
 |----------|----------|
-| HTML | Structuring the content of our web pages.| 
+| HTML | Structuring the content of our web pages. | 
 | CSS| Styling the layout and design elements. |
-| JavaScript| Adding interactivity and dynamic behavior to the frontend.|
-| Figma | Designing and prototyping user interfaces.|
+| JavaScript| Adding interactivity and dynamic behavior to the frontend. |
+| Figma | Designing and prototyping user interfaces. |
+| Visual Studio Code | Code editor for efficient development. |
+| GitHub | Hosting our version-controlled code repository. |
+| Vercel | Platform for hosting and deploying web applications. |
 
 # Website Demo
 
 Feel free to explore the website and let us know your feedback! We're constantly working to enhance your dining experience. 
 
-Visit SE.Kopi website at [https://www.sekopi.biz.id/](https://www.sekopi.biz.id/)
+Visit SE.Kopi website at 🚀 [https://www.sekopi.biz.id](https://www.sekopi.biz.id/)
 
 # Acknowledgements
 
 We would like to express our gratitude to the following individuals and organizations for their contributions and support:
 
 
-Thank you to **RevoU** (https://revou.co/) for providing best tutor such as **Kak Tandry Syawaludin, Kak Fitra Rahma Muliani, and Kak Ichsan Natawijaya** that gave us valuable knowledge related to this project. Kak **Nabil Haidar Pribadi** as mentor who providing valuable guidance and feedback throughout the development process. **Jihan Amella Bale** as Section Manager (SM) who always try to give the best for RevoU students. Thank you to **Hatami & Husain**, for your tireless commitment to making this project a success.
+Thank you to **RevoU** (https://revou.co) for providing best tutor such as **Kak Tandry Syawaludin, Kak Fitra Rahma Muliani, and Kak Ichsan Natawijaya** that gave us valuable knowledge related to this project. Kak **Nabil Haidar Pribadi** as mentor who providing valuable guidance and feedback throughout the development process. **Jihan Amella Bale** as Section Manager (SM) who always try to give the best for RevoU students. Thank you to **Hatami & Husain**, for your tireless commitment to making this project a success.
 
 We appreciate everyone who has played a role, big or small, in the development and success of our project.
 
