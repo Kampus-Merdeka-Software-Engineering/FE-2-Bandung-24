@@ -1,4 +1,4 @@
-// API url for transaction
+// transaction
 import { addTransaction } from './api/transactionData.js';
 
 const totalPriceElement = document.getElementById('total-price');

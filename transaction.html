@@ -100,17 +100,17 @@
                 <div class="form-container">
                     <h4 class="txt-transaction">Form Transaction</h4>
                     <form id="transactionForm">
-                        <label for="nomorMeja">Nomor Meja:</label>
-                        <input type="number" id="nomorMeja" name="nomorMeja" placeholder="Nomor Meja" required>
+                        <label for="nomorMeja">Table Number</label>
+                        <input type="number" id="nomorMeja" name="nomorMeja" placeholder="Table Number" required>
 
-                        <label for="namaPemesan">Nama Pemesan:</label>
-                        <input type="text" id="namaPemesan" name="namaPemesan" placeholder="Nama Pemesan" required>
+                        <label for="namaPemesan">Orderer Name</label>
+                        <input type="text" id="namaPemesan" name="namaPemesan" placeholder="Orderer Name" required>
 
-                        <label for="statusPembayaran">Status Pembayaran:</label>
+                        <label for="statusPembayaran">Payment Status</label>
                         <select id="statusPembayaran" name="statusPembayaran" required>
-                            <option>Konfirmasi Pembayaran</option>
-                            <option value="true">Lunas</option>
-                            <option value="false">Belum Lunas</option>
+                            <option>Payment Confirmation</option>
+                            <option value="true">Paid</option>
+                            <option value="false">Unpaid</option>
                         </select>
 
                         <div id="ordersContainer"></div>
